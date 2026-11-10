@@ -1,0 +1,4 @@
+interface:
+  display_name: "H3Image Prompt Writing"
+  short_description: "Write H3Image generation and reference-edit prompts"
+  default_prompt: "Use $h3-image-prompt-writing to write an image prompt from my idea, brief, existing prompt, or reference images."
