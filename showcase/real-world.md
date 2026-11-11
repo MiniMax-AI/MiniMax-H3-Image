@@ -7,6 +7,8 @@
 
 # The Real World
 
+Realistic lighting and subtle material textures give generated images a natural, convincing photographic look.
+
 ← [Game Worlds](game-worlds.md) · [Showcase](README.md) · [Surreal Worlds](surreal-worlds.md) →
 
 ## Farm in the fog, documentary film photo

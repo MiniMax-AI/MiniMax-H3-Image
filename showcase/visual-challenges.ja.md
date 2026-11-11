@@ -7,7 +7,9 @@
 
 # 複雑な視覚的課題
 
-← [ロボティクスと身体性 AI](robotics.ja.md) · [ショーケース](README.ja.md) · [ゲームの世界](game-worlds.ja.md) →
+鏡の反射、投影と遮蔽、2D マップからの 3D シーン再現、そして遊び心のあるペリカンの課題。
+
+← [精密な指示追従と理解](instruction-following.ja.md) · [ショーケース](README.ja.md) · [ゲームの世界](game-worlds.ja.md) →
 
 ## 直角の合わせ鏡
 
@@ -61,4 +63,4 @@ Output only one complete game screenshot. Do not include the original red arrow,
 
 ---
 
-← [ロボティクスと身体性 AI](robotics.ja.md) · [ショーケース](README.ja.md) · [ゲームの世界](game-worlds.ja.md) →
+← [精密な指示追従と理解](instruction-following.ja.md) · [ショーケース](README.ja.md) · [ゲームの世界](game-worlds.ja.md) →

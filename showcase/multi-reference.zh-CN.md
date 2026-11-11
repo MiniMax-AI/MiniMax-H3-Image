@@ -7,7 +7,9 @@
 
 # 最高 16 图参考
 
-[效果展示](README.zh-CN.md) · [教育、科普、知识推理](education-and-reasoning.zh-CN.md) →
+可分别指定内容、风格与布局的参考图。
+
+[效果展示](README.zh-CN.md) · [精准指令遵循与理解](instruction-following.zh-CN.md) →
 
 ## 16 人群像，6 种场景
 
@@ -33,4 +35,4 @@
 
 ---
 
-[效果展示](README.zh-CN.md) · [教育、科普、知识推理](education-and-reasoning.zh-CN.md) →
+[效果展示](README.zh-CN.md) · [精准指令遵循与理解](instruction-following.zh-CN.md) →

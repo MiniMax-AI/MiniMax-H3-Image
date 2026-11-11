@@ -7,9 +7,13 @@
 
 # 游戏世界
 
+围绕场景、角色与世界观的游戏概念设计，分奇幻史诗和科幻末世两个方向。
+
 ← [复杂视觉挑战](visual-challenges.zh-CN.md) · [效果展示](README.zh-CN.md) · [现实世界](real-world.zh-CN.md) →
 
-## 边境骑手
+## 奇幻史诗
+
+### 边境骑手
 
 <p align="center"><img src="../assets/showcase/frontier-rider.jpg" alt="边境骑手" width="100%"></p>
 
@@ -18,7 +22,7 @@
 <blockquote>Aspect ratio 16:9, 4K. Create original game key art that evokes the genre atmosphere of a major AAA production through mood, gameplay motifs and composition. Use realistic 3D materials and cinematic lighting, with original identities, costumes and symbols. Scene: An adult frontier rider waits at a waystation as a sandstorm approaches and the horse turns its head. Use original identities and designs without existing franchise names, characters, brand marks or watermarks.</blockquote>
 </details>
 
-## 荒漠大集会
+### 荒漠大集会
 
 <p align="center"><img src="../assets/showcase/desert-gathering.jpg" alt="荒漠大集会" width="100%"></p>
 
@@ -27,7 +31,7 @@
 <blockquote>画幅比例 21:9。史诗感写实电影场面，从人物身后的高处岩台俯视巨大沙漠集会，一个披着深色长斗篷的人物站在近景中央偏左，背对镜头，轮廓几乎形成黑色剪影。下方密密麻麻的人群铺满宽阔的沙地与岩石围合的天然剧场，人群以极小尺度向远方延伸，排列不完全整齐，每个身影融成细密有序的纹理。两侧褐色岩壁、粗糙台阶和隆起岩台构成空间边界，暖米黄色空气中有轻微尘雾。高处自然日光照亮场地，前景保留深阴影，强调孤立的近景人物与庞大集体的尺度对照，真实电影调色。</blockquote>
 </details>
 
-## 冷色矿物荒原航拍
+### 冷色矿物荒原航拍
 
 <p align="center"><img src="../assets/showcase/cold-mineral-aerial.jpg" alt="冷色矿物荒原航拍" width="100%"></p>
 
@@ -46,7 +50,7 @@
 风格与参数：高品质游戏CG，写实向三维地貌渲染，电影级游戏过场画面，基于物理的材质表现，全局光照，电影级航拍构图，高空倾斜俯拍，超远景，S形引导线，非对称布局，宽银幕比例约2.5:1，高清细节，深景深，地表纹理清晰，低照度冷光，高动态范围，适度低饱和，柔和高光，深色阴影，无文字、无标志、无边框。</blockquote>
 </details>
 
-## 红褐矿物荒原航拍
+### 红褐矿物荒原航拍
 
 <p align="center"><img src="../assets/showcase/desert-mineral-aerial.jpg" alt="红褐矿物荒原航拍" width="100%"></p>
 
@@ -58,7 +62,7 @@
 写实地貌摄影，超远景、深景深、高清纹理、高动态范围，适度低饱和，柔和高光与自然暗角，轻微尘雾和细腻胶片颗粒，不过度锐化，无文字、标志及边框。</blockquote>
 </details>
 
-## 森林中的古剧场
+### 森林中的古剧场
 
 <p align="center"><img src="../assets/showcase/forest-amphitheater.jpg" alt="森林中的古剧场" width="100%"></p>
 
@@ -67,7 +71,7 @@
 <blockquote>画面比例16:9，4K。做一张面向3A游戏的环境概念成图，先读出地形、地标和聚落用途，再看到细节。采用可信写实3D空间，建筑顺应气候与地势，保留前中后景。具体内容：被森林吞没的圆形剧场，树根沿裂缝进入座席。不使用现有作品的名称、角色或品牌标志，不添加水印。</blockquote>
 </details>
 
-## 云海仙山宫阙
+### 云海仙山宫阙
 
 <p align="center"><img src="../assets/showcase/mountain-temple.jpg" alt="云海仙山宫阙" width="100%"></p>
 
@@ -76,7 +80,7 @@
 <blockquote>画面比例21:9，4K。制作电影级写实数字绘景，适合3A过场的远景扩展。前景清晰、中景有结构、远景用大气透视递减，统一地平线、光照与尺度，建筑和地貌自然衔接，不出现拼贴边缘。具体内容：高山寺院群沿山脊延伸，金色晨光逐层照亮屋顶。不使用现有作品的名称、角色或品牌标志，不添加水印。</blockquote>
 </details>
 
-## 巫师释放扇形火焰
+### 巫师释放扇形火焰
 
 <p align="center"><img src="../assets/showcase/fire-mage-vfx.jpg" alt="巫师释放扇形火焰" width="100%"></p>
 
@@ -85,7 +89,7 @@
 <blockquote>Aspect ratio 16:9, 4K. Render a realistic AAA game effect at its peak, keeping the character or device and ground readable. Clearly distinguish origin, direction and area of influence, with layered particle density and environmental light interaction, without damage numbers, UI or text. Scene: An adult mage releases a fan of fire from the palm with flame tails bending downwind. Use original identities and designs without existing franchise names, characters, brand marks or watermarks.</blockquote>
 </details>
 
-## 爆炸的两个阶段
+### 爆炸的两个阶段
 
 <p align="center"><img src="../assets/showcase/explosion-two-state.jpg" alt="爆炸的两个阶段" width="100%"></p>
 
@@ -94,7 +98,7 @@
 <blockquote>一张电影特效爆炸模拟的双状态对照画面，纯黑背景，下方各有灰色无纹理水平地面。左右两个并排视窗保持相同机位和尺度：左侧呈现爆炸早期，翻滚火球呈明亮橙黄颜色，火舌密集形成花椰菜状细节；右侧呈现稍晚阶段，底部仍有橙色火焰，上方大团厚重深灰烟云向右上翻卷。体积火焰与烟雾具有真实透光、密度、湍流和层次，较高快门凝固瞬间，画面重点是火与烟的形态及相互遮挡。 输出一张完整图像，保留上述构图和视图数量；不添加网页边框、作者签名或水印。</blockquote>
 </details>
 
-## 重甲骑士角色设定
+### 重甲骑士角色设定
 
 <p align="center"><img src="../assets/showcase/armored-knight-sheet.jpg" alt="重甲骑士角色设定" width="100%"></p>
 
@@ -103,7 +107,7 @@
 <blockquote>暗黑奇幻游戏角色设定板，深灰渐变摄影棚背景。同一名高大男性重甲骑士以正面、背面和去除披肩后的正面全身三个视图并排展示，姿势和比例一致。面部完全藏在尖棱封闭头盔内，深色钢铁板甲有尖角肩甲、分片胸甲、护臂、膝甲与胫甲；颈肩围着磨损的灰黑布披肩，腰间是层叠的暗褐皮革裙甲和绑带。视图之间放置独立肩甲与胸甲小特写。写实游戏概念美术，金属磨痕、皮革粗糙度和布料褶皱清晰，冷灰主色，柔和顶侧光，完整展示脚部与轮廓。 输出一张完整图像，保留上述构图和视图数量；不添加网页边框、作者签名或水印。</blockquote>
 </details>
 
-## 狮王面部特写
+### 狮王面部特写
 
 <p align="center"><img src="../assets/showcase/lion-king-face.jpg" alt="狮王面部特写" width="100%"></p>
 
@@ -112,7 +116,7 @@
 <blockquote>画幅比例 21:9。写实奇幻生物面部特写，一个兼具狮子鬃毛与猿类面部结构的兽王朝向镜头略偏左，宽阔灰色鼻梁、深陷眼窝和琥珀色眼睛清楚，嘴唇略微张开露出少量小型象牙色牙齿。面部覆盖短而密的灰白毛发，周围巨大的棕褐与银白鬃毛向画面右侧和下方铺开，毛束有自然卷曲、层次和蓬松体积，发丝受到细腻侧光照亮。右下边缘仅露出一小部分暗金色饰件，主体仍是脸部与鬃毛。深色虚化背景，真实皮肤与毛发交界、湿润眼球反射和电影级生物材质。 输出单张完整作品画面，不添加网站边框、作者署名或水印。</blockquote>
 </details>
 
-## 森林中的龙
+### 森林中的龙
 
 <p align="center"><img src="../assets/showcase/forest-dragon.jpg" alt="森林中的龙" width="600"></p>
 
@@ -121,7 +125,9 @@
 <blockquote>写实幻想电影生物立于幽暗森林的岩石上，正方形全身构图。主体是一只高颈、细长身体的龙，灰蓝与墨绿色细鳞皮肤，腹部偏米灰色，背部从肩膀到尾部竖起扇形暗红色鳍膜；头部张嘴嘶吼，额头与脸颊生出许多向后飘卷的粉红色长须和角状肉质冠，须丝形成优雅复杂的轮廓。四肢为有锐爪的爬行动物结构，长尾绕身体向左弯曲，脚踩湿润石块和苔藓。森林柔和自然光穿透部分须冠，材质细腻可信，无文字或水印。</blockquote>
 </details>
 
-## 第一人称射击场景
+## 科幻末世
+
+### 第一人称射击场景
 
 <p align="center"><img src="../assets/showcase/fps-wasteland.jpg" alt="第一人称射击场景" width="100%"></p>
 
@@ -130,7 +136,7 @@
 <blockquote>画幅比例 16:9。写实末世第一人称射击游戏场景，镜头前方下缘可见玩家双手持握的步枪与瞄具，指向一条荒废林地公路。左侧中景一名穿绿色战术服、背包与头盔的同伴向前方射击，枪口闪出小团橙黄色火光；右侧另一名戴兜帽、穿旧棕色外套的战士半蹲持长枪。远处道路被高大松树、灰色灌木与薄雾包围，左后方有一辆生锈黄色巴士，地面杂草、石块与泥土细节丰富。清晨或黄昏的低位日光从树林后透出，冷灰绿环境与短促枪火对比，人物装备结构真实，紧张但没有血腥内容，不加 HUD。</blockquote>
 </details>
 
-## 白模渲染图变电影剧照
+### 白模渲染图变电影剧照
 
 <table><tr><td width="50%" valign="top"><img src="../assets/showcase/whitebox-moon-input.jpg" alt="输入"><br><sub>输入</sub></td><td width="50%" valign="top"><img src="../assets/showcase/moon-rover-render.jpg" alt="白模渲染图变电影剧照"><br><sub>输出</sub></td></tr></table>
 
@@ -139,7 +145,7 @@
 <blockquote>把这张白模渲染成真实月面科考电影画面。补全灰色月壤、银白隔热层、涂层金属、玻璃与轮网材质，宇航服为米白色。使用强方向性太阳光和有限地面反射，远处天空纯黑，不加蓝天、云或地球式雾气。保持探测车六个车轮、人物和舱段布局，阴影方向统一，亮部保留材质细节。 保留原图构图、镜头角度、透视、几何结构与各主体的位置和比例；输出4K、16:9横版，呈现3A级写实CG与电影实拍融合的质感，不添加文字、品牌、界面或水印。</blockquote>
 </details>
 
-## 峡谷水电站绘景
+### 峡谷水电站绘景
 
 <p align="center"><img src="../assets/showcase/hydro-station-canyon.jpg" alt="峡谷水电站绘景" width="100%"></p>
 
@@ -148,7 +154,7 @@
 <blockquote>Aspect ratio 21:9, 4K. Create a cinematic photoreal matte painting suitable for extending an AAA cutscene. Use a crisp foreground, structured middle distance and atmospheric recession, with consistent horizon, light and scale and seamless transitions between architecture and terrain. Scene: An old hydro station enclosed by red canyons with a long channel crossing the scene. Use original identities and designs without existing franchise names, characters, brand marks or watermarks.</blockquote>
 </details>
 
-## 废弃车站
+### 废弃车站
 
 <p align="center"><img src="../assets/showcase/abandoned-station.jpg" alt="废弃车站" width="100%"></p>
 
@@ -157,7 +163,7 @@
 <blockquote>Aspect ratio 16:9, 4K. Generate a photorealistic AAA image with a high-end real-time engine look. Emphasize indirect illumination, varied roughness, contact shadows and depth separation. Show only the rendered scene, without an editor or performance counters. Scene: Sunlight enters an abandoned station through a glass roof and reflects its steel frame in wet tiles. Use original identities and designs without existing franchise names, characters, brand marks or watermarks.</blockquote>
 </details>
 
-## 末世工业厂区
+### 末世工业厂区
 
 <p align="center"><img src="../assets/showcase/industrial-ruins.jpg" alt="末世工业厂区" width="100%"></p>
 
@@ -166,7 +172,7 @@
 <blockquote>画幅比例 16:9。写实末世工业厂区外景，低机位穿过满是碎石和废料的狭窄院落。左侧近景为高大的褪色红砖墙，右侧是残破混凝土厂房；中央远处立着多层钢架生产塔、圆筒罐、连桥和粗大烟囱。前景零散摆放生锈油桶、破木板与枯黄灌木，地面泥泞有浅水反射。厚重灰云压低天空，阳光从云缝穿出局部照亮建筑，黑色鸟群盘旋。强烈纵深和建筑遮挡形成紧张气氛，混凝土剥落、锈蚀钢板、断裂窗框与植被侵蚀细节清晰，整体低饱和灰黄配色，写实游戏环境渲染。 输出单张完整作品画面，不添加网站边框、作者署名或水印。</blockquote>
 </details>
 
-## 冰封海湾中的沉船
+### 冰封海湾中的沉船
 
 <p align="center"><img src="../assets/showcase/frozen-shipwreck-bay.jpg" alt="冰封海湾中的沉船" width="100%"></p>
 
@@ -175,7 +181,7 @@
 <blockquote>极寒冰封海湾中的废弃船舶遗址，2.2:1超宽全景，24mm广角微俯视。左侧倾斜船骸覆满积雪与冰柱，锈蚀集装箱散落甲板。中央碎冰裂隙延伸至蓝水道，青绿冰壁透光，浮冰与残片漂流。右侧白灰拖船搁浅，远处红色货轮倾覆于冰川之间。背景雪山、冰崖与稀疏针叶林隐入寒雾。冰蓝青灰主调，暗红船体点缀，冷冽日光形成近暗远亮层次，寂静荒凉。电影级写实，真实冰雪金属材质与水面反射，深景深、体积雾、8K，无人、无字、无水印。</blockquote>
 </details>
 
-## 战斗驾驶员
+### 战斗驾驶员
 
 <p align="center"><img src="../assets/showcase/combat-pilot.jpg" alt="战斗驾驶员" width="600"></p>
 
@@ -184,7 +190,7 @@
 <blockquote>画幅比例 1:1。写实未来战斗驾驶员的近距离半身肖像，年轻男性脸部冷峻、眼睛微向右看，面颊有细小擦伤，头发藏在复杂的开放式装甲头盔内。头盔为橄榄绿与旧白色工业壳体，顶部有红白斜纹徽记，面部两侧排列传感器、黑色光学镜头、通讯盒和铰接支架，下颌装有护颈框架。白灰色胸甲厚重，有深色胸带、软管、编号“003”、贴纸和细小警示标记，表面有划痕、积尘和边缘掉漆。主体靠近镜头，纯黑背景，冷色左上软光勾勒脸部与设备轮廓，强调复杂机械装配、皮肤真实感和军用硬表面材质。 输出单张完整作品画面，不添加网站边框、作者署名或水印。</blockquote>
 </details>
 
-## 极地服装设定
+### 极地服装设定
 
 <p align="center"><img src="../assets/showcase/polar-costume-board.jpg" alt="极地服装设定" width="100%"></p>
 
@@ -193,7 +199,7 @@
 <blockquote>Aspect ratio 3:2, 4K. Create an original AAA costume board: full front view on the left, full rear view in the center and one construction close-up on the right, using the same adult model and outfit. Show realistic 3D drape, seams and fastening structures against pale gray without text. Scene: An insulated polar communicator outfit with fur collar, sealed cuffs and gaiters. Use original identities and designs without existing franchise names, characters, brand marks or watermarks.</blockquote>
 </details>
 
-## 红色荒原上的头盔
+### 红色荒原上的头盔
 
 <p align="center"><img src="../assets/showcase/helmet-key-art.jpg" alt="红色荒原上的头盔" width="520"></p>
 
@@ -202,7 +208,7 @@
 <blockquote>画面比例3:4，4K。绘制原创3A游戏的竖版封面主视觉，写实3D、强烈而克制的电影光影。让单一主角或核心物占据明确焦点，顶部约四分之一保持安静用于后续排字，当前图不生成标题、标志或文字。具体内容：蒙尘宇航头盔躺在红色荒原上，镜面反射远处基地。不使用现有作品的名称、角色或品牌标志，不添加水印。</blockquote>
 </details>
 
-## 科幻战斗机
+### 科幻战斗机
 
 <p align="center"><img src="../assets/showcase/scifi-fighter.jpg" alt="科幻战斗机" width="100%"></p>
 
@@ -211,7 +217,7 @@
 <blockquote>画幅比例 16:9。写实科幻战斗机资产展示，从上方略俯视机体后侧的三分之四视角，战机停在中性深灰地面上，整体为低矮流线形白灰机身，局部红色装甲与红色尾翼形成鲜明点缀。两组大尺寸黑色矩形喷口位于机身尾部，喷口周围有机械层级与散热结构，机翼向左右展开，翼下分布小型挂载和细长设备，机背有抬起的鳍状结构。表面保留清晰分件缝、面板厚度、金属连接与轻度使用痕迹。柔和棚拍顶光，地面有自然接触阴影，重点展示双引擎布局和干净可读的硬表面轮廓。 输出单张完整作品画面，不添加网站边框、作者署名或水印。</blockquote>
 </details>
 
-## 科幻改装肌肉车
+### 科幻改装肌肉车
 
 <p align="center"><img src="../assets/showcase/modded-muscle-car.jpg" alt="科幻改装肌肉车" width="100%"></p>
 

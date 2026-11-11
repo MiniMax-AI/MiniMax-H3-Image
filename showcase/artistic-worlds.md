@@ -7,6 +7,8 @@
 
 # Artistic Worlds
 
+From classical oil painting and the Renaissance to East Asian aesthetics and line-art illustration.
+
 ← [Surreal Worlds](surreal-worlds.md) · [Showcase](README.md)
 
 ## Mandarin ducks, Old Master oil painting

@@ -7,7 +7,9 @@
 
 # 复杂视觉挑战
 
-← [机器人与具身智能](robotics.zh-CN.md) · [效果展示](README.zh-CN.md) · [游戏世界](game-worlds.zh-CN.md) →
+镜面反射、投影遮挡、由二维地图还原三维场景，还有几张趣味鹈鹕挑战。
+
+← [精准指令遵循与理解](instruction-following.zh-CN.md) · [效果展示](README.zh-CN.md) · [游戏世界](game-worlds.zh-CN.md) →
 
 ## 直角镜面
 
@@ -61,4 +63,4 @@
 
 ---
 
-← [机器人与具身智能](robotics.zh-CN.md) · [效果展示](README.zh-CN.md) · [游戏世界](game-worlds.zh-CN.md) →
+← [精准指令遵循与理解](instruction-following.zh-CN.md) · [效果展示](README.zh-CN.md) · [游戏世界](game-worlds.zh-CN.md) →

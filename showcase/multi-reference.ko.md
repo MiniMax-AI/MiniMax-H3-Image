@@ -7,7 +7,9 @@
 
 # 최대 16장의 참조 이미지
 
-[쇼케이스](README.ko.md) · [교육, 과학 커뮤니케이션, 추론](education-and-reasoning.ko.md) →
+내용, 스타일, 레이아웃마다 참조 이미지를 따로 지정할 수 있습니다.
+
+[쇼케이스](README.ko.md) · [정밀한 지시 이행과 이해](instruction-following.ko.md) →
 
 ## 16명의 군상, 여섯 장면
 
@@ -33,4 +35,4 @@ Preserve the color, material, structure, and proportions of every product. Let l
 
 ---
 
-[쇼케이스](README.ko.md) · [교육, 과학 커뮤니케이션, 추론](education-and-reasoning.ko.md) →
+[쇼케이스](README.ko.md) · [정밀한 지시 이행과 이해](instruction-following.ko.md) →

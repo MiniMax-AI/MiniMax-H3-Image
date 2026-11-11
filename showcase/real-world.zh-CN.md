@@ -7,6 +7,8 @@
 
 # 现实世界
 
+真实光影与细腻质感，让生成画面呈现自然可信的摄影观感。
+
 ← [游戏世界](game-worlds.zh-CN.md) · [效果展示](README.zh-CN.md) · [超现实世界](surreal-worlds.zh-CN.md) →
 
 ## 雾中农场，纪实胶片
