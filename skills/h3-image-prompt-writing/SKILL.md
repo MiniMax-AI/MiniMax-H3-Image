@@ -133,9 +133,11 @@ python3 scripts/generate.py --prompt-file edit.txt --image room.jpg --image sofa
 
 On a local SGLang server, send the prompt as `prompt` and a `size` (`WIDTHxHEIGHT`) for the
 aspect ratio from the [Sizes table](https://github.com/MiniMax-AI/MiniMax-H3-Image#sizes); the
-other fields, and those of vLLM-Omni, are under
-[Request Parameters](https://github.com/MiniMax-AI/MiniMax-H3-Image#request-parameters). A local
-server does not expand prompts, so a prompt written with this skill takes the place of that step.
+other fields are under
+[Request Parameters](https://github.com/MiniMax-AI/MiniMax-H3-Image#request-parameters), and
+vLLM-Omni's differ slightly, see the [vLLM-Omni recipe](https://recipes.vllm.ai/MiniMaxAI/MiniMax-H3-Image).
+A local server does not expand prompts, so a prompt written with this skill takes the place of
+that step.
 
 ## Final check
 
