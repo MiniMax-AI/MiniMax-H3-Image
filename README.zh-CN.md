@@ -36,11 +36,18 @@ npx skills add https://github.com/MiniMax-AI/MiniMax-H3-Image --skill h3-image-p
 
 **智能体兼容性**：`h3-image-prompt-writing` 是一个纯 Markdown + 参考文件技能，不调用任何外部 API，因此可在 Claude Code、Claude Agent SDK、Cursor、Windsurf、基于 OpenAI 的智能体/Codex、LangChain，以及任何能够读取 `SKILL.md` 和本地文件的运行环境中使用。内置的 `skills/h3-image-prompt-writing/agents/openai.yaml` 只为 ChatGPT/Codex 的技能界面提供可选的界面元数据（显示名称、描述、默认提示词），并不会把该技能限制为仅适用于 OpenAI 智能体。
 
-该技能只写提示词，不生成图像。把它的输出作为 `prompt` 传给你自己的部署即可（参见[快速开始](#快速开始)）。如果调用 MiniMax 文生图 API，还要设置 `disable_prompt_enhanced: true`，并传入技能给出的 `aspect_ratio`，否则 API 会把提示词再扩写一遍；图像编辑请求总会被扩写。如果想手写提示词，请参阅[提示词技巧](#提示词技巧)。所有技能的说明见 [`skills/README.md`](skills/README.md)。
+该技能只写提示词，不生成图像。把它的输出作为 `prompt` 传给你自己的部署即可（参见[本地运行](#本地运行)）。如果调用 MiniMax 文生图 API，还要设置 `disable_prompt_enhanced: true`，并传入技能给出的 `aspect_ratio`，否则 API 会把提示词再扩写一遍；图像编辑请求总会被扩写。如果想手写提示词，请参阅[提示词技巧](#提示词技巧)。所有技能的说明见 [`skills/README.md`](skills/README.md)。
 
-## 在线 API
+## 在线使用
 
-通过 API 直接使用 MiniMax-H3-Image。
+无需部署，可以直接在 MiniMax 应用里使用 MiniMax-H3-Image，也可以通过 MiniMax API 调用。
+
+### 应用
+
+- WebApp Global: [hailuoai.video](https://hailuoai.video/) | CN: [hailuoai.com](https://hailuoai.com/)
+- Desktop Global: [agent.minimax.io](https://agent.minimax.io/) | CN: [agent.minimax.cn](https://agent.minimax.cn)
+
+### API
 
 - Global: [platform.minimax.io](https://platform.minimax.io/docs/guides/image-generation) | CN: [platform.minimax.cn](https://platform.minimax.cn/docs/guides/image-generation)
 
@@ -49,14 +56,7 @@ API 文档：
 - 图像编辑：[EN-docs](https://platform.minimax.io/docs/api-reference/image-generation-h3-edits)，[CN-docs](https://platform.minimax.cn/docs/api-reference/image-generation-h3-edits)
 - 提示词扩写：[EN-docs](https://platform.minimax.io/docs/api-reference/image-generation-h3-context-ir)，[CN-docs](https://platform.minimax.cn/docs/api-reference/image-generation-h3-context-ir)
 
-## 在线应用
-
-通过应用直接使用 MiniMax-H3-Image。
-
-- WebApp Global: [hailuoai.video](https://hailuoai.video/) | CN: [hailuoai.com](https://hailuoai.com/)
-- Desktop Global: [agent.minimax.io](https://agent.minimax.io/) | CN: [agent.minimax.cn](https://agent.minimax.cn)
-
-## 简介
+## 概览
 
 MiniMax-H3-Image 是 [MiniMax H3](https://huggingface.co/MiniMaxAI/MiniMax-H3) 系列的开源 SOTA 图像生成与编辑模型，兼具高智能创作理解与视觉世界构建能力。模型以精准的指令遵循能力，将创意概念展开为具体的角色、场景与视觉氛围，集生成与编辑于一体，为创作者和开发者提供灵活、可控的出色图像创作体验。
 
@@ -64,7 +64,7 @@ MiniMax-H3-Image 是 [MiniMax H3](https://huggingface.co/MiniMaxAI/MiniMax-H3) �
 
 ![十五张 MiniMax-H3-Image 文生图结果，有横版也有竖版：3D 奇幻战斗场面、青绿山水画、树蛙、蓝染兔子、3D 白发女孩、花丛中的人像、科幻城市、饺子、高地牛、镜中人像、3D 水獭和绵羊、像素风猫咪、吉丁虫、巨型樱桃和鱼眼自拍](assets/showcase_hero.jpg)
 
-**亮点**
+### 亮点
 
 MiniMax-H3-Image 兼具三项核心优势：速度、画质和指令遵循。
 
@@ -72,9 +72,26 @@ MiniMax-H3-Image 兼具三项核心优势：速度、画质和指令遵循。
 2. **细节丰富，真实感出众**。MiniMax-H3-Image 摆脱了常见的“AI 感”，生成的图像细节精细、真实逼真，为创意和专业用途带来更多可能。它让生成的图像更接近真实视觉世界的丰富与细腻。
 3. **指令遵循更强**，创作更可控。出色的图像生成不只是画面好看，更要帮助创作者把想法变成作品。MiniMax-H3-Image 的指令遵循能力在开源模型中最强，最多支持 16 张参考图，让创作者能更好地掌控最终效果。
 
+### 模型列表
+
+| 模型 | 用途 | 精度 | 大小 | Hugging Face |
+| --- | --- | --- | --- | --- |
+| **MiniMax-H3-Image** | 文生图和图像编辑 | BF16 (DiT) | 68.65 GB | [MiniMaxAI/MiniMax-H3-Image](https://huggingface.co/MiniMaxAI/MiniMax-H3-Image) |
+| **MiniMax-H3-Image-PE**（可选） | 文生图提示词扩写模型 | NVFP4 | 17.9 GB | [MiniMaxAI/MiniMax-H3-Image-PE](https://huggingface.co/MiniMaxAI/MiniMax-H3-Image-PE) |
+
+### 模型架构
+
+MiniMax-H3-Image 沿用 H3-Base 的设计，但去掉了音频分支。文本提示词和参考图由 H3 文本编码器编码；参考图还会经过图像 VAE 编码。所有 token 组成一个打包序列，输入单流 Transformer，由它预测目标图像的 latent。VAE 再把这个 latent 解码成图像。
+
+- **文本编码器**：MiniMax-H3 的完整 Qwen3-VL 文本编码器，未做改动。DiT 读取它第 50 层的隐藏状态。
+- **图像 VAE**：一个 CNN 编码器加一个 2D ViT 解码器（24 层），空间下采样 16 倍，latent 通道数为 24。DiT 以 2x2 的 patch 对 latent 做 patchify，因此每个 Transformer token 覆盖 32x32 像素。
+- **扩散 Transformer**：33.1B 参数的稠密单流 Transformer，共 50 层（隐藏维度 5376，56 个注意力头，FFN 维度 14336），使用 3D 多模态 RoPE，与 H3-Omni-Transformer 相同。权重为 BF16；embedding 层、timestep 层和输出层为 FP32。
+
 ## 效果展示
 
 以下是文生图和图像编辑的结果，图片经过缩小。展开图片下方的**提示词**，可以看到当时输入的内容。这些是用户直接写下的需求，不是模型实际收到的扩写后提示词：MiniMax API 会在生成前用 H3-Image-Context-IR 扩写它们（文生图默认扩写，图像编辑总是扩写），所以可以原样发送。如果是本地部署，请先按[完整工作流](#完整工作流)中的方法扩写。这里展示的都是原始提示词，大多用中文写成，少数原本用英文写成，保留原样。
+
+### 文生图
 
 <p align="center">
 <img src="assets/showcase/photo.jpg" alt="三张写实照片：黄昏的满月下，一个穿白衬衫的人在屋顶上收晾衣绳上的白床单；一位卷发年轻男子捧着深色杯子喝茶的侧脸特写；几只火烈鸟在浅水中行走" width="100%"/>
@@ -99,8 +116,6 @@ MiniMax-H3-Image 兼具三项核心优势：速度、画质和指令遵循。
 </details>
 <!-- END showcase-prompts -->
 
-
-
 <p align="center">
 <img src="assets/showcase/surreal.jpg" alt="三张超现实时尚大片：理发师为坐在理发椅上的一朵云修剪造型；夜晚的草地上有人在切月亮；一位模特从一只巨大的梨中走出" width="100%"/>
 </p>
@@ -121,8 +136,6 @@ MiniMax-H3-Image 兼具三项核心优势：速度、画质和指令遵循。
 
 </details>
 <!-- END showcase-prompts -->
-
-
 
 <p align="center">
 <img src="assets/showcase/scene.jpg" alt="四张场景概念图：森林中一座古代露天剧场的遗迹，标题为 ENVIRONMENT CONCEPT: THE ANCIENT THEATER；红色岩石悬崖上的驭龙者；挂着 ARRIVALS 指示牌的废弃火车站；冰封海面上的沉船" width="100%"/>
@@ -147,8 +160,6 @@ MiniMax-H3-Image 兼具三项核心优势：速度、画质和指令遵循。
 </details>
 <!-- END showcase-prompts -->
 
-
-
 <p align="center">
 <img src="assets/showcase/char.jpg" alt="角色、生物与道具：戴装甲头盔的战斗驾驶员；森林中长着红色鳍的龙；红色荒原上一顶落满灰尘的宇航员头盔；一张极地服装设定板，含正面、背面和局部特写" width="100%"/>
 </p>
@@ -172,8 +183,6 @@ MiniMax-H3-Image 兼具三项核心优势：速度、画质和指令遵循。
 
 </details>
 <!-- END showcase-prompts -->
-
-
 
 <p align="center">
 <img src="assets/showcase/art.jpg" alt="四幅绘画与插画：古典大师油画风格的荷叶间鸳鸯；印象派油画风格的晨雾苏州园林；中世纪泥金手抄本风格的 XVIII THE MOON 页面，玉兔在石臼里捣月亮；一幅中国工笔画，画中鹈鹕照着镜子，配有四个书法字" width="100%"/>
@@ -217,8 +226,6 @@ Flat perspective, dark ink outlines, opaque tempera on aged parchment. Rich red,
 </details>
 <!-- END showcase-prompts -->
 
-
-
 <p align="center">
 <img src="assets/showcase/text.jpg" alt="两块逻辑推理题板：一块是中文的候选人选拔题，列出五个条件和推出的答案；另一块是英文题板，标题为 CONFIDENTIAL FILE MISSING，有六名嫌疑人、真假印章和一张核对表" width="100%"/>
 </p>
@@ -245,7 +252,7 @@ Flat perspective, dark ink outlines, opaque tempera on aged parchment. Rich red,
 </details>
 <!-- END showcase-prompts -->
 
-
+### 图像编辑
 
 <p align="center">
 <img src="assets/showcase/edit_render.jpg" alt="左：月球基地的无纹理灰色 3D 渲染图，有居住舱、月球车和一名宇航员。右：同一场景变成月面上的写实电影剧照" width="100%"/>
@@ -260,8 +267,6 @@ Flat perspective, dark ink outlines, opaque tempera on aged parchment. Rich red,
 
 </details>
 <!-- END showcase-prompts -->
-
-
 
 <p align="center">
 <img src="assets/showcase/edit_map.jpg" alt="左：插画风格的游戏地图，有河流、瀑布、桥梁、城堡、村庄、矿场和港口，南边湖面上有一个红色箭头。右：从湖面望向瀑布、吊桥、矿场和远处城堡的第一人称 3D 游戏画面，左上角是作为小地图的原地图" width="100%"/>
@@ -288,8 +293,6 @@ Flat perspective, dark ink outlines, opaque tempera on aged parchment. Rich red,
 </details>
 <!-- END showcase-prompts -->
 
-
-
 <p align="center">
 <img src="assets/showcase/edit_multi.jpg" alt="上：十张参考图，一间洒满阳光的空房间和九件家具。下：空房间摆上这九件家具后成了一间客厅" width="100%"/>
 </p>
@@ -305,52 +308,11 @@ Flat perspective, dark ink outlines, opaque tempera on aged parchment. Rich red,
 </details>
 <!-- END showcase-prompts -->
 
+## 本地运行
 
+要在自己的 GPU 上运行 MiniMax-H3-Image，先下载权重，再用 SGLang 或 vLLM-Omni 启动服务，然后按下面的参数和尺寸发送请求。[完整工作流](#完整工作流)把这些步骤和提示词扩写串起来，在本地复现 MiniMax API 的出图效果。
 
-## 提示词技巧
-
-以下技巧来自 MiniMax-H3-Image 官方使用手册，既适用于发给 MiniMax API 的简短需求，也适用于发给你自己部署的模型的完整提示词。
-
-**基础描述**
-
-- **先写任务，再写风格**：先说明任务目的、图片用途、主要人物或物体，以及状态或动作，再补充风格要求。
-- **先定整体布局，再补局部细节**：写清主体数量、位置、观看角度与留白。内容较多时，先说明整体分区，再描述各部分及其关系，例如：“上方标题，下方左图右文。”
-- **用可见细节表达风格**：通过色彩、材质、光线与质感描述效果，用“柔和侧光、金属反光、简洁留白”代替笼统的“高级感”。优先写清关键细节，避免堆叠相互矛盾的要求。
-
-**文字与信息**
-
-- **具体文字逐字给全**：可用引号标出需要显示的完整文字，说明位置、层级与分行。需要模型创作文案时，明确说明。
-- **不需要文字时，明确说明**：在提示词中写明“画面中不添加任何文字、字母或数字”，减少模型自行添加标题、标签或装饰文字的情况。
-- **知识与数据给准、关系写清**：图表、论文配图和科普内容，应提供准确的信息、数值、单位及对应关系；涉及时间变化时，注明时间范围。使用示例数据时明确说明，避免与真实数据混淆。
-
-**多图参考与编辑**
-
-- **多图参考先分工**：说明每张图提供什么，以及哪些需要一致、哪些可以自由变化。例如：“图1保留产品，图2参考配色，图3参考布局。”只借用颜色时，也应说明不采用其形状或材质。
-- **编辑分清“变化”与“保留”**：用位置或特征指出修改对象，说明改成什么、修改范围，以及关键保留项。例如：“左侧杯身改为蓝色，形状、材质、位置和大小保持一致。”
-- **给出完整的修改结果**：区分移动、复制、替换与删除，删除时说明原位置如何补全。修改文字或数据时，提供完整的新内容，并说明原排版、图表结构及其他信息是否保留。
-- **多轮编辑，每轮明确目标**：说明本轮使用哪张图、修改什么、哪些内容继续保留，减少“上一轮那个”“和之前一样”等模糊指代。
-- **网格和分格写清几行几列**：九宫格、分镜、拼图类需求写成“2行3列”或“3×3（行×列）”，避免只写“2×3”造成行列颠倒；排列不规则时直接描述，例如“上排3格、下排2格”；修改其中一格时，说明是“第2行第1列”。
-
-本地部署会原样使用你给出的提示词，最长 4096 个 token，最适合使用一段描述整张图像的长篇英文文字。在这样的提示词中，按上传顺序用 `<Picture 1>`、`<Picture 2>` 等指代参考图。[提示词编写技能](#提示词编写技能)自带的两份指南 [`t2i-en.txt`](skills/h3-image-prompt-writing/references/t2i-en.txt) 和 [`edit-en.txt`](skills/h3-image-prompt-writing/references/edit-en.txt) 详细说明了这种格式；[`examples/`](examples) 中有真实的扩写后提示词，分别对应[文生图](examples/revised_prompt.t2i.txt)和[图像编辑](examples/revised_prompt.edit.txt)。
-
-## 模型列表
-
-| 模型 | 用途 | 精度 | 大小 | Hugging Face |
-| --- | --- | --- | --- | --- |
-| **MiniMax-H3-Image** | 文生图和图像编辑 | BF16 (DiT) | 68.65 GB | [MiniMaxAI/MiniMax-H3-Image](https://huggingface.co/MiniMaxAI/MiniMax-H3-Image) |
-| **MiniMax-H3-Image-PE**（可选） | 文生图提示词扩写模型 | NVFP4 | 17.9 GB | [MiniMaxAI/MiniMax-H3-Image-PE](https://huggingface.co/MiniMaxAI/MiniMax-H3-Image-PE) |
-
-## 模型架构
-
-MiniMax-H3-Image 沿用 H3-Base 的设计，但去掉了音频分支。文本提示词和参考图由 H3 文本编码器编码；参考图还会经过图像 VAE 编码。所有 token 组成一个打包序列，输入单流 Transformer，由它预测目标图像的 latent。VAE 再把这个 latent 解码成图像。
-
-- **文本编码器**：MiniMax-H3 的完整 Qwen3-VL 文本编码器，未做改动。DiT 读取它第 50 层的隐藏状态。
-- **图像 VAE**：一个 CNN 编码器加一个 2D ViT 解码器（24 层），空间下采样 16 倍，latent 通道数为 24。DiT 以 2x2 的 patch 对 latent 做 patchify，因此每个 Transformer token 覆盖 32x32 像素。
-- **扩散 Transformer**：33.1B 参数的稠密单流 Transformer，共 50 层（隐藏维度 5376，56 个注意力头，FFN 维度 14336），使用 3D 多模态 RoPE，与 H3-Omni-Transformer 相同。权重为 BF16；embedding 层、timestep 层和输出层为 FP32。
-
-## 快速开始
-
-### 下载
+### 模型文件
 
 | 组件 | 内容 | 大小 |
 | --- | --- | --- |
@@ -383,7 +345,7 @@ hf download MiniMaxAI/MiniMax-H3-Image-PE
 
 diffusers 用户无需手动下载：`ModularPipeline.from_pretrained("MiniMaxAI/MiniMax-H3-Image")` 会读取 `modular_model_index.json`，并拉取 diffusers 格式的文件夹（`transformer_diffusers/`、`vae_diffusers/`，以及本仓库自带的一份 `text_encoder/`）。加载和 offloading 的用法请参阅 [diffusers 文档](https://huggingface.co/docs/diffusers/main/en/api/pipelines/minimax_h3_image)。
 
-### 本地部署
+### 部署
 
 我们推荐使用以下推理框架部署模型：
 
@@ -392,7 +354,7 @@ diffusers 用户无需手动下载：`ModularPipeline.from_pretrained("MiniMaxAI
 - [diffusers](https://github.com/huggingface/diffusers)：参见 [diffusers 文档](https://huggingface.co/docs/diffusers/main/en/api/pipelines/minimax_h3_image)
 - [ComfyUI](https://github.com/Comfy-Org/ComfyUI)：参见 [Comfy 教程](https://docs.comfy.org/tutorials/image/minimax/minimax-h3-image)；使用 [T2I 模板](https://github.com/Comfy-Org/workflow_templates/blob/main/templates/image_minimax_h3_image_t2i.json) / [Edit 模板](https://github.com/Comfy-Org/workflow_templates/blob/main/templates/image_minimax_h3_image_edit.json)
 
-#### SGLang 部署
+#### SGLang
 
 下面的[完整工作流](#完整工作流)使用 SGLang。从 main 分支安装 SGLang 及其扩散模型依赖（参见[扩散模型安装指南](https://docs.sglang.io/docs/sglang-diffusion/installation)）：
 
@@ -419,7 +381,7 @@ sglang serve --model-path MiniMaxAI/MiniMax-H3-Image --host 0.0.0.0 --port 30000
 
 [SGLang cookbook](https://docs.sglang.io/cookbook/diffusion/MiniMax/MiniMax-H3-Image) 按 GPU 类型给出了从 B300 到 24 GB 显卡的部署方案和实测延迟。
 
-#### vLLM-Omni 部署
+#### vLLM-Omni
 
 安装 vLLM 0.33.0，并从源码安装 vLLM-Omni：
 
@@ -450,6 +412,8 @@ vllm serve MiniMaxAI/MiniMax-H3-Image --omni --host 0.0.0.0 --port 8000 --num-gp
 ```
 
 在 AMD Instinct MI325X 和 MI350X 上，使用 `vllm/vllm-omni:minimax-h3-image-rocm` 镜像，并在默认命令后加上 `--no-enable-cuda-graph-decode`。H100、RTX PRO 6000 等其他 GPU 的配置和实测延迟见 [vLLM-Omni recipe](https://recipes.vllm.ai/MiniMaxAI/MiniMax-H3-Image)。
+
+### 请求参数与尺寸
 
 #### 请求参数
 
@@ -555,6 +519,34 @@ API 文档：
 <img src="assets/workflow_edit.jpg" alt="左：参考图 reference1.png，两位播客主持人，男主持人戴着耳机。中：本地 SGLang 使用增强后的提示词生成的 edit.png。右：MiniMax API 生成的 api_edit.png。两张结果图中耳机都已去掉，两位主持人在 MONEY TALKS 标牌上方碰拳" width="100%"/>
 </p>
 <p align="center"><em>参考图 reference1.png（左）、本地 SGLang 生成的 edit.png（中）和 MiniMax API 生成的 api_edit.png（右），4096x4096（宽高比 1:1 由 H3-Image-Context-IR 选定）</em></p>
+
+## 提示词技巧
+
+以下技巧来自 MiniMax-H3-Image 官方使用手册，既适用于发给 MiniMax API 的简短需求，也适用于发给你自己部署的模型的完整提示词。
+
+### 基础描述
+
+- **先写任务，再写风格**：先说明任务目的、图片用途、主要人物或物体，以及状态或动作，再补充风格要求。
+- **先定整体布局，再补局部细节**：写清主体数量、位置、观看角度与留白。内容较多时，先说明整体分区，再描述各部分及其关系，例如：“上方标题，下方左图右文。”
+- **用可见细节表达风格**：通过色彩、材质、光线与质感描述效果，用“柔和侧光、金属反光、简洁留白”代替笼统的“高级感”。优先写清关键细节，避免堆叠相互矛盾的要求。
+
+### 文字与信息
+
+- **具体文字逐字给全**：可用引号标出需要显示的完整文字，说明位置、层级与分行。需要模型创作文案时，明确说明。
+- **不需要文字时，明确说明**：在提示词中写明“画面中不添加任何文字、字母或数字”，减少模型自行添加标题、标签或装饰文字的情况。
+- **知识与数据给准、关系写清**：图表、论文配图和科普内容，应提供准确的信息、数值、单位及对应关系；涉及时间变化时，注明时间范围。使用示例数据时明确说明，避免与真实数据混淆。
+
+### 多图参考与编辑
+
+- **多图参考先分工**：说明每张图提供什么，以及哪些需要一致、哪些可以自由变化。例如：“图1保留产品，图2参考配色，图3参考布局。”只借用颜色时，也应说明不采用其形状或材质。
+- **编辑分清“变化”与“保留”**：用位置或特征指出修改对象，说明改成什么、修改范围，以及关键保留项。例如：“左侧杯身改为蓝色，形状、材质、位置和大小保持一致。”
+- **给出完整的修改结果**：区分移动、复制、替换与删除，删除时说明原位置如何补全。修改文字或数据时，提供完整的新内容，并说明原排版、图表结构及其他信息是否保留。
+- **多轮编辑，每轮明确目标**：说明本轮使用哪张图、修改什么、哪些内容继续保留，减少“上一轮那个”“和之前一样”等模糊指代。
+- **网格和分格写清几行几列**：九宫格、分镜、拼图类需求写成“2行3列”或“3×3（行×列）”，避免只写“2×3”造成行列颠倒；排列不规则时直接描述，例如“上排3格、下排2格”；修改其中一格时，说明是“第2行第1列”。
+
+### 本地部署时的提示词
+
+本地部署会原样使用你给出的提示词，最长 4096 个 token，最适合使用一段描述整张图像的长篇英文文字。在这样的提示词中，按上传顺序用 `<Picture 1>`、`<Picture 2>` 等指代参考图。[提示词编写技能](#提示词编写技能)自带的两份指南 [`t2i-en.txt`](skills/h3-image-prompt-writing/references/t2i-en.txt) 和 [`edit-en.txt`](skills/h3-image-prompt-writing/references/edit-en.txt) 详细说明了这种格式；[`examples/`](examples) 中有真实的扩写后提示词，分别对应[文生图](examples/revised_prompt.t2i.txt)和[图像编辑](examples/revised_prompt.edit.txt)。
 
 ## 许可证
 

@@ -36,11 +36,18 @@ npx skills add https://github.com/MiniMax-AI/MiniMax-H3-Image --skill h3-image-p
 
 **에이전트 호환성:** `h3-image-prompt-writing`은 외부 API 호출이 없는 순수 Markdown + 참조 파일 스킬이므로 Claude Code, Claude Agent SDK, Cursor, Windsurf, OpenAI 기반 에이전트/Codex, LangChain 등 `SKILL.md`와 로컬 파일을 읽을 수 있는 모든 환경에서 동작합니다. 함께 제공되는 `skills/h3-image-prompt-writing/agents/openai.yaml`은 ChatGPT/Codex 스킬 UI를 위한 선택적 UI 메타데이터(표시 이름, 설명, 기본 프롬프트)만 추가할 뿐, 이 스킬을 OpenAI 에이전트로 제한하지 않습니다.
 
-이 스킬은 프롬프트만 작성하며 이미지를 생성하지는 않습니다. 스킬의 출력을 `prompt`로 직접 배포한 모델에 전달하세요([빠른 시작](#빠른-시작) 참고). MiniMax 텍스트-이미지 API를 사용할 때는 `disable_prompt_enhanced: true`와 스킬이 제시한 `aspect_ratio`도 함께 지정하세요. 그렇지 않으면 API가 프롬프트를 한 번 더 확장합니다. 이미지 편집 요청은 항상 확장됩니다. 프롬프트를 직접 작성하려면 [프롬프트 작성 팁](#프롬프트-작성-팁)을 참고하세요. 모든 스킬에 대한 설명은 [`skills/README.md`](skills/README.md)에 있습니다.
+이 스킬은 프롬프트만 작성하며 이미지를 생성하지는 않습니다. 스킬의 출력을 `prompt`로 직접 배포한 모델에 전달하세요([로컬 실행](#로컬-실행) 참고). MiniMax 텍스트-이미지 API를 사용할 때는 `disable_prompt_enhanced: true`와 스킬이 제시한 `aspect_ratio`도 함께 지정하세요. 그렇지 않으면 API가 프롬프트를 한 번 더 확장합니다. 이미지 편집 요청은 항상 확장됩니다. 프롬프트를 직접 작성하려면 [프롬프트 작성 팁](#프롬프트-작성-팁)을 참고하세요. 모든 스킬에 대한 설명은 [`skills/README.md`](skills/README.md)에 있습니다.
 
-## 온라인 API
+## 온라인 사용
 
-API를 통해 MiniMax-H3-Image를 직접 사용할 수 있습니다.
+별도 설정 없이 MiniMax 앱에서 MiniMax-H3-Image를 사용하거나 MiniMax API로 호출할 수 있습니다.
+
+### 앱
+
+- WebApp Global: [hailuoai.video](https://hailuoai.video/) | CN: [hailuoai.com](https://hailuoai.com/)
+- Desktop Global: [agent.minimax.io](https://agent.minimax.io/) | CN: [agent.minimax.cn](https://agent.minimax.cn)
+
+### API
 
 - Global: [platform.minimax.io](https://platform.minimax.io/docs/guides/image-generation) | CN: [platform.minimax.cn](https://platform.minimax.cn/docs/guides/image-generation)
 
@@ -49,14 +56,7 @@ API 문서:
 - 이미지 편집: [EN-docs](https://platform.minimax.io/docs/api-reference/image-generation-h3-edits), [CN-docs](https://platform.minimax.cn/docs/api-reference/image-generation-h3-edits)
 - 프롬프트 확장: [EN-docs](https://platform.minimax.io/docs/api-reference/image-generation-h3-context-ir), [CN-docs](https://platform.minimax.cn/docs/api-reference/image-generation-h3-context-ir)
 
-## 온라인 앱
-
-앱을 통해 MiniMax-H3-Image를 직접 사용할 수 있습니다.
-
-- WebApp Global: [hailuoai.video](https://hailuoai.video/) | CN: [hailuoai.com](https://hailuoai.com/)
-- Desktop Global: [agent.minimax.io](https://agent.minimax.io/) | CN: [agent.minimax.cn](https://agent.minimax.cn)
-
-## 소개
+## 개요
 
 MiniMax-H3-Image는 [MiniMax H3](https://huggingface.co/MiniMaxAI/MiniMax-H3) 계열에 속하는 최고 수준의 오픈소스 이미지 생성 및 편집 모델입니다. 창작 의도를 이해하는 능력과 시각적 세계를 구축하는 능력을 함께 갖추고 있어, 정확한 지시 이행을 바탕으로 창작 콘셉트를 구체적인 캐릭터, 장면, 분위기로 풀어냅니다. 생성과 편집이 하나의 checkpoint에 통합되어 있어 텍스트로 이미지를 생성하고(텍스트-이미지 생성) 한 장 이상의 참조 이미지를 편집할 수 있으며(이미지 편집), 창작자와 개발자에게 유연하고 제어 가능한 이미지 제작 방법을 제공합니다.
 
@@ -64,7 +64,7 @@ MiniMax-H3-Image는 [MiniMax H3](https://huggingface.co/MiniMaxAI/MiniMax-H3) �
 
 ![가로형과 세로형으로 구성된 MiniMax-H3-Image 텍스트-이미지 생성 결과 15장: 3D 판타지 전투, 청록 산수화, 나무개구리, 쪽염색 토끼, 흰 머리의 3D 소녀, 꽃 속의 인물 사진, SF 도시, 만두, 하이랜드 소, 거울 속 인물 사진, 3D 수달과 양, 픽셀 아트 고양이, 비단벌레, 거대한 체리, 어안 렌즈 셀카](assets/showcase_hero.jpg)
 
-**주요 특징**
+### 주요 특징
 
 MiniMax-H3-Image는 속도, 이미지 품질, 지시 이행이라는 세 가지 핵심 강점을 함께 갖추고 있습니다.
 
@@ -72,9 +72,26 @@ MiniMax-H3-Image는 속도, 이미지 품질, 지시 이행이라는 세 가지 
 2. **풍부한 디테일과 높은 사실감.** MiniMax-H3-Image는 흔히 보는 “AI 느낌”에서 벗어나 섬세한 디테일과 실제 같은 사실감을 갖춘 이미지를 생성하므로 창작과 전문 작업에서 활용할 수 있는 범위가 넓어집니다. 생성 이미지를 실제 시각 세계의 풍부함과 미묘한 느낌에 더 가깝게 만듭니다.
 3. **더 강력한 지시 이행.** 창작 결과를 더 세밀하게 제어할 수 있습니다. 좋은 이미지 생성은 보기 좋은 그림을 넘어 창작자가 아이디어를 실제로 구현하도록 돕는 것입니다. MiniMax-H3-Image는 오픈소스 모델 가운데 가장 강력한 지시 이행 능력을 갖추고 최대 16장의 참조 이미지를 지원하므로, 창작자가 최종 결과를 더 잘 제어할 수 있습니다.
 
+### 모델 목록
+
+| 모델 | 역할 | 정밀도 | 크기 | Hugging Face |
+| --- | --- | --- | --- | --- |
+| **MiniMax-H3-Image** | 텍스트-이미지 생성 및 이미지 편집 | BF16 (DiT) | 68.65 GB | [MiniMaxAI/MiniMax-H3-Image](https://huggingface.co/MiniMaxAI/MiniMax-H3-Image) |
+| **MiniMax-H3-Image-PE** (선택 사항) | 텍스트-이미지 생성용 프롬프트 확장 모델 | NVFP4 | 17.9 GB | [MiniMaxAI/MiniMax-H3-Image-PE](https://huggingface.co/MiniMaxAI/MiniMax-H3-Image-PE) |
+
+### 모델 아키텍처
+
+MiniMax-H3-Image는 H3-Base 설계에서 오디오 브랜치를 제거한 구조를 따릅니다. 텍스트 프롬프트와 참조 이미지는 H3 텍스트 인코더로 인코딩되며, 참조 이미지는 이미지 VAE로도 인코딩됩니다. 모든 토큰은 하나의 패킹된 시퀀스를 이루어 단일 스트림 Transformer에 입력되고, Transformer는 목표 이미지의 latent를 예측합니다. VAE는 이 latent를 디코딩해 이미지를 만듭니다.
+
+- **텍스트 인코더**: MiniMax-H3의 Qwen3-VL 텍스트 인코더 전체를 변경 없이 사용합니다. DiT는 이 인코더의 50번째 레이어 hidden state를 읽습니다.
+- **이미지 VAE**: CNN 인코더와 2D ViT 디코더(24개 레이어)로 구성되며, 공간 다운샘플링 계수는 16x, latent 채널은 24개입니다. DiT는 2x2 패치로 latent를 patchify하므로 Transformer 토큰 하나가 32x32 픽셀에 해당합니다.
+- **Diffusion transformer**: 33.1B 파라미터의 dense 단일 스트림 Transformer로, 50개 레이어(hidden size 5376, 어텐션 헤드 56개, FFN 크기 14336)와 3D 멀티모달 RoPE를 사용하며 H3-Omni-Transformer와 같은 구조입니다. 가중치는 BF16이고, 임베딩 레이어, timestep 레이어, 출력 레이어는 FP32입니다.
+
 ## 쇼케이스
 
 텍스트-이미지 생성 및 이미지 편집 결과이며, 축소해서 표시했습니다. 이미지 아래의 **프롬프트**를 펼치면 해당 이미지를 만들 때 입력한 내용을 볼 수 있습니다. 이는 모델이 실제로 받는 확장된 프롬프트가 아니라 사용자가 작성한 그대로의 요청입니다. MiniMax API는 생성 전에 H3-Image-Context-IR로 요청을 확장하므로(텍스트-이미지 생성에서는 기본적으로, 편집에서는 항상) 그대로 보내면 됩니다. 로컬 배포에서는 [전체 워크플로](#전체-워크플로)처럼 먼저 프롬프트를 확장하세요. 대부분의 프롬프트는 원래 중국어로 작성되었습니다. 여기에 표시된 영어 버전은 공식 영어 사용자 가이드에서 가져온 것이며, 원문은 [중국어 README](README.zh-CN.md)에서 볼 수 있습니다.
+
+### 텍스트-이미지 생성
 
 <p align="center">
 <img src="assets/showcase/photo.jpg" alt="사실적인 사진 세 장: 보름달이 뜬 해 질 녘 옥상에서 빨랫줄의 흰 시트를 걷는 흰 셔츠 차림의 사람, 검은 컵으로 차를 마시는 곱슬머리 젊은 남성의 옆모습 클로즈업, 얕은 물을 걷는 플라밍고" width="100%"/>
@@ -99,8 +116,6 @@ Real photographic and cinematic-still texture. Prioritize natural light and phys
 </details>
 <!-- END showcase-prompts -->
 
-
-
 <p align="center">
 <img src="assets/showcase/surreal.jpg" alt="초현실적인 에디토리얼 사진 세 장: 이발 의자에 앉은 구름을 다듬는 이발사, 밤의 잔디밭에서 달을 자르는 사람, 거대한 배에서 걸어 나오는 모델" width="100%"/>
 </p>
@@ -121,8 +136,6 @@ Real photographic and cinematic-still texture. Prioritize natural light and phys
 
 </details>
 <!-- END showcase-prompts -->
-
-
 
 <p align="center">
 <img src="assets/showcase/scene.jpg" alt="환경 콘셉트 아트 네 장: ENVIRONMENT CONCEPT: THE ANCIENT THEATER라는 제목이 붙은 숲속 고대 야외극장 유적, 붉은 바위 절벽 위의 드래곤 라이더, ARRIVALS 표지판이 있는 버려진 기차역, 얼어붙은 바다에 갇힌 난파선" width="100%"/>
@@ -147,8 +160,6 @@ Real photographic and cinematic-still texture. Prioritize natural light and phys
 </details>
 <!-- END showcase-prompts -->
 
-
-
 <p align="center">
 <img src="assets/showcase/char.jpg" alt="캐릭터, 크리처, 소품: 장갑 헬멧을 쓴 전투 조종사, 숲속에 있는 붉은 지느러미의 용, 붉은 황무지에 놓인 먼지 덮인 우주비행사 헬멧, 정면·후면·클로즈업으로 구성한 극지 의상 보드" width="100%"/>
 </p>
@@ -172,8 +183,6 @@ Real photographic and cinematic-still texture. Prioritize natural light and phys
 
 </details>
 <!-- END showcase-prompts -->
-
-
 
 <p align="center">
 <img src="assets/showcase/art.jpg" alt="회화와 일러스트 네 점: 고전 거장풍 유화로 그린 연잎 사이의 원앙, 인상파 유화로 그린 아침 안개 속 쑤저우 정원, 옥토끼가 절구에 달을 빻는 중세 채식 필사본 스타일의 XVIII THE MOON 페이지, 거울을 들여다보는 펠리컨과 서예 글자 네 자가 들어간 중국 공필화" width="100%"/>
@@ -217,8 +226,6 @@ Flat perspective, dark ink outlines, opaque tempera on aged parchment. Rich red,
 </details>
 <!-- END showcase-prompts -->
 
-
-
 <p align="center">
 <img src="assets/showcase/text.jpg" alt="논리 퍼즐 보드 두 장: 다섯 가지 조건과 도출된 정답이 적힌 중국어 후보 선발 퍼즐, 용의자 여섯 명과 참/거짓 도장, 검증표가 담긴 CONFIDENTIAL FILE MISSING이라는 제목의 영어 보드" width="100%"/>
 </p>
@@ -245,7 +252,7 @@ At the bottom, use brief notes to show the key reasons for exclusion. The card p
 </details>
 <!-- END showcase-prompts -->
 
-
+### 이미지 편집
 
 <p align="center">
 <img src="assets/showcase/edit_render.jpg" alt="왼쪽: 거주 모듈, 로버, 우주비행사가 있는 달 기지를 텍스처 없이 회색으로 렌더링한 3D 이미지. 오른쪽: 같은 장면을 달 표면에서 찍은 사실적인 영화 스틸로 바꾼 결과" width="100%"/>
@@ -260,8 +267,6 @@ At the bottom, use brief notes to show the key reasons for exclusion. The card p
 
 </details>
 <!-- END showcase-prompts -->
-
-
 
 <p align="center">
 <img src="assets/showcase/edit_map.jpg" alt="왼쪽: 강, 폭포, 다리, 성, 마을, 광산, 항구가 그려져 있고 남쪽 호수에 빨간 화살표가 표시된 일러스트 게임 지도. 오른쪽: 호수에서 폭포, 현수교, 광산, 멀리 있는 성을 바라보는 1인칭 3D 게임 화면으로, 왼쪽 위에 지도가 미니맵으로 들어가 있음" width="100%"/>
@@ -288,8 +293,6 @@ Output only one complete game screenshot. Do not include the original red arrow,
 </details>
 <!-- END showcase-prompts -->
 
-
-
 <p align="center">
 <img src="assets/showcase/edit_multi.jpg" alt="위: 햇빛이 드는 빈방과 가구 아홉 점으로 이루어진 참조 이미지 열 장. 아래: 가구 아홉 점을 모두 배치해 거실로 꾸민 빈방" width="100%"/>
 </p>
@@ -305,52 +308,11 @@ Preserve the color, material, structure, and proportions of every product. Let l
 </details>
 <!-- END showcase-prompts -->
 
+## 로컬 실행
 
+MiniMax-H3-Image를 직접 GPU에서 실행하려면 체크포인트를 다운로드하고 SGLang 또는 vLLM-Omni로 서버를 시작한 뒤, 아래 파라미터와 크기로 요청을 보내세요. [전체 워크플로](#전체-워크플로)는 이 단계들을 프롬프트 확장과 결합해 MiniMax API의 이미지를 로컬에서 재현합니다.
 
-## 프롬프트 작성 팁
-
-아래 팁은 공식 MiniMax-H3-Image 사용자 가이드에서 가져왔습니다. MiniMax API로 보내는 짧은 요청과 직접 배포한 모델에 보내는 완전한 프롬프트 모두에 적용됩니다.
-
-**기본 설명**
-
-- **스타일보다 작업을 먼저 설명합니다.** 먼저 목표, 이미지의 용도, 주요 인물이나 사물, 그리고 그 상태나 동작을 설명한 다음 스타일 요구 사항을 추가합니다.
-- **전체 레이아웃을 먼저 정한 뒤 세부 사항을 추가합니다.** 주체의 수와 배치, 시점, 여백을 지정합니다. 내용이 많을 때는 전체 구역을 먼저 설명한 다음 각 부분과 그 관계를 설명합니다. 예: "상단에 제목, 그 아래 왼쪽에는 이미지, 오른쪽에는 텍스트."
-- **눈에 보이는 디테일로 스타일을 표현합니다.** 원하는 효과를 색상, 재질, 조명, 질감으로 설명합니다. "고급스러운 느낌" 같은 모호한 표현 대신 "부드러운 측광, 금속 반사, 깔끔한 여백"처럼 씁니다. 핵심 디테일을 우선하고, 서로 모순되는 요구 사항을 쌓지 않도록 합니다.
-
-**텍스트와 정보**
-
-- **표시할 텍스트를 정확하고 완전하게 제공합니다.** 이미지에 표시할 전체 텍스트를 따옴표로 묶고, 위치, 위계, 줄바꿈을 지정합니다. 모델이 문구를 직접 쓰기를 원하면 그렇다고 명시합니다.
-- **텍스트가 필요 없으면 그렇게 적습니다.** "이미지에 텍스트, 문자, 숫자를 넣지 않음"이라고 쓰면 모델이 제목, 라벨, 장식용 글자를 임의로 추가하지 않도록 할 수 있습니다.
-- **정확한 지식과 데이터를 제공하고 관계를 명확히 합니다.** 차트, 학술 그림, 교육용 콘텐츠에는 정확한 정보, 수치, 단위와 그 관계를 제공합니다. 시간에 따른 변화를 표현할 때는 기간을 지정합니다. 예시 데이터는 실제 데이터와 혼동되지 않도록 예시임을 분명히 밝힙니다.
-
-**참조 이미지와 편집**
-
-- **참조 이미지마다 역할을 지정합니다.** 각 이미지가 무엇을 제공하는지, 무엇을 일관되게 유지해야 하는지, 무엇은 자유롭게 바뀌어도 되는지 설명합니다. 예: "이미지 1의 제품은 유지하고, 이미지 2는 색상, 이미지 3은 레이아웃 참고용으로 사용." 색상만 가져올 때는 해당 이미지의 형태나 재질은 사용하지 않는다고 명시합니다.
-- **바뀌는 것과 유지되는 것을 구분합니다.** 편집할 대상을 위치나 특징으로 지정하고, 무엇으로 바꿀지, 변경 범위가 어디까지인지, 무엇을 유지해야 하는지 설명합니다. 예: "왼쪽 컵을 파란색으로 바꾸고, 모양, 재질, 위치, 크기는 그대로 유지."
-- **원하는 최종 결과를 빠짐없이 지정합니다.** 이동, 복사, 교체, 삭제를 구분합니다. 무언가를 삭제할 때는 원래 영역을 어떻게 채울지 설명합니다. 텍스트나 데이터를 바꿀 때는 교체할 내용을 전부 제공하고, 원래 레이아웃, 차트 구조, 기타 정보를 유지할지 명시합니다.
-- **편집 라운드마다 목표를 분명히 정합니다.** 이번 라운드에서 어떤 이미지를 사용할지, 무엇을 바꾸고 무엇을 유지할지 적습니다. "지난 라운드의 그것", "아까와 같게" 같은 모호한 지칭은 피합니다.
-- **그리드와 패널은 행과 열로 지정합니다.** 9칸 그리드, 스토리보드, 콜라주는 "2×3"이라고만 쓰면 행과 열이 뒤바뀔 수 있으므로 "2행 3열" 또는 "3×3(행 × 열)"처럼 씁니다. 불규칙한 배치는 "위에 3칸, 아래에 2칸"처럼 직접 설명합니다. 패널 하나를 편집할 때는 "2행 1열"처럼 위치를 지정합니다.
-
-로컬 배포에서는 프롬프트를 최대 4096 토큰까지 입력된 그대로 사용하며, 이미지 전체를 영어로 길게 설명한 프롬프트에서 가장 좋은 결과를 냅니다. 이런 프롬프트에서는 참조 이미지를 업로드 순서대로 `<Picture 1>`, `<Picture 2>`, ...로 지칭합니다. [프롬프트 작성 스킬](#프롬프트-작성-스킬)에 포함된 가이드인 [`t2i-en.txt`](skills/h3-image-prompt-writing/references/t2i-en.txt)와 [`edit-en.txt`](skills/h3-image-prompt-writing/references/edit-en.txt)에 이 형식이 자세히 설명되어 있습니다. [`examples/`](examples)에는 [텍스트-이미지 생성](examples/revised_prompt.t2i.txt)과 [편집](examples/revised_prompt.edit.txt)에 실제로 사용한 확장 프롬프트가 들어 있습니다.
-
-## 모델 목록
-
-| 모델 | 역할 | 정밀도 | 크기 | Hugging Face |
-| --- | --- | --- | --- | --- |
-| **MiniMax-H3-Image** | 텍스트-이미지 생성 및 이미지 편집 | BF16 (DiT) | 68.65 GB | [MiniMaxAI/MiniMax-H3-Image](https://huggingface.co/MiniMaxAI/MiniMax-H3-Image) |
-| **MiniMax-H3-Image-PE** (선택 사항) | 텍스트-이미지 생성용 프롬프트 확장 모델 | NVFP4 | 17.9 GB | [MiniMaxAI/MiniMax-H3-Image-PE](https://huggingface.co/MiniMaxAI/MiniMax-H3-Image-PE) |
-
-## 모델 아키텍처
-
-MiniMax-H3-Image는 H3-Base 설계에서 오디오 브랜치를 제거한 구조를 따릅니다. 텍스트 프롬프트와 참조 이미지는 H3 텍스트 인코더로 인코딩되며, 참조 이미지는 이미지 VAE로도 인코딩됩니다. 모든 토큰은 하나의 패킹된 시퀀스를 이루어 단일 스트림 Transformer에 입력되고, Transformer는 목표 이미지의 latent를 예측합니다. VAE는 이 latent를 디코딩해 이미지를 만듭니다.
-
-- **텍스트 인코더**: MiniMax-H3의 Qwen3-VL 텍스트 인코더 전체를 변경 없이 사용합니다. DiT는 이 인코더의 50번째 레이어 hidden state를 읽습니다.
-- **이미지 VAE**: CNN 인코더와 2D ViT 디코더(24개 레이어)로 구성되며, 공간 다운샘플링 계수는 16x, latent 채널은 24개입니다. DiT는 2x2 패치로 latent를 patchify하므로 Transformer 토큰 하나가 32x32 픽셀에 해당합니다.
-- **Diffusion transformer**: 33.1B 파라미터의 dense 단일 스트림 Transformer로, 50개 레이어(hidden size 5376, 어텐션 헤드 56개, FFN 크기 14336)와 3D 멀티모달 RoPE를 사용하며 H3-Omni-Transformer와 같은 구조입니다. 가중치는 BF16이고, 임베딩 레이어, timestep 레이어, 출력 레이어는 FP32입니다.
-
-## 빠른 시작
-
-### 다운로드
+### 모델 파일
 
 | 구성 요소 | 내용 | 크기 |
 | --- | --- | --- |
@@ -383,7 +345,7 @@ hf download MiniMaxAI/MiniMax-H3-Image-PE
 
 diffusers 사용자는 수동 다운로드가 필요하지 않습니다. `ModularPipeline.from_pretrained("MiniMaxAI/MiniMax-H3-Image")`가 `modular_model_index.json`을 읽고 diffusers 형식 폴더(`transformer_diffusers/`, `vae_diffusers/`, 그리고 이 저장소에 포함된 `text_encoder/` 사본)를 가져옵니다. 로딩 및 오프로딩 방법은 [diffusers 문서](https://huggingface.co/docs/diffusers/main/en/api/pipelines/minimax_h3_image)를 참고하세요.
 
-### 로컬 배포
+### 배포
 
 모델 서빙에는 다음 추론 프레임워크를 권장합니다:
 
@@ -392,7 +354,7 @@ diffusers 사용자는 수동 다운로드가 필요하지 않습니다. `Modula
 - [diffusers](https://github.com/huggingface/diffusers) - [diffusers 문서](https://huggingface.co/docs/diffusers/main/en/api/pipelines/minimax_h3_image) 참고
 - [ComfyUI](https://github.com/Comfy-Org/ComfyUI) - [Comfy 튜토리얼](https://docs.comfy.org/tutorials/image/minimax/minimax-h3-image) 참고, [T2I 템플릿](https://github.com/Comfy-Org/workflow_templates/blob/main/templates/image_minimax_h3_image_t2i.json) / [Edit 템플릿](https://github.com/Comfy-Org/workflow_templates/blob/main/templates/image_minimax_h3_image_edit.json) 사용
 
-#### SGLang 배포
+#### SGLang
 
 아래 [전체 워크플로](#전체-워크플로)는 SGLang을 사용합니다. main 브랜치에서 SGLang과 diffusion 의존성을 설치하세요([diffusion 설치 가이드](https://docs.sglang.io/docs/sglang-diffusion/installation) 참고):
 
@@ -419,7 +381,7 @@ sglang serve --model-path MiniMaxAI/MiniMax-H3-Image --host 0.0.0.0 --port 30000
 
 [SGLang cookbook](https://docs.sglang.io/cookbook/diffusion/MiniMax/MiniMax-H3-Image)에는 B300부터 24 GB 카드까지 GPU 등급별 레시피와 측정된 지연 시간이 있습니다.
 
-#### vLLM-Omni 배포
+#### vLLM-Omni
 
 vLLM 0.33.0을 설치하고 vLLM-Omni를 소스에서 설치합니다:
 
@@ -450,6 +412,8 @@ vllm serve MiniMaxAI/MiniMax-H3-Image --omni --host 0.0.0.0 --port 8000 --num-gp
 ```
 
 AMD Instinct MI325X와 MI350X에서는 `vllm/vllm-omni:minimax-h3-image-rocm` 이미지를 사용하고 기본 명령에 `--no-enable-cuda-graph-decode`를 추가하세요. H100, RTX PRO 6000 등 다른 GPU의 구성과 측정된 지연 시간은 [vLLM-Omni 레시피](https://recipes.vllm.ai/MiniMaxAI/MiniMax-H3-Image)를 참고하세요.
+
+### 요청과 이미지 크기
 
 #### 요청 파라미터
 
@@ -557,6 +521,34 @@ API 문서:
 <img src="assets/workflow_edit.jpg" alt="왼쪽: 남성이 헤드폰을 쓰고 있는 팟캐스트 진행자 두 명의 참조 이미지 reference1.png. 가운데: 향상된 프롬프트로 로컬 SGLang에서 생성한 edit.png. 오른쪽: MiniMax API에서 생성한 api_edit.png. 두 결과 모두 헤드폰이 사라지고 두 진행자가 MONEY TALKS 표지판 위에서 주먹을 맞대고 있음" width="100%"/>
 </p>
 <p align="center"><em>참조 이미지 reference1.png(왼쪽), 로컬 SGLang에서 생성한 edit.png(가운데), MiniMax API에서 생성한 api_edit.png(오른쪽), 4096x4096(H3-Image-Context-IR이 선택한 1:1)</em></p>
+
+## 프롬프트 작성 팁
+
+아래 팁은 공식 MiniMax-H3-Image 사용자 가이드에서 가져왔습니다. MiniMax API로 보내는 짧은 요청과 직접 배포한 모델에 보내는 완전한 프롬프트 모두에 적용됩니다.
+
+### 기본 설명
+
+- **스타일보다 작업을 먼저 설명합니다.** 먼저 목표, 이미지의 용도, 주요 인물이나 사물, 그리고 그 상태나 동작을 설명한 다음 스타일 요구 사항을 추가합니다.
+- **전체 레이아웃을 먼저 정한 뒤 세부 사항을 추가합니다.** 주체의 수와 배치, 시점, 여백을 지정합니다. 내용이 많을 때는 전체 구역을 먼저 설명한 다음 각 부분과 그 관계를 설명합니다. 예: "상단에 제목, 그 아래 왼쪽에는 이미지, 오른쪽에는 텍스트."
+- **눈에 보이는 디테일로 스타일을 표현합니다.** 원하는 효과를 색상, 재질, 조명, 질감으로 설명합니다. "고급스러운 느낌" 같은 모호한 표현 대신 "부드러운 측광, 금속 반사, 깔끔한 여백"처럼 씁니다. 핵심 디테일을 우선하고, 서로 모순되는 요구 사항을 쌓지 않도록 합니다.
+
+### 텍스트와 정보
+
+- **표시할 텍스트를 정확하고 완전하게 제공합니다.** 이미지에 표시할 전체 텍스트를 따옴표로 묶고, 위치, 위계, 줄바꿈을 지정합니다. 모델이 문구를 직접 쓰기를 원하면 그렇다고 명시합니다.
+- **텍스트가 필요 없으면 그렇게 적습니다.** "이미지에 텍스트, 문자, 숫자를 넣지 않음"이라고 쓰면 모델이 제목, 라벨, 장식용 글자를 임의로 추가하지 않도록 할 수 있습니다.
+- **정확한 지식과 데이터를 제공하고 관계를 명확히 합니다.** 차트, 학술 그림, 교육용 콘텐츠에는 정확한 정보, 수치, 단위와 그 관계를 제공합니다. 시간에 따른 변화를 표현할 때는 기간을 지정합니다. 예시 데이터는 실제 데이터와 혼동되지 않도록 예시임을 분명히 밝힙니다.
+
+### 참조 이미지와 편집
+
+- **참조 이미지마다 역할을 지정합니다.** 각 이미지가 무엇을 제공하는지, 무엇을 일관되게 유지해야 하는지, 무엇은 자유롭게 바뀌어도 되는지 설명합니다. 예: "이미지 1의 제품은 유지하고, 이미지 2는 색상, 이미지 3은 레이아웃 참고용으로 사용." 색상만 가져올 때는 해당 이미지의 형태나 재질은 사용하지 않는다고 명시합니다.
+- **바뀌는 것과 유지되는 것을 구분합니다.** 편집할 대상을 위치나 특징으로 지정하고, 무엇으로 바꿀지, 변경 범위가 어디까지인지, 무엇을 유지해야 하는지 설명합니다. 예: "왼쪽 컵을 파란색으로 바꾸고, 모양, 재질, 위치, 크기는 그대로 유지."
+- **원하는 최종 결과를 빠짐없이 지정합니다.** 이동, 복사, 교체, 삭제를 구분합니다. 무언가를 삭제할 때는 원래 영역을 어떻게 채울지 설명합니다. 텍스트나 데이터를 바꿀 때는 교체할 내용을 전부 제공하고, 원래 레이아웃, 차트 구조, 기타 정보를 유지할지 명시합니다.
+- **편집 라운드마다 목표를 분명히 정합니다.** 이번 라운드에서 어떤 이미지를 사용할지, 무엇을 바꾸고 무엇을 유지할지 적습니다. "지난 라운드의 그것", "아까와 같게" 같은 모호한 지칭은 피합니다.
+- **그리드와 패널은 행과 열로 지정합니다.** 9칸 그리드, 스토리보드, 콜라주는 "2×3"이라고만 쓰면 행과 열이 뒤바뀔 수 있으므로 "2행 3열" 또는 "3×3(행 × 열)"처럼 씁니다. 불규칙한 배치는 "위에 3칸, 아래에 2칸"처럼 직접 설명합니다. 패널 하나를 편집할 때는 "2행 1열"처럼 위치를 지정합니다.
+
+### 로컬 배포용 프롬프트
+
+로컬 배포에서는 프롬프트를 최대 4096 토큰까지 입력된 그대로 사용하며, 이미지 전체를 영어로 길게 설명한 프롬프트에서 가장 좋은 결과를 냅니다. 이런 프롬프트에서는 참조 이미지를 업로드 순서대로 `<Picture 1>`, `<Picture 2>`, ...로 지칭합니다. [프롬프트 작성 스킬](#프롬프트-작성-스킬)에 포함된 가이드인 [`t2i-en.txt`](skills/h3-image-prompt-writing/references/t2i-en.txt)와 [`edit-en.txt`](skills/h3-image-prompt-writing/references/edit-en.txt)에 이 형식이 자세히 설명되어 있습니다. [`examples/`](examples)에는 [텍스트-이미지 생성](examples/revised_prompt.t2i.txt)과 [편집](examples/revised_prompt.edit.txt)에 실제로 사용한 확장 프롬프트가 들어 있습니다.
 
 ## 라이선스
 

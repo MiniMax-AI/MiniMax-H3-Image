@@ -49,14 +49,21 @@ metadata (display name, description, default prompt) for the ChatGPT/Codex skill
 limit the skill to OpenAI agents.
 
 The skill writes prompts only; it does not generate images. Send its output as `prompt` to your
-own deployment (see [Quick Start](#quick-start)). With the MiniMax text-to-image API, also set
+own deployment (see [Run Locally](#run-locally)). With the MiniMax text-to-image API, also set
 `disable_prompt_enhanced: true` and the `aspect_ratio` the skill gives, otherwise the API expands
 the prompt again; image editing requests are always expanded. To write prompts by hand, see
 [Prompting Tips](#prompting-tips). All skills are described in [`skills/README.md`](skills/README.md).
 
-## Online API
+## Use Online
 
-Use MiniMax-H3-Image directly via API.
+Use MiniMax-H3-Image without any setup in the MiniMax apps, or call it through the MiniMax API.
+
+### App
+
+- WebApp Global: [hailuoai.video](https://hailuoai.video/) | CN: [hailuoai.com](https://hailuoai.com/)
+- Desktop Global: [agent.minimax.io](https://agent.minimax.io/) | CN: [agent.minimax.cn](https://agent.minimax.cn)
+
+### API
 
 - Global: [platform.minimax.io](https://platform.minimax.io/docs/guides/image-generation) | CN: [platform.minimax.cn](https://platform.minimax.cn/docs/guides/image-generation)
 
@@ -65,14 +72,7 @@ API docs:
 - Image editing: [EN-docs](https://platform.minimax.io/docs/api-reference/image-generation-h3-edits), [CN-docs](https://platform.minimax.cn/docs/api-reference/image-generation-h3-edits)
 - Prompt expansion: [EN-docs](https://platform.minimax.io/docs/api-reference/image-generation-h3-context-ir), [CN-docs](https://platform.minimax.cn/docs/api-reference/image-generation-h3-context-ir)
 
-## Online App
-
-Use MiniMax-H3-Image directly via App.
-
-- WebApp Global: [hailuoai.video](https://hailuoai.video/) | CN: [hailuoai.com](https://hailuoai.com/)
-- Desktop Global: [agent.minimax.io](https://agent.minimax.io/) | CN: [agent.minimax.cn](https://agent.minimax.cn)
-
-## Introduction
+## Overview
 
 MiniMax-H3-Image is a state-of-the-art open-source model for image generation and editing from
 the [MiniMax H3](https://huggingface.co/MiniMaxAI/MiniMax-H3) family. It combines intelligent
@@ -90,7 +90,7 @@ MiniMax-H3 text encoder unchanged.
 
 ![Fifteen MiniMax-H3-Image text-to-image results in landscape and portrait formats: a 3D fantasy battle, a blue-green landscape painting, a tree frog, an indigo-dyed rabbit, a 3D white-haired girl, a portrait among flowers, a sci-fi city, dumplings, a highland cow, a mirror portrait, a 3D otter and sheep, a pixel art cat, a jewel beetle, giant cherries and a fisheye selfie](assets/showcase_hero.jpg)
 
-**Highlights**
+### Highlights
 
 MiniMax-H3-Image brings together three core strengths: speed, image quality, and instruction
 following.
@@ -108,6 +108,31 @@ following.
    delivers the strongest instruction following among open-source models and supports up to 16
    reference images, giving creators more control over the final result.
 
+### Model Zoo
+
+| Model | Role | Precision | Size | Hugging Face |
+| --- | --- | --- | --- | --- |
+| **MiniMax-H3-Image** | Text-to-image and image editing | BF16 (DiT) | 68.65 GB | [MiniMaxAI/MiniMax-H3-Image](https://huggingface.co/MiniMaxAI/MiniMax-H3-Image) |
+| **MiniMax-H3-Image-PE** (optional) | Prompt expander for text-to-image | NVFP4 | 17.9 GB | [MiniMaxAI/MiniMax-H3-Image-PE](https://huggingface.co/MiniMaxAI/MiniMax-H3-Image-PE) |
+
+### Model Architecture
+
+MiniMax-H3-Image follows the H3-Base design with the audio branch removed. The text
+prompt and the reference images are encoded by the H3 text encoder; the reference images are
+also encoded by the image VAE. All tokens form one packed sequence for a single-stream
+transformer, which predicts the latent of the target image. The VAE decodes that latent
+into the image.
+
+- **Text encoder**: the full Qwen3-VL text encoder of MiniMax-H3, unchanged. The DiT reads
+  the hidden states of its 50th layer.
+- **Image VAE**: a CNN encoder and a 2D ViT decoder (24 layers), with 16x spatial
+  downsampling and 24 latent channels. The DiT patchifies the latent with a 2x2 patch, so each
+  transformer token covers 32x32 pixels.
+- **Diffusion transformer**: 33.1B parameters, a dense single-stream transformer with 50
+  layers (hidden size 5376, 56 attention heads, FFN size 14336) and 3D multimodal RoPE, the same
+  as the H3-Omni-Transformer. The weights are BF16; the embedding, timestep and output layers
+  are FP32.
+
 ## Showcase
 
 Text-to-image and image editing results, shown downscaled. Open **Prompts** under an image to
@@ -116,6 +141,8 @@ the model receives: the MiniMax API expands them with H3-Image-Context-IR before
 default for text-to-image, always for editing), so you can send them as they are. For a local deployment, expand them first as in
 [Full Workflow](#full-workflow). Most prompts were written in Chinese; the English versions come
 from the official English user guide, and [简体中文](README.zh-CN.md) shows the originals.
+
+### Text-to-Image
 
 <p align="center">
 <img src="assets/showcase/photo.jpg" alt="Three photorealistic photographs: a person in a white shirt taking down white sheets from a clothesline on a rooftop at dusk under a full moon, a close-up profile of a curly-haired young man drinking from a dark cup, and flamingos wading in shallow water" width="100%"/>
@@ -140,7 +167,6 @@ Real photographic and cinematic-still texture. Prioritize natural light and phys
 </details>
 <!-- END showcase-prompts -->
 
-
 <p align="center">
 <img src="assets/showcase/surreal.jpg" alt="Three surreal editorial photographs: a barber trimming a cloud seated in a barber chair, a person slicing the moon on a lawn at night, and a model stepping out of a giant pear" width="100%"/>
 </p>
@@ -161,7 +187,6 @@ Real photographic and cinematic-still texture. Prioritize natural light and phys
 
 </details>
 <!-- END showcase-prompts -->
-
 
 <p align="center">
 <img src="assets/showcase/scene.jpg" alt="Four environment concepts: ruins of an ancient open-air theater in a forest titled ENVIRONMENT CONCEPT: THE ANCIENT THEATER, a dragon rider on a red rock cliff, an abandoned railway station with an ARRIVALS sign, and shipwrecks frozen in an icy sea" width="100%"/>
@@ -186,7 +211,6 @@ Real photographic and cinematic-still texture. Prioritize natural light and phys
 </details>
 <!-- END showcase-prompts -->
 
-
 <p align="center">
 <img src="assets/showcase/char.jpg" alt="Characters, creatures and props: a combat pilot in an armored helmet, a red-finned dragon in a forest, a dust-covered astronaut helmet on a red wasteland, and a costume board of a polar outfit with front view, rear view and close-up" width="100%"/>
 </p>
@@ -210,7 +234,6 @@ Real photographic and cinematic-still texture. Prioritize natural light and phys
 
 </details>
 <!-- END showcase-prompts -->
-
 
 <p align="center">
 <img src="assets/showcase/art.jpg" alt="Four paintings and illustrations: mandarin ducks among lotus leaves as an Old Master oil painting, a Suzhou garden in morning mist as an Impressionist oil painting, an illuminated-manuscript page XVIII THE MOON with the Jade Rabbit grinding the moon in a mortar, and a gongbi painting of a pelican looking into a mirror with four calligraphy characters" width="100%"/>
@@ -254,7 +277,6 @@ Flat perspective, dark ink outlines, opaque tempera on aged parchment. Rich red,
 </details>
 <!-- END showcase-prompts -->
 
-
 <p align="center">
 <img src="assets/showcase/text.jpg" alt="Two logic puzzle boards: a Chinese candidate-selection puzzle with five conditions and the derived answer, and an English board titled CONFIDENTIAL FILE MISSING with six suspects, true/false stamps and a verification table" width="100%"/>
 </p>
@@ -281,6 +303,7 @@ At the bottom, use brief notes to show the key reasons for exclusion. The card p
 </details>
 <!-- END showcase-prompts -->
 
+### Image Editing
 
 <p align="center">
 <img src="assets/showcase/edit_render.jpg" alt="Left: untextured grey 3D render of a lunar base with habitat modules, a rover and an astronaut. Right: the same scene as a photorealistic film still on the lunar surface" width="100%"/>
@@ -295,7 +318,6 @@ At the bottom, use brief notes to show the key reasons for exclusion. The card p
 
 </details>
 <!-- END showcase-prompts -->
-
 
 <p align="center">
 <img src="assets/showcase/edit_map.jpg" alt="Left: illustrated game map with a river, a waterfall, bridges, a castle, a village, a mine and a harbor, and a red arrow on the southern lake. Right: first-person 3D game view from the lake towards the waterfall, the suspension bridge, the mine and the distant castle, with the map as a minimap in the top-left corner" width="100%"/>
@@ -322,7 +344,6 @@ Output only one complete game screenshot. Do not include the original red arrow,
 </details>
 <!-- END showcase-prompts -->
 
-
 <p align="center">
 <img src="assets/showcase/edit_multi.jpg" alt="Top: ten reference images, an empty sunlit room and nine pieces of furniture. Bottom: the empty room furnished with all nine pieces as a living room" width="100%"/>
 </p>
@@ -338,96 +359,13 @@ Preserve the color, material, structure, and proportions of every product. Let l
 </details>
 <!-- END showcase-prompts -->
 
+## Run Locally
 
-## Prompting Tips
+To run MiniMax-H3-Image on your own GPUs, download the checkpoint, start a server with SGLang or
+vLLM-Omni, and send requests with the parameters and sizes below. [Full Workflow](#full-workflow)
+combines these steps with prompt expansion to reproduce the images of the MiniMax API.
 
-These tips come from the official MiniMax-H3-Image user guide. They hold both for a short request
-sent to the MiniMax API and for a full prompt sent to your own deployment.
-
-**Basic descriptions**
-
-- **Describe the task before the style.** First explain the goal, the image's intended use, the
-  main people or objects, and their state or actions; then add stylistic requirements.
-- **Set the overall layout before adding local details.** Specify the number and placement of
-  subjects, viewing angle, and whitespace. For dense content, describe the overall sections first,
-  then each part and its relationships, for example "Title at the top; image on the left and text
-  on the right below."
-- **Express style through visible details.** Describe the desired effect through color, material,
-  lighting, and texture. Use "soft side light, metallic reflections, and clean whitespace" instead
-  of a vague phrase like "premium feel." Prioritize key details and avoid piling up contradictory
-  requirements.
-
-**Text and information**
-
-- **Provide the exact text in full.** Put the complete text to be displayed in quotation marks, and
-  specify its position, hierarchy, and line breaks. If you want the model to write the copy, say so
-  explicitly.
-- **Say so when you want no text.** Write "no text, letters or numbers in the image" to keep the
-  model from adding its own titles, labels or decorative lettering.
-- **Provide accurate knowledge and data, and clarify relationships.** For charts, academic figures,
-  and educational content, provide accurate information, values, units, and their relationships.
-  When depicting changes over time, specify the time range. Clearly identify example data to avoid
-  confusion with real data.
-
-**Reference images and editing**
-
-- **Assign each reference image a role.** Explain what each image contributes, what must remain
-  consistent, and what may vary freely, for example "Keep the product from image 1, use image 2 for
-  color, and image 3 for layout." When borrowing only color, also specify that its shape or
-  material should not be used.
-- **Distinguish what changes from what stays.** Identify the object to edit by location or
-  features, explain what it should become, define the scope of the change, and state what must be
-  preserved, for example "Change the cup on the left to blue, keeping its shape, material,
-  position, and size the same."
-- **Specify the complete desired result.** Distinguish moving, copying, replacing, and deleting.
-  When deleting something, explain how its original area should be filled. When changing text or
-  data, provide the complete replacement content and state whether the original layout, chart
-  structure, and other information should remain.
-- **Set a clear goal for every editing round.** State which image to use in the current round, what
-  to change, and what to keep. Avoid vague references such as "that one from the last round" or
-  "the same as before."
-- **Give grids and panels as rows and columns.** For nine-panel grids, storyboards, and collages,
-  write "2 rows and 3 columns" or "3×3 (rows × columns)" instead of just "2×3," which can swap rows
-  and columns. Describe irregular arrangements directly, such as "3 panels on top and 2 below." When
-  editing one panel, identify it as "row 2, column 1."
-
-A local deployment uses the prompt exactly as given, up to 4096 tokens, and works best with a long
-English description of the whole image. In such a prompt, refer to the reference images as
-`<Picture 1>`, `<Picture 2>`, ... in upload order. The guides bundled with the
-[Prompt Writing Skill](#prompt-writing-skill),
-[`t2i-en.txt`](skills/h3-image-prompt-writing/references/t2i-en.txt) and
-[`edit-en.txt`](skills/h3-image-prompt-writing/references/edit-en.txt), describe that format in
-detail; [`examples/`](examples) has real expanded prompts for
-[text-to-image](examples/revised_prompt.t2i.txt) and [editing](examples/revised_prompt.edit.txt).
-
-## Model Zoo
-
-| Model | Role | Precision | Size | Hugging Face |
-| --- | --- | --- | --- | --- |
-| **MiniMax-H3-Image** | Text-to-image and image editing | BF16 (DiT) | 68.65 GB | [MiniMaxAI/MiniMax-H3-Image](https://huggingface.co/MiniMaxAI/MiniMax-H3-Image) |
-| **MiniMax-H3-Image-PE** (optional) | Prompt expander for text-to-image | NVFP4 | 17.9 GB | [MiniMaxAI/MiniMax-H3-Image-PE](https://huggingface.co/MiniMaxAI/MiniMax-H3-Image-PE) |
-
-## Model Architecture
-
-MiniMax-H3-Image follows the H3-Base design with the audio branch removed. The text
-prompt and the reference images are encoded by the H3 text encoder; the reference images are
-also encoded by the image VAE. All tokens form one packed sequence for a single-stream
-transformer, which predicts the latent of the target image. The VAE decodes that latent
-into the image.
-
-- **Text encoder**: the full Qwen3-VL text encoder of MiniMax-H3, unchanged. The DiT reads
-  the hidden states of its 50th layer.
-- **Image VAE**: a CNN encoder and a 2D ViT decoder (24 layers), with 16x spatial
-  downsampling and 24 latent channels. The DiT patchifies the latent with a 2x2 patch, so each
-  transformer token covers 32x32 pixels.
-- **Diffusion transformer**: 33.1B parameters, a dense single-stream transformer with 50
-  layers (hidden size 5376, 56 attention heads, FFN size 14336) and 3D multimodal RoPE, the same
-  as the H3-Omni-Transformer. The weights are BF16; the embedding, timestep and output layers
-  are FP32.
-
-## Quick Start
-
-### Download
+### Model Files
 
 | Component | Content | Size |
 | --- | --- | --- |
@@ -467,7 +405,7 @@ repository's own copy of `text_encoder/`). See the
 [diffusers documentation](https://huggingface.co/docs/diffusers/main/en/api/pipelines/minimax_h3_image)
 for loading and offloading recipes.
 
-### Local Deployment
+### Deployment
 
 We recommend the following inference frameworks to serve the model:
 
@@ -476,7 +414,7 @@ We recommend the following inference frameworks to serve the model:
 - [diffusers](https://github.com/huggingface/diffusers) - see [diffusers docs](https://huggingface.co/docs/diffusers/main/en/api/pipelines/minimax_h3_image)
 - [ComfyUI](https://github.com/Comfy-Org/ComfyUI) - see [Comfy tutorial](https://docs.comfy.org/tutorials/image/minimax/minimax-h3-image); use [T2I template](https://github.com/Comfy-Org/workflow_templates/blob/main/templates/image_minimax_h3_image_t2i.json) / [Edit template](https://github.com/Comfy-Org/workflow_templates/blob/main/templates/image_minimax_h3_image_edit.json)
 
-#### SGLang Deployment
+#### SGLang
 
 The [Full Workflow](#full-workflow) below uses SGLang. Install it from the main branch with its
 diffusion dependencies (see the
@@ -509,7 +447,7 @@ sglang serve --model-path MiniMaxAI/MiniMax-H3-Image --host 0.0.0.0 --port 30000
 The [SGLang cookbook](https://docs.sglang.io/cookbook/diffusion/MiniMax/MiniMax-H3-Image) has
 recipes for each GPU class, from B300 to 24 GB cards, with measured latency.
 
-#### vLLM-Omni Deployment
+#### vLLM-Omni
 
 Install vLLM 0.33.0 and vLLM-Omni from source:
 
@@ -545,7 +483,9 @@ On AMD Instinct MI325X and MI350X, use the `vllm/vllm-omni:minimax-h3-image-rocm
 [vLLM-Omni recipe](https://recipes.vllm.ai/MiniMaxAI/MiniMax-H3-Image) lists layouts for H100,
 RTX PRO 6000 and other GPUs, with measured latency.
 
-#### Request parameters
+### Requests and Sizes
+
+#### Request Parameters
 
 With SGLang, text-to-image requests are JSON sent to `/v1/images/generations`. Image editing
 requests send the reference images as multipart form data to `/v1/images/edits`; their order
@@ -667,6 +607,69 @@ as `<Picture 1>`.
 <img src="assets/workflow_edit.jpg" alt="Left: reference1.png, the reference image of two podcast hosts with the man wearing headphones. Middle: edit.png from local SGLang with the enhanced prompt. Right: api_edit.png from the MiniMax API. In both results the headphones are gone and the hosts bump fists above the MONEY TALKS sign" width="100%"/>
 </p>
 <p align="center"><em>Reference image reference1.png (left), edit.png from local SGLang (middle) and api_edit.png from the MiniMax API (right), 4096x4096 (1:1 picked by H3-Image-Context-IR)</em></p>
+
+## Prompting Tips
+
+These tips come from the official MiniMax-H3-Image user guide. They hold both for a short request
+sent to the MiniMax API and for a full prompt sent to your own deployment.
+
+### Basic Descriptions
+
+- **Describe the task before the style.** First explain the goal, the image's intended use, the
+  main people or objects, and their state or actions; then add stylistic requirements.
+- **Set the overall layout before adding local details.** Specify the number and placement of
+  subjects, viewing angle, and whitespace. For dense content, describe the overall sections first,
+  then each part and its relationships, for example "Title at the top; image on the left and text
+  on the right below."
+- **Express style through visible details.** Describe the desired effect through color, material,
+  lighting, and texture. Use "soft side light, metallic reflections, and clean whitespace" instead
+  of a vague phrase like "premium feel." Prioritize key details and avoid piling up contradictory
+  requirements.
+
+### Text and Information
+
+- **Provide the exact text in full.** Put the complete text to be displayed in quotation marks, and
+  specify its position, hierarchy, and line breaks. If you want the model to write the copy, say so
+  explicitly.
+- **Say so when you want no text.** Write "no text, letters or numbers in the image" to keep the
+  model from adding its own titles, labels or decorative lettering.
+- **Provide accurate knowledge and data, and clarify relationships.** For charts, academic figures,
+  and educational content, provide accurate information, values, units, and their relationships.
+  When depicting changes over time, specify the time range. Clearly identify example data to avoid
+  confusion with real data.
+
+### Reference Images and Editing
+
+- **Assign each reference image a role.** Explain what each image contributes, what must remain
+  consistent, and what may vary freely, for example "Keep the product from image 1, use image 2 for
+  color, and image 3 for layout." When borrowing only color, also specify that its shape or
+  material should not be used.
+- **Distinguish what changes from what stays.** Identify the object to edit by location or
+  features, explain what it should become, define the scope of the change, and state what must be
+  preserved, for example "Change the cup on the left to blue, keeping its shape, material,
+  position, and size the same."
+- **Specify the complete desired result.** Distinguish moving, copying, replacing, and deleting.
+  When deleting something, explain how its original area should be filled. When changing text or
+  data, provide the complete replacement content and state whether the original layout, chart
+  structure, and other information should remain.
+- **Set a clear goal for every editing round.** State which image to use in the current round, what
+  to change, and what to keep. Avoid vague references such as "that one from the last round" or
+  "the same as before."
+- **Give grids and panels as rows and columns.** For nine-panel grids, storyboards, and collages,
+  write "2 rows and 3 columns" or "3×3 (rows × columns)" instead of just "2×3," which can swap rows
+  and columns. Describe irregular arrangements directly, such as "3 panels on top and 2 below." When
+  editing one panel, identify it as "row 2, column 1."
+
+### Prompts for a Local Deployment
+
+A local deployment uses the prompt exactly as given, up to 4096 tokens, and works best with a long
+English description of the whole image. In such a prompt, refer to the reference images as
+`<Picture 1>`, `<Picture 2>`, ... in upload order. The guides bundled with the
+[Prompt Writing Skill](#prompt-writing-skill),
+[`t2i-en.txt`](skills/h3-image-prompt-writing/references/t2i-en.txt) and
+[`edit-en.txt`](skills/h3-image-prompt-writing/references/edit-en.txt), describe that format in
+detail; [`examples/`](examples) has real expanded prompts for
+[text-to-image](examples/revised_prompt.t2i.txt) and [editing](examples/revised_prompt.edit.txt).
 
 ## License
 

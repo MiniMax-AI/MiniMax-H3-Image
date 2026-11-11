@@ -36,11 +36,18 @@ npx skills add https://github.com/MiniMax-AI/MiniMax-H3-Image --skill h3-image-p
 
 **エージェント互換性：** `h3-image-prompt-writing` は外部 API 呼び出しを行わない、純粋な Markdown + リファレンスファイルのスキルです。そのため、Claude Code、Claude Agent SDK、Cursor、Windsurf、OpenAI ベースのエージェント/Codex、LangChain など、`SKILL.md` とローカルファイルを読み取れるあらゆる環境で動作します。同梱されている `skills/h3-image-prompt-writing/agents/openai.yaml` は、ChatGPT/Codex のスキル UI 向けに任意の UI メタデータ（表示名、説明、デフォルトプロンプト）を追加するだけであり、このスキルを OpenAI エージェント専用に制限するものではありません。
 
-このスキルが行うのはプロンプトの作成だけで、画像は生成しません。出力を `prompt` として独自のデプロイに渡してください（[クイックスタート](#クイックスタート) を参照）。MiniMax のテキストからの画像生成 API を使う場合は、`disable_prompt_enhanced: true` とスキルが示す `aspect_ratio` も指定してください。指定しないと API がプロンプトをもう一度拡張します。画像編集のリクエストは常に拡張されます。プロンプトを手で書く場合は [プロンプトのコツ](#プロンプトのコツ) を参照してください。すべてのスキルの説明は [`skills/README.md`](skills/README.md) にあります。
+このスキルが行うのはプロンプトの作成だけで、画像は生成しません。出力を `prompt` として独自のデプロイに渡してください（[ローカルで実行](#ローカルで実行) を参照）。MiniMax のテキストからの画像生成 API を使う場合は、`disable_prompt_enhanced: true` とスキルが示す `aspect_ratio` も指定してください。指定しないと API がプロンプトをもう一度拡張します。画像編集のリクエストは常に拡張されます。プロンプトを手で書く場合は [プロンプトのコツ](#プロンプトのコツ) を参照してください。すべてのスキルの説明は [`skills/README.md`](skills/README.md) にあります。
 
-## オンライン API
+## オンラインで使う
 
-API 経由で MiniMax-H3-Image を直接利用できます。
+セットアップなしで MiniMax のアプリから MiniMax-H3-Image を使えるほか、MiniMax API からも呼び出せます。
+
+### アプリ
+
+- WebApp Global: [hailuoai.video](https://hailuoai.video/) | CN: [hailuoai.com](https://hailuoai.com/)
+- Desktop Global: [agent.minimax.io](https://agent.minimax.io/) | CN: [agent.minimax.cn](https://agent.minimax.cn)
+
+### API
 
 - Global: [platform.minimax.io](https://platform.minimax.io/docs/guides/image-generation) | CN: [platform.minimax.cn](https://platform.minimax.cn/docs/guides/image-generation)
 
@@ -48,13 +55,6 @@ API ドキュメント:
 - テキストからの画像生成: [EN-docs](https://platform.minimax.io/docs/api-reference/image-generation-h3-generations), [CN-docs](https://platform.minimax.cn/docs/api-reference/image-generation-h3-generations)
 - 画像編集: [EN-docs](https://platform.minimax.io/docs/api-reference/image-generation-h3-edits), [CN-docs](https://platform.minimax.cn/docs/api-reference/image-generation-h3-edits)
 - プロンプト拡張: [EN-docs](https://platform.minimax.io/docs/api-reference/image-generation-h3-context-ir), [CN-docs](https://platform.minimax.cn/docs/api-reference/image-generation-h3-context-ir)
-
-## オンラインアプリ
-
-アプリ経由で MiniMax-H3-Image を直接利用できます。
-
-- WebApp Global: [hailuoai.video](https://hailuoai.video/) | CN: [hailuoai.com](https://hailuoai.com/)
-- Desktop Global: [agent.minimax.io](https://agent.minimax.io/) | CN: [agent.minimax.cn](https://agent.minimax.cn)
 
 ## 概要
 
@@ -64,7 +64,7 @@ MiniMax-H3-Image は、[MiniMax H3](https://huggingface.co/MiniMaxAI/MiniMax-H3)
 
 ![MiniMax-H3-Image によるテキストからの画像生成の結果 15 点（横長と縦長）：3D のファンタジー戦闘シーン、青緑山水画、アマガエル、藍染めのウサギ、3D の白髪の少女、花に囲まれたポートレート、SF 都市、餃子、ハイランド牛、鏡越しのポートレート、3D のカワウソと羊、ピクセルアートの猫、タマムシ、巨大なサクランボ、魚眼レンズの自撮り](assets/showcase_hero.jpg)
 
-**主な特長**
+### 主な特長
 
 MiniMax-H3-Image は、速度、画質、指示追従という 3 つの中核的な強みを兼ね備えています。
 
@@ -72,9 +72,26 @@ MiniMax-H3-Image は、速度、画質、指示追従という 3 つの中核的
 2. **豊かなディテールと高いリアリティ。** MiniMax-H3-Image は見慣れた「AI っぽさ」を超えて、精緻なディテールと本物らしいリアリティを備えた画像を生成し、クリエイティブ用途やプロフェッショナル用途の可能性を広げます。生成画像を、現実の視覚世界が持つ豊かさや繊細さに近づけます。
 3. **より強い指示追従。** 創作をより細かくコントロールできます。優れた画像生成は、美しい絵を作るだけでなく、クリエイターのアイデアを形にする手助けをします。MiniMax-H3-Image はオープンソースモデルの中で最も強い指示追従性能を持ち、最大 16 枚の参照画像をサポートするため、クリエイターは最終結果をより細かく制御できます。
 
+### モデル一覧
+
+| モデル | 役割 | 精度 | サイズ | Hugging Face |
+| --- | --- | --- | --- | --- |
+| **MiniMax-H3-Image** | テキストからの画像生成と画像編集 | BF16 (DiT) | 68.65 GB | [MiniMaxAI/MiniMax-H3-Image](https://huggingface.co/MiniMaxAI/MiniMax-H3-Image) |
+| **MiniMax-H3-Image-PE**（任意） | テキストからの画像生成用のプロンプト拡張モデル | NVFP4 | 17.9 GB | [MiniMaxAI/MiniMax-H3-Image-PE](https://huggingface.co/MiniMaxAI/MiniMax-H3-Image-PE) |
+
+### モデルアーキテクチャ
+
+MiniMax-H3-Image は H3-Base の設計を踏襲し、音声ブランチを取り除いたものです。テキストプロンプトと参照画像は H3 テキストエンコーダーでエンコードされ、参照画像は画像 VAE でもエンコードされます。すべてのトークンは 1 つのパック済みシーケンスにまとめられてシングルストリーム Transformer に入力され、Transformer がターゲット画像の latent を予測します。VAE はその latent を画像にデコードします。
+
+- **テキストエンコーダー**：MiniMax-H3 の Qwen3-VL テキストエンコーダー全体をそのまま使用します。DiT はその第 50 層の hidden states を読み取ります。
+- **画像 VAE**：CNN エンコーダーと 2D ViT デコーダー（24 層）で構成され、空間方向に 16 倍のダウンサンプリングを行い、latent のチャネル数は 24 です。DiT は latent を 2x2 のパッチでパッチ化するため、Transformer の各トークンは 32x32 ピクセルに相当します。
+- **拡散 Transformer**：パラメータ数 33.1B の dense なシングルストリーム Transformer で、50 層（hidden size 5376、attention head 数 56、FFN サイズ 14336）と 3D マルチモーダル RoPE を備えます。これは H3-Omni-Transformer と同じ構成です。重みは BF16 で、embedding 層、timestep 層、出力層は FP32 です。
+
 ## ショーケース
 
 テキストからの画像生成と画像編集の結果を縮小して掲載しています。各画像の下にある **プロンプト** を開くと、その画像に入力した内容を確認できます。これはユーザーが書いたままのリクエストであり、モデルが実際に受け取る拡張済みのプロンプトではありません。MiniMax API は生成前に H3-Image-Context-IR でこれらを拡張するため（テキストからの画像生成ではデフォルトで、編集では常に）、そのまま送信できます。ローカルデプロイの場合は、[完全なワークフロー](#完全なワークフロー) のように先に拡張してください。プロンプトの多くは元々中国語で書かれたものです。ここに掲載している英語版は公式の英語ユーザーガイドからの引用で、原文は [简体中文](README.zh-CN.md) 版で確認できます。
+
+### テキストからの画像生成
 
 <p align="center">
 <img src="assets/showcase/photo.jpg" alt="フォトリアルな写真 3 点：満月の夕暮れに屋上で物干しロープから白いシーツを取り込む白シャツの人物、黒いカップでお茶を飲む巻き毛の若い男性の横顔のクローズアップ、浅瀬を歩くフラミンゴ" width="100%"/>
@@ -99,8 +116,6 @@ Real photographic and cinematic-still texture. Prioritize natural light and phys
 </details>
 <!-- END showcase-prompts -->
 
-
-
 <p align="center">
 <img src="assets/showcase/surreal.jpg" alt="シュールなエディトリアル写真 3 点：理容椅子に座った雲の手入れをする理容師、夜の芝生で月を切り分ける人物、巨大な洋梨から出てくるモデル" width="100%"/>
 </p>
@@ -121,8 +136,6 @@ Real photographic and cinematic-still texture. Prioritize natural light and phys
 
 </details>
 <!-- END showcase-prompts -->
-
-
 
 <p align="center">
 <img src="assets/showcase/scene.jpg" alt="環境コンセプトアート 4 点：ENVIRONMENT CONCEPT: THE ANCIENT THEATER と題された森の中の古代野外劇場の遺跡、赤い岩の崖にいるドラゴンライダー、ARRIVALS の看板がある廃駅、氷の海に閉じ込められた難破船" width="100%"/>
@@ -147,8 +160,6 @@ Real photographic and cinematic-still texture. Prioritize natural light and phys
 </details>
 <!-- END showcase-prompts -->
 
-
-
 <p align="center">
 <img src="assets/showcase/char.jpg" alt="キャラクター、クリーチャー、小道具：装甲ヘルメットをかぶった戦闘パイロット、森の中にいる赤いひれを持つドラゴン、赤い荒野に転がる砂ぼこりをかぶった宇宙飛行士のヘルメット、正面・背面・クローズアップを並べた極地用コスチュームボード" width="100%"/>
 </p>
@@ -172,8 +183,6 @@ Real photographic and cinematic-still texture. Prioritize natural light and phys
 
 </details>
 <!-- END showcase-prompts -->
-
-
 
 <p align="center">
 <img src="assets/showcase/art.jpg" alt="絵画とイラスト 4 点：オールドマスター風油彩で描いた蓮の葉の間のオシドリ、印象派油彩で描いた朝霧の蘇州庭園、玉兎が石臼で月をつく中世の装飾写本風ページ XVIII THE MOON、鏡をのぞき込むペリカンと 4 文字の書が入った中国の工筆画" width="100%"/>
@@ -217,8 +226,6 @@ Flat perspective, dark ink outlines, opaque tempera on aged parchment. Rich red,
 </details>
 <!-- END showcase-prompts -->
 
-
-
 <p align="center">
 <img src="assets/showcase/text.jpg" alt="論理パズルのボード 2 点：5 つの条件と導き出した答えを示す中国語の候補者選びのパズルと、CONFIDENTIAL FILE MISSING と題され、6 人の容疑者、真偽のスタンプ、検証表を含む英語のボード" width="100%"/>
 </p>
@@ -245,7 +252,7 @@ At the bottom, use brief notes to show the key reasons for exclusion. The card p
 </details>
 <!-- END showcase-prompts -->
 
-
+### 画像編集
 
 <p align="center">
 <img src="assets/showcase/edit_render.jpg" alt="左：居住モジュール、ローバー、宇宙飛行士がいる月面基地の、テクスチャのないグレーの 3D レンダリング。右：同じシーンを月面でのフォトリアルな映画のスチルにしたもの" width="100%"/>
@@ -260,8 +267,6 @@ At the bottom, use brief notes to show the key reasons for exclusion. The card p
 
 </details>
 <!-- END showcase-prompts -->
-
-
 
 <p align="center">
 <img src="assets/showcase/edit_map.jpg" alt="左：川、滝、橋、城、村、鉱山、港が描かれ、南の湖に赤い矢印があるイラストのゲームマップ。右：湖から滝、吊り橋、鉱山、遠くの城の方向を見た一人称の 3D ゲーム画面で、左上隅にマップがミニマップとして表示されている" width="100%"/>
@@ -288,8 +293,6 @@ Output only one complete game screenshot. Do not include the original red arrow,
 </details>
 <!-- END showcase-prompts -->
 
-
-
 <p align="center">
 <img src="assets/showcase/edit_multi.jpg" alt="上：日の差す空っぽの部屋と 9 点の家具からなる 10 枚の参照画像。下：9 点の家具をすべて配置してリビングルームにした同じ部屋" width="100%"/>
 </p>
@@ -305,52 +308,11 @@ Preserve the color, material, structure, and proportions of every product. Let l
 </details>
 <!-- END showcase-prompts -->
 
+## ローカルで実行
 
+MiniMax-H3-Image を自分の GPU で動かすには、チェックポイントをダウンロードし、SGLang または vLLM-Omni でサーバーを起動して、以下のパラメータとサイズでリクエストを送ります。[完全なワークフロー](#完全なワークフロー) では、これらの手順とプロンプト拡張を組み合わせて、MiniMax API の画像をローカルで再現します。
 
-## プロンプトのコツ
-
-これらのコツは MiniMax-H3-Image の公式ユーザーガイドに基づいています。MiniMax API に送る短いリクエストにも、独自のデプロイに送る完全なプロンプトにも当てはまります。
-
-**基本的な記述**
-
-- **スタイルより先にタスクを書く。** まず目的、画像の用途、主な人物や物体、その状態や動作を説明し、そのあとでスタイルの要件を加えます。
-- **細部より先に全体のレイアウトを決める。** 被写体の数と配置、視点、余白を指定します。内容が多い場合は、まず全体の区分を説明し、次に各部分とその関係を記述します。例：「上部にタイトル、その下の左に画像、右にテキスト」。
-- **スタイルは目に見えるディテールで表現する。** 色、素材、光、質感で求める効果を説明します。「高級感」のような曖昧な表現ではなく、「柔らかなサイドライト、金属の反射、すっきりした余白」のように書きます。重要なディテールを優先し、互いに矛盾する要件を詰め込まないようにします。
-
-**テキストと情報**
-
-- **表示するテキストは正確に全文を書く。** 表示したいテキストを全文引用符で囲み、その位置、階層、改行を指定します。文面をモデルに考えさせたい場合は、そのことを明示します。
-- **テキストが不要な場合はそう書く。** 「画像内に文字、アルファベット、数字を入れない」と書くと、モデルが独自にタイトル、ラベル、装飾文字を加えるのを防げます。
-- **正確な知識とデータを示し、関係を明確にする。** グラフ、学術図版、教育コンテンツでは、正確な情報、数値、単位、およびそれらの関係を示します。時間の経過による変化を描く場合は期間を指定します。例示用のデータはそのことを明記し、実際のデータと混同されないようにします。
-
-**参照画像と編集**
-
-- **参照画像ごとに役割を割り当てる。** 各画像が何を提供するのか、何を一貫させるべきか、何を自由に変えてよいかを説明します。例：「画像 1 の製品はそのまま残し、画像 2 は配色、画像 3 はレイアウトの参考にする」。色だけを借りる場合は、その画像の形や素材は使わないことも明記します。
-- **変える部分と残す部分を区別する。** 編集対象を位置や特徴で特定し、何に変えるか、変更の範囲、残すべき点を説明します。例：「左側のカップを青にする。形、素材、位置、サイズは変えない」。
-- **最終的な結果を完全に指定する。** 移動、コピー、置き換え、削除を区別します。削除する場合は、元の領域をどう埋めるかを説明します。テキストやデータを変更する場合は、置き換え後の内容をすべて示し、元のレイアウト、グラフの構造、その他の情報を残すかどうかを明記します。
-- **編集の各ラウンドで目標を明確にする。** 今回のラウンドでどの画像を使うか、何を変えるか、何を残すかを書きます。「前のラウンドのあれ」や「前と同じ」のような曖昧な指示は避けます。
-- **グリッドやパネルは行と列で指定する。** 9 分割グリッド、絵コンテ、コラージュでは、「2×3」とだけ書くと行と列が入れ替わることがあるため、「2 行 3 列」や「3×3（行×列）」のように書きます。不規則な配置は「上に 3 枚、下に 2 枚」のように直接記述します。1 つのパネルを編集する場合は「2 行目の 1 列目」のように指定します。
-
-ローカルデプロイでは、プロンプトは与えられたとおりに最大 4096 トークンまで使用され、画像全体を詳しく記述した長い英語の説明文で最も良い結果が得られます。このようなプロンプトでは、参照画像をアップロード順に `<Picture 1>`、`<Picture 2>`、... と呼びます。[プロンプト作成スキル](#プロンプト作成スキル) に同梱されているガイド [`t2i-en.txt`](skills/h3-image-prompt-writing/references/t2i-en.txt) と [`edit-en.txt`](skills/h3-image-prompt-writing/references/edit-en.txt) で、この形式を詳しく説明しています。[`examples/`](examples) には、[テキストからの画像生成](examples/revised_prompt.t2i.txt) と [画像編集](examples/revised_prompt.edit.txt) の実際の拡張済みプロンプトがあります。
-
-## モデル一覧
-
-| モデル | 役割 | 精度 | サイズ | Hugging Face |
-| --- | --- | --- | --- | --- |
-| **MiniMax-H3-Image** | テキストからの画像生成と画像編集 | BF16 (DiT) | 68.65 GB | [MiniMaxAI/MiniMax-H3-Image](https://huggingface.co/MiniMaxAI/MiniMax-H3-Image) |
-| **MiniMax-H3-Image-PE**（任意） | テキストからの画像生成用のプロンプト拡張モデル | NVFP4 | 17.9 GB | [MiniMaxAI/MiniMax-H3-Image-PE](https://huggingface.co/MiniMaxAI/MiniMax-H3-Image-PE) |
-
-## モデルアーキテクチャ
-
-MiniMax-H3-Image は H3-Base の設計を踏襲し、音声ブランチを取り除いたものです。テキストプロンプトと参照画像は H3 テキストエンコーダーでエンコードされ、参照画像は画像 VAE でもエンコードされます。すべてのトークンは 1 つのパック済みシーケンスにまとめられてシングルストリーム Transformer に入力され、Transformer がターゲット画像の latent を予測します。VAE はその latent を画像にデコードします。
-
-- **テキストエンコーダー**：MiniMax-H3 の Qwen3-VL テキストエンコーダー全体をそのまま使用します。DiT はその第 50 層の hidden states を読み取ります。
-- **画像 VAE**：CNN エンコーダーと 2D ViT デコーダー（24 層）で構成され、空間方向に 16 倍のダウンサンプリングを行い、latent のチャネル数は 24 です。DiT は latent を 2x2 のパッチでパッチ化するため、Transformer の各トークンは 32x32 ピクセルに相当します。
-- **拡散 Transformer**：パラメータ数 33.1B の dense なシングルストリーム Transformer で、50 層（hidden size 5376、attention head 数 56、FFN サイズ 14336）と 3D マルチモーダル RoPE を備えます。これは H3-Omni-Transformer と同じ構成です。重みは BF16 で、embedding 層、timestep 層、出力層は FP32 です。
-
-## クイックスタート
-
-### ダウンロード
+### モデルファイル
 
 | コンポーネント | 内容 | サイズ |
 | --- | --- | --- |
@@ -383,7 +345,7 @@ hf download MiniMaxAI/MiniMax-H3-Image-PE
 
 diffusers ユーザーは手動でダウンロードする必要はありません。`ModularPipeline.from_pretrained("MiniMaxAI/MiniMax-H3-Image")` が `modular_model_index.json` を読み込み、diffusers 形式のフォルダ（`transformer_diffusers/`、`vae_diffusers/`、およびリポジトリ内にある `text_encoder/` のコピー）を取得します。読み込みとオフロードの方法については [diffusers のドキュメント](https://huggingface.co/docs/diffusers/main/en/api/pipelines/minimax_h3_image) を参照してください。
 
-### ローカルデプロイ
+### デプロイ
 
 モデルのサービングには以下の推論フレームワークを推奨します:
 
@@ -392,7 +354,7 @@ diffusers ユーザーは手動でダウンロードする必要はありませ�
 - [diffusers](https://github.com/huggingface/diffusers) - [diffusers docs](https://huggingface.co/docs/diffusers/main/en/api/pipelines/minimax_h3_image) を参照
 - [ComfyUI](https://github.com/Comfy-Org/ComfyUI) - [Comfy tutorial](https://docs.comfy.org/tutorials/image/minimax/minimax-h3-image) を参照。テンプレートは [T2I template](https://github.com/Comfy-Org/workflow_templates/blob/main/templates/image_minimax_h3_image_t2i.json) / [Edit template](https://github.com/Comfy-Org/workflow_templates/blob/main/templates/image_minimax_h3_image_edit.json) を使用します
 
-#### SGLang デプロイ
+#### SGLang
 
 以下の [完全なワークフロー](#完全なワークフロー) では SGLang を使います。main ブランチから SGLang を拡散モデル用の依存関係とともにインストールします（[拡散モデルのインストールガイド](https://docs.sglang.io/docs/sglang-diffusion/installation) を参照）:
 
@@ -419,7 +381,7 @@ sglang serve --model-path MiniMaxAI/MiniMax-H3-Image --host 0.0.0.0 --port 30000
 
 [SGLang cookbook](https://docs.sglang.io/cookbook/diffusion/MiniMax/MiniMax-H3-Image) には、B300 から 24 GB のカードまで、GPU クラスごとのレシピと実測レイテンシがあります。
 
-#### vLLM-Omni デプロイ
+#### vLLM-Omni
 
 vLLM 0.33.0 をインストールし、vLLM-Omni をソースからインストールします:
 
@@ -450,6 +412,8 @@ vllm serve MiniMaxAI/MiniMax-H3-Image --omni --host 0.0.0.0 --port 8000 --num-gp
 ```
 
 AMD Instinct MI325X と MI350X では、`vllm/vllm-omni:minimax-h3-image-rocm` イメージを使い、デフォルトのコマンドに `--no-enable-cuda-graph-decode` を追加します。H100、RTX PRO 6000 などほかの GPU 向けの構成と実測レイテンシは [vLLM-Omni recipe](https://recipes.vllm.ai/MiniMaxAI/MiniMax-H3-Image) にあります。
+
+### リクエストとサイズ
 
 #### リクエストパラメータ
 
@@ -555,6 +519,34 @@ API ドキュメント:
 <img src="assets/workflow_edit.jpg" alt="左：参照画像 reference1.png。2 人のポッドキャストホストが写っており、男性はヘッドホンを着けている。中央：拡張済みプロンプトを使ってローカル SGLang で生成した edit.png。右：MiniMax API で生成した api_edit.png。どちらの結果でもヘッドホンはなくなり、2 人が MONEY TALKS の看板の上で拳を合わせている" width="100%"/>
 </p>
 <p align="center"><em>参照画像 reference1.png（左）、ローカル SGLang による edit.png（中央）、MiniMax API による api_edit.png（右）、4096x4096（H3-Image-Context-IR が 1:1 を選択）</em></p>
+
+## プロンプトのコツ
+
+これらのコツは MiniMax-H3-Image の公式ユーザーガイドに基づいています。MiniMax API に送る短いリクエストにも、独自のデプロイに送る完全なプロンプトにも当てはまります。
+
+### 基本的な記述
+
+- **スタイルより先にタスクを書く。** まず目的、画像の用途、主な人物や物体、その状態や動作を説明し、そのあとでスタイルの要件を加えます。
+- **細部より先に全体のレイアウトを決める。** 被写体の数と配置、視点、余白を指定します。内容が多い場合は、まず全体の区分を説明し、次に各部分とその関係を記述します。例：「上部にタイトル、その下の左に画像、右にテキスト」。
+- **スタイルは目に見えるディテールで表現する。** 色、素材、光、質感で求める効果を説明します。「高級感」のような曖昧な表現ではなく、「柔らかなサイドライト、金属の反射、すっきりした余白」のように書きます。重要なディテールを優先し、互いに矛盾する要件を詰め込まないようにします。
+
+### テキストと情報
+
+- **表示するテキストは正確に全文を書く。** 表示したいテキストを全文引用符で囲み、その位置、階層、改行を指定します。文面をモデルに考えさせたい場合は、そのことを明示します。
+- **テキストが不要な場合はそう書く。** 「画像内に文字、アルファベット、数字を入れない」と書くと、モデルが独自にタイトル、ラベル、装飾文字を加えるのを防げます。
+- **正確な知識とデータを示し、関係を明確にする。** グラフ、学術図版、教育コンテンツでは、正確な情報、数値、単位、およびそれらの関係を示します。時間の経過による変化を描く場合は期間を指定します。例示用のデータはそのことを明記し、実際のデータと混同されないようにします。
+
+### 参照画像と編集
+
+- **参照画像ごとに役割を割り当てる。** 各画像が何を提供するのか、何を一貫させるべきか、何を自由に変えてよいかを説明します。例：「画像 1 の製品はそのまま残し、画像 2 は配色、画像 3 はレイアウトの参考にする」。色だけを借りる場合は、その画像の形や素材は使わないことも明記します。
+- **変える部分と残す部分を区別する。** 編集対象を位置や特徴で特定し、何に変えるか、変更の範囲、残すべき点を説明します。例：「左側のカップを青にする。形、素材、位置、サイズは変えない」。
+- **最終的な結果を完全に指定する。** 移動、コピー、置き換え、削除を区別します。削除する場合は、元の領域をどう埋めるかを説明します。テキストやデータを変更する場合は、置き換え後の内容をすべて示し、元のレイアウト、グラフの構造、その他の情報を残すかどうかを明記します。
+- **編集の各ラウンドで目標を明確にする。** 今回のラウンドでどの画像を使うか、何を変えるか、何を残すかを書きます。「前のラウンドのあれ」や「前と同じ」のような曖昧な指示は避けます。
+- **グリッドやパネルは行と列で指定する。** 9 分割グリッド、絵コンテ、コラージュでは、「2×3」とだけ書くと行と列が入れ替わることがあるため、「2 行 3 列」や「3×3（行×列）」のように書きます。不規則な配置は「上に 3 枚、下に 2 枚」のように直接記述します。1 つのパネルを編集する場合は「2 行目の 1 列目」のように指定します。
+
+### ローカルデプロイ向けのプロンプト
+
+ローカルデプロイでは、プロンプトは与えられたとおりに最大 4096 トークンまで使用され、画像全体を詳しく記述した長い英語の説明文で最も良い結果が得られます。このようなプロンプトでは、参照画像をアップロード順に `<Picture 1>`、`<Picture 2>`、... と呼びます。[プロンプト作成スキル](#プロンプト作成スキル) に同梱されているガイド [`t2i-en.txt`](skills/h3-image-prompt-writing/references/t2i-en.txt) と [`edit-en.txt`](skills/h3-image-prompt-writing/references/edit-en.txt) で、この形式を詳しく説明しています。[`examples/`](examples) には、[テキストからの画像生成](examples/revised_prompt.t2i.txt) と [画像編集](examples/revised_prompt.edit.txt) の実際の拡張済みプロンプトがあります。
 
 ## ライセンス
 
