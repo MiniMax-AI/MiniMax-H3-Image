@@ -7,7 +7,9 @@
 
 # Complex Visual Challenges
 
-← [Robotics and Embodied Intelligence](robotics.md) · [Showcase](README.md) · [Game Worlds](game-worlds.md) →
+Mirror reflections, projection and occlusion, a 2D map rebuilt as a 3D scene, and a few playful pelican challenges.
+
+← [Precise Instruction Following and Understanding](instruction-following.md) · [Showcase](README.md) · [Game Worlds](game-worlds.md) →
 
 ## Corner mirrors
 
@@ -61,4 +63,4 @@ Output only one complete game screenshot. Do not include the original red arrow,
 
 ---
 
-← [Robotics and Embodied Intelligence](robotics.md) · [Showcase](README.md) · [Game Worlds](game-worlds.md) →
+← [Precise Instruction Following and Understanding](instruction-following.md) · [Showcase](README.md) · [Game Worlds](game-worlds.md) →

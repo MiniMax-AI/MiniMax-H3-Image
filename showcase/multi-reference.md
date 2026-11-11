@@ -7,7 +7,9 @@
 
 # Up to 16 Reference Images
 
-[Showcase](README.md) · [Education, Science Communication and Reasoning](education-and-reasoning.md) →
+Assign separate reference images for content, style, and layout.
+
+[Showcase](README.md) · [Precise Instruction Following and Understanding](instruction-following.md) →
 
 ## Sixteen people, six scenes
 
@@ -33,4 +35,4 @@ Preserve the color, material, structure, and proportions of every product. Let l
 
 ---
 
-[Showcase](README.md) · [Education, Science Communication and Reasoning](education-and-reasoning.md) →
+[Showcase](README.md) · [Precise Instruction Following and Understanding](instruction-following.md) →

@@ -7,7 +7,9 @@
 
 # 最大 16 枚の参照画像
 
-[ショーケース](README.ja.md) · [教育・科学解説・推論](education-and-reasoning.ja.md) →
+内容・スタイル・レイアウトごとに参照画像を指定できます。
+
+[ショーケース](README.ja.md) · [精密な指示追従と理解](instruction-following.ja.md) →
 
 ## 16 人の群像、6 つのシーン
 
@@ -33,4 +35,4 @@ Preserve the color, material, structure, and proportions of every product. Let l
 
 ---
 
-[ショーケース](README.ja.md) · [教育・科学解説・推論](education-and-reasoning.ja.md) →
+[ショーケース](README.ja.md) · [精密な指示追従と理解](instruction-following.ja.md) →

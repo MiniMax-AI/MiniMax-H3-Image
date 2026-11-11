@@ -7,7 +7,9 @@
 
 # 복잡한 시각 과제
 
-← [로보틱스와 체화 지능](robotics.ko.md) · [쇼케이스](README.ko.md) · [게임 세계](game-worlds.ko.md) →
+거울 반사, 투사와 가림, 2D 지도를 3D 장면으로 재현하기, 그리고 재미있는 펠리컨 과제 몇 가지.
+
+← [정밀한 지시 이행과 이해](instruction-following.ko.md) · [쇼케이스](README.ko.md) · [게임 세계](game-worlds.ko.md) →
 
 ## 직각 거울
 
@@ -61,4 +63,4 @@ Output only one complete game screenshot. Do not include the original red arrow,
 
 ---
 
-← [로보틱스와 체화 지능](robotics.ko.md) · [쇼케이스](README.ko.md) · [게임 세계](game-worlds.ko.md) →
+← [정밀한 지시 이행과 이해](instruction-following.ko.md) · [쇼케이스](README.ko.md) · [게임 세계](game-worlds.ko.md) →
