@@ -22,55 +22,99 @@
   <a href="README.ja.md">日本語</a>
 </p>
 
-# MiniMax-H3-Image
+<h1 align="center">MiniMax-H3-Image</h1>
+
+<p align="center"><b><i>One idea with open weights. A world of uses.</i></b></p>
+
+<p align="center">
+  <a href="#프롬프트-작성-스킬">프롬프트 작성 스킬</a> ·
+  <a href="#온라인-사용">온라인 사용</a> ·
+  <a href="#개요">개요</a> ·
+  <a href="#쇼케이스">쇼케이스</a> ·
+  <a href="#로컬-실행">로컬 실행</a> ·
+  <a href="#프롬프트-작성-팁">프롬프트 작성 팁</a> ·
+  <a href="#라이선스">라이선스</a>
+</p>
 
 ## 프롬프트 작성 스킬
 
-MiniMax-H3-Image는 이미지 전체를 영어로 자세히 묘사한 설명을 입력할 때 가장 좋은 결과를 냅니다. `h3-image-prompt-writing` 스킬을 사용하면 짧은 아이디어, 브리프, 기존 프롬프트 또는 여러 장의 참조 이미지로부터 사용 중인 에이전트가 이런 설명을 작성할 수 있습니다. [skills CLI](https://github.com/vercel-labs/skills)로 설치합니다:
+MiniMax-H3-Image는 이미지 전체를 자세히 묘사한 설명을 입력할 때 가장 좋은 결과를 냅니다. `h3-image-prompt-writing` 스킬을 사용하면 에이전트가 짧은 아이디어, 브리프, 기존 프롬프트 또는 여러 장의 참조 이미지로부터 이런 설명을 작성하고, MiniMax API로 이미지까지 생성할 수 있습니다. [skills CLI](https://github.com/vercel-labs/skills)로 설치합니다:
 
 ```bash
 npx skills add https://github.com/MiniMax-AI/MiniMax-H3-Image --skill h3-image-prompt-writing
 ```
 
-이 스킬은 [`skills/h3-image-prompt-writing/references/`](skills/h3-image-prompt-writing/references/) 아래에 두 개의 프롬프트 가이드를 제공합니다. [`t2i-en.txt`](skills/h3-image-prompt-writing/references/t2i-en.txt)는 텍스트-이미지 생성용이고, [`edit-en.txt`](skills/h3-image-prompt-writing/references/edit-en.txt)는 참조 이미지를 한 장 이상 사용하는 이미지 편집용입니다.
+- **프롬프트 작성**: 텍스트-이미지 생성 프롬프트와 최대 16장의 참조 이미지를 사용하는 편집 프롬프트를 작성하며, 각 프롬프트에 맞는 화면비도 함께 정합니다.
+- **작성 기준**: 공식 [프롬프트 작성 팁](#프롬프트-작성-팁)과 두 개의 상세 가이드를 따릅니다. [`t2i-en.txt`](skills/h3-image-prompt-writing/references/t2i-en.txt)는 텍스트-이미지 생성용이고, [`edit-en.txt`](skills/h3-image-prompt-writing/references/edit-en.txt)는 이미지 편집용입니다.
+- **이미지 생성**: Python 표준 라이브러리만 사용하는 [`scripts/generate.py`](skills/h3-image-prompt-writing/scripts/generate.py)로 프롬프트를 MiniMax API에 보내 이미지를 생성합니다.
+- **지원 환경**: Claude Code, Claude Agent SDK, Codex, Cursor, Windsurf, LangChain 등 `SKILL.md`와 로컬 파일을 읽을 수 있는 모든 에이전트에서 동작합니다. 이미지를 생성하려면 Python을 실행하고 네트워크에 접근할 수 있는 에이전트가 필요합니다. 함께 제공되는 `agents/openai.yaml`은 ChatGPT/Codex 스킬 UI에 표시할 메타데이터만 추가합니다.
 
-**에이전트 호환성:** `h3-image-prompt-writing`은 외부 API 호출이 없는 순수 Markdown + 참조 파일 스킬이므로 Claude Code, Claude Agent SDK, Cursor, Windsurf, OpenAI 기반 에이전트/Codex, LangChain 등 `SKILL.md`와 로컬 파일을 읽을 수 있는 모든 환경에서 동작합니다. 함께 제공되는 `skills/h3-image-prompt-writing/agents/openai.yaml`은 ChatGPT/Codex 스킬 UI를 위한 선택적 UI 메타데이터(표시 이름, 설명, 기본 프롬프트)만 추가할 뿐, 이 스킬을 OpenAI 에이전트로 제한하지 않습니다.
+설치한 뒤에는 평소 말하듯 요청하면 됩니다:
 
-이 스킬은 프롬프트만 작성하며 이미지를 생성하지는 않습니다. 스킬의 출력을 `prompt`로 직접 배포한 모델에 전달하세요([로컬 실행](#로컬-실행) 참고). MiniMax 텍스트-이미지 API를 사용할 때는 `disable_prompt_enhanced: true`와 스킬이 제시한 `aspect_ratio`도 함께 지정하세요. 그렇지 않으면 API가 프롬프트를 한 번 더 확장합니다. 이미지 편집 요청은 항상 확장됩니다. 프롬프트를 직접 작성하려면 [프롬프트 작성 팁](#프롬프트-작성-팁)을 참고하세요. 모든 스킬에 대한 설명은 [`skills/README.md`](skills/README.md)에 있습니다.
+```text
+h3-image-prompt-writing으로 비 내리는 야시장을 담은 3:4 포스터를 만들어 주세요.
+제목은 "雨夜集市"로 하고, 이미지까지 생성해 주세요.
+```
+
+> [!TIP]
+> 이미지를 생성하려면 `MINIMAX_API_KEY`를 설정하세요(중국에서는 `MINIMAX_API_BASE=https://api.minimax.cn`도 함께 설정합니다). 텍스트-이미지 생성에서는 스크립트가 `disable_prompt_enhanced: true`로 API 자체의 프롬프트 확장을 끄므로, 스킬이 작성한 프롬프트 그대로 이미지가 생성됩니다. 이미지 편집 요청은 항상 확장됩니다. 자체 GPU에서 생성하려면 [로컬 실행](#로컬-실행)에서 시작한 서버로 [이미지 크기](#이미지-크기)의 `size`와 함께 프롬프트를 보내세요. 전체 스킬 목록은 [`skills/README.md`](skills/README.md)에 있습니다.
 
 ## 온라인 사용
 
 별도 설정 없이 MiniMax 앱에서 MiniMax-H3-Image를 사용하거나 MiniMax API로 호출할 수 있습니다.
 
-### 앱
-
-- WebApp Global: [hailuoai.video](https://hailuoai.video/) | CN: [hailuoai.com](https://hailuoai.com/)
-- Desktop Global: [agent.minimax.io](https://agent.minimax.io/) | CN: [agent.minimax.cn](https://agent.minimax.cn)
-
-### API
-
-- Global: [platform.minimax.io](https://platform.minimax.io/docs/guides/image-generation) | CN: [platform.minimax.cn](https://platform.minimax.cn/docs/guides/image-generation)
-
-API 문서:
-- 텍스트-이미지 생성: [EN-docs](https://platform.minimax.io/docs/api-reference/image-generation-h3-generations), [CN-docs](https://platform.minimax.cn/docs/api-reference/image-generation-h3-generations)
-- 이미지 편집: [EN-docs](https://platform.minimax.io/docs/api-reference/image-generation-h3-edits), [CN-docs](https://platform.minimax.cn/docs/api-reference/image-generation-h3-edits)
-- 프롬프트 확장: [EN-docs](https://platform.minimax.io/docs/api-reference/image-generation-h3-context-ir), [CN-docs](https://platform.minimax.cn/docs/api-reference/image-generation-h3-context-ir)
+| | 글로벌 | 중국 |
+| --- | --- | --- |
+| 웹 앱 | [hailuoai.video](https://hailuoai.video/) | [hailuoai.com](https://hailuoai.com/) |
+| 데스크톱 앱 | [agent.minimax.io](https://agent.minimax.io/) | [agent.minimax.cn](https://agent.minimax.cn) |
+| API 플랫폼 | [platform.minimax.io](https://platform.minimax.io/docs/guides/image-generation) | [platform.minimax.cn](https://platform.minimax.cn/docs/guides/image-generation) |
+| API 레퍼런스 | [텍스트-이미지 생성](https://platform.minimax.io/docs/api-reference/image-generation-h3-generations) · [이미지 편집](https://platform.minimax.io/docs/api-reference/image-generation-h3-edits) · [프롬프트 확장](https://platform.minimax.io/docs/api-reference/image-generation-h3-context-ir) | [텍스트-이미지 생성](https://platform.minimax.cn/docs/api-reference/image-generation-h3-generations) · [이미지 편집](https://platform.minimax.cn/docs/api-reference/image-generation-h3-edits) · [프롬프트 확장](https://platform.minimax.cn/docs/api-reference/image-generation-h3-context-ir) |
 
 ## 개요
 
-MiniMax-H3-Image는 [MiniMax H3](https://huggingface.co/MiniMaxAI/MiniMax-H3) 계열에 속하는 최고 수준의 오픈소스 이미지 생성 및 편집 모델입니다. 창작 의도를 이해하는 능력과 시각적 세계를 구축하는 능력을 함께 갖추고 있어, 정확한 지시 이행을 바탕으로 창작 콘셉트를 구체적인 캐릭터, 장면, 분위기로 풀어냅니다. 생성과 편집이 하나의 checkpoint에 통합되어 있어 텍스트로 이미지를 생성하고(텍스트-이미지 생성) 한 장 이상의 참조 이미지를 편집할 수 있으며(이미지 편집), 창작자와 개발자에게 유연하고 제어 가능한 이미지 제작 방법을 제공합니다.
+**MiniMax-H3-Image는 최고 수준의 오픈소스 이미지 생성 및 편집 모델로, 창작 의도를 정교하게 이해하는 능력과 풍부한 시각적 세계를 구축하는 능력을 함께 갖추고 있습니다.** 정확한 지시 이행을 바탕으로 창작 콘셉트를 완성도 높은 캐릭터, 장면, 시각적 분위기로 풀어냅니다. 생성과 편집이 하나의 checkpoint에 통합되어 있어 창작자와 개발자에게 유연하고 제어 가능한 이미지 제작 방법을 제공합니다.
 
-4096x4096(1:1)부터 6272x2688(21:9)까지 모든 화면비에서 약 1,600만 화소(16 MP) 이미지를 업스케일러 없이 직접 생성합니다([이미지 크기](#이미지-크기) 참고). checkpoint는 classifier-free guidance 없이 6 샘플링 스텝(6 NFE)으로 증류되었습니다. diffusion transformer(DiT)는 오디오 레이어를 제외한 H3 아키텍처를 사용하며, MiniMax-H3 텍스트 인코더를 변경 없이 그대로 사용합니다.
+이 모델은 [MiniMax H3](https://huggingface.co/MiniMaxAI/MiniMax-H3) 계열에 속합니다. 4096x4096(1:1)부터 6272x2688(21:9)까지 모든 화면비에서 약 1,600만 화소(16 MP) 이미지를 업스케일러 없이 직접 생성합니다. checkpoint는 classifier-free guidance 없이 6 샘플링 스텝(6 NFE)으로 증류되었습니다. diffusion transformer(DiT)는 오디오 레이어를 제외한 H3 아키텍처를 사용하며, MiniMax-H3 텍스트 인코더를 변경 없이 그대로 사용합니다.
 
 ![가로형과 세로형으로 구성된 MiniMax-H3-Image 텍스트-이미지 생성 결과 15장: 3D 판타지 전투, 청록 산수화, 나무개구리, 쪽염색 토끼, 흰 머리의 3D 소녀, 꽃 속의 인물 사진, SF 도시, 만두, 하이랜드 소, 거울 속 인물 사진, 3D 수달과 양, 픽셀 아트 고양이, 비단벌레, 거대한 체리, 어안 렌즈 셀카](assets/showcase_hero.jpg)
 
 ### 주요 특징
 
-MiniMax-H3-Image는 속도, 이미지 품질, 지시 이행이라는 세 가지 핵심 강점을 함께 갖추고 있습니다.
+<table>
+<tr>
+<td width="33%" valign="top">
+<b>실용적인 비용으로 생성하는 16 MP 이미지</b><br><br>
+현재 흔히 쓰이는 1–4 MP 출력과 비교하면 16 MP(4096 × 4096) 이미지는 훨씬 많은 디테일을 담을 수 있지만, 일반적으로 훨씬 많은 연산이 필요합니다. MiniMax-H3-Image는 이 연산 비용을 감당할 수 있는 수준으로 유지하여 일상적인 창작에서도 16 MP 생성을 실용적으로 쓸 수 있게 합니다.
+</td>
+<td width="33%" valign="top">
+<b>풍부한 디테일과 높은 사실감</b><br><br>
+MiniMax-H3-Image는 흔히 보는 “AI 느낌”에서 벗어나 섬세한 디테일과 실제 같은 사실감을 갖춘 이미지를 생성하여, 생성 이미지를 실제 시각 세계의 풍부함과 미묘한 느낌에 더 가깝게 만듭니다.
+</td>
+<td width="33%" valign="top">
+<b>더 강력한 지시 이행</b><br><br>
+좋은 이미지 생성 모델은 창작자가 아이디어를 실제로 구현하도록 돕습니다. MiniMax-H3-Image는 오픈소스 모델 가운데 가장 강력한 지시 이행 능력을 갖추고 최대 16장의 참조 이미지를 지원하므로, 창작자가 최종 결과를 더 잘 제어할 수 있습니다.
+</td>
+</tr>
+</table>
 
-1. **실용적인 연산 비용으로 생성하는 1,600만 화소 이미지.** 현재 흔히 쓰이는 1–4 MP 출력과 비교하면 16 MP(4096 × 4096) 이미지는 훨씬 많은 디테일을 담을 수 있지만, 일반적으로 훨씬 많은 연산이 필요합니다. MiniMax-H3-Image는 이 연산 비용을 감당할 수 있는 수준으로 유지하여 일상적인 창작에서도 16 MP 생성을 실용적으로 쓸 수 있게 합니다.
-2. **풍부한 디테일과 높은 사실감.** MiniMax-H3-Image는 흔히 보는 “AI 느낌”에서 벗어나 섬세한 디테일과 실제 같은 사실감을 갖춘 이미지를 생성하므로 창작과 전문 작업에서 활용할 수 있는 범위가 넓어집니다. 생성 이미지를 실제 시각 세계의 풍부함과 미묘한 느낌에 더 가깝게 만듭니다.
-3. **더 강력한 지시 이행.** 창작 결과를 더 세밀하게 제어할 수 있습니다. 좋은 이미지 생성은 보기 좋은 그림을 넘어 창작자가 아이디어를 실제로 구현하도록 돕는 것입니다. MiniMax-H3-Image는 오픈소스 모델 가운데 가장 강력한 지시 이행 능력을 갖추고 최대 16장의 참조 이미지를 지원하므로, 창작자가 최종 결과를 더 잘 제어할 수 있습니다.
+### 사양
+
+MiniMax API에서 제공하는 모델의 사양은 다음과 같습니다. 로컬 배포는 프롬프트를 확장하지 않으므로 완전한 프롬프트를 보내야 하며([로컬 배포용 프롬프트](#로컬-배포용-프롬프트) 참고), 로컬 배포의 이미지 크기와 요청 필드는 [요청과 이미지 크기](#요청과-이미지-크기)를 참고하세요.
+
+| 파라미터 | 사양 |
+| --- | --- |
+| 모델 ID | `MiniMax-H3-Image` |
+| 작업 | 텍스트-이미지 생성, 이미지 편집 |
+| 이미지 크기 | `width` + `height` 또는 `area` + `aspect_ratio`로 지정합니다. 기본값은 `auto`이며, 4K 면적에 화면비를 자동으로 정합니다 |
+| 출력 면적 | `1K`, `2K` 또는 **`4K`(가장 좋은 결과 👍)**. `width` × `height`를 직접 지정하면 655,360~20,000,000 픽셀 범위를 지원합니다 |
+| 화면비 | 1:3~3:1 |
+| 프롬프트 | 최대 32,000자이며, 4,096 토큰을 넘는 부분은 잘립니다 |
+| 참조 이미지 | 최대 16장. 각 이미지는 64 MiB 이하, 변의 길이 128~8192 픽셀, 화면비 1:4~4:1이어야 합니다 |
+| 참조 이미지 형식 | JPG, PNG, WebP, HEIC, HEIF. HTTP(S) URL, Base64 또는 MiniMax 파일 ID로 보냅니다 |
+| 요청당 이미지 수 | 1~10장 |
+| 프롬프트 확장 | 텍스트-이미지 생성에서는 기본으로 켜져 있으며 끌 수 있고, 이미지 편집에서는 항상 켜져 있습니다. 확장된 프롬프트를 반환받을 수 있습니다 |
+| 출력 | PNG(기본값), JPEG 또는 WebP이며, `output_compression`은 0~100입니다. URL(기본값) 또는 Base64로 반환합니다 |
+| 아직 지원하지 않는 기능 | 마스크 기반 인페인팅, 투명 배경, 사용자 지정 seed, 미리보기 이미지 |
 
 ### 모델 목록
 
@@ -89,53 +133,206 @@ MiniMax-H3-Image는 H3-Base 설계에서 오디오 브랜치를 제거한 구조
 
 ## 쇼케이스
 
-텍스트-이미지 생성 및 이미지 편집 결과이며, 축소해서 표시했습니다. 이미지 아래의 **프롬프트**를 펼치면 해당 이미지를 만들 때 입력한 내용을 볼 수 있습니다. 이는 모델이 실제로 받는 확장된 프롬프트가 아니라 사용자가 작성한 그대로의 요청입니다. MiniMax API는 생성 전에 H3-Image-Context-IR로 요청을 확장하므로(텍스트-이미지 생성에서는 기본적으로, 편집에서는 항상) 그대로 보내면 됩니다. 로컬 배포에서는 [전체 워크플로](#전체-워크플로)처럼 먼저 프롬프트를 확장하세요. 대부분의 프롬프트는 원래 중국어로 작성되었습니다. 여기에 표시된 영어 버전은 공식 영어 사용자 가이드에서 가져온 것이며, 원문은 [중국어 README](README.zh-CN.md)에서 볼 수 있습니다.
+공식 사용자 가이드에 실린 결과이며, 축소해서 표시했습니다. 이미지 아래의 **프롬프트**를 펼치면 해당 이미지를 만들 때 입력한 요청을 볼 수 있습니다. 이는 모델이 실제로 받는 확장된 프롬프트가 아니라 사용자가 작성한 그대로의 요청입니다. MiniMax API는 생성 전에 H3-Image-Context-IR로 요청을 확장하므로(텍스트-이미지 생성에서는 기본적으로, 편집에서는 항상) 그대로 보내면 됩니다. 로컬 배포에서는 [전체 워크플로](#전체-워크플로)처럼 먼저 프롬프트를 확장하세요. 대부분의 프롬프트는 원래 중국어로 작성되었습니다. 여기에 표시된 영어 버전은 공식 영어 사용자 가이드에서 가져온 것이며, 원문은 [중국어 README](README.zh-CN.md)에서 볼 수 있습니다.
 
-### 텍스트-이미지 생성
+### 오픈소스 고급 역량
+
+<p><b>복잡한 구상을 이미지로 구현합니다.</b> MiniMax-H3-Image는 프롬프트가 요구하는 지식, 구조, 표현 방식을 이해하고 이를 명확한 이미지로 정리합니다. 여러 장의 참조 이미지를 한꺼번에 다루는 작업부터 다이어그램, 엔지니어링 도면, 시각 퍼즐까지 소화합니다.</p>
+
+#### 최대 16장의 참조 이미지
+
+콘텐츠, 스타일, 레이아웃에 각각 다른 참조 이미지를 지정하고, 흩어져 있는 시각 에셋을 한 장의 이미지로 결합합니다. 에셋 배치와 공간 계획부터 제품 패키징까지 활용할 수 있습니다.
 
 <p align="center">
-<img src="assets/showcase/photo.jpg" alt="사실적인 사진 세 장: 보름달이 뜬 해 질 녘 옥상에서 빨랫줄의 흰 시트를 걷는 흰 셔츠 차림의 사람, 검은 컵으로 차를 마시는 곱슬머리 젊은 남성의 옆모습 클로즈업, 얕은 물을 걷는 플라밍고" width="100%"/>
+<img src="assets/showcase/edit_multi.jpg" alt="위: 햇빛이 드는 빈방과 가구 아홉 점으로 이루어진 참조 이미지 열 장. 아래: 가구 아홉 점을 모두 배치해 거실로 꾸민 빈방" width="100%"/>
 </p>
-<p align="center"><em>사실적인 사진</em></p>
+<p align="center"><em>이미지 편집, 참조 이미지 10장: 빈방과 가구 아홉 점(위)을 하나의 거실로 구성(아래)</em></p>
 
 <!-- BEGIN showcase-prompts -->
 <details>
 <summary>프롬프트</summary>
 
-<p><b>해 질 녘 옥상</b></p>
-<blockquote>An old city rooftop at dusk in late summer. Several clotheslines cross the foreground, with white sheets lifted by the wind into soft waves. Through the gaps, show dense distant rooftops, antennas, and a low pale-gold moon. On the right, a backlit person in a white shirt takes down laundry, visible as a clear profile silhouette. The concrete rooftop has warm-gray textures and shallow puddles. The sky transitions from rose pink to smoky purple, and sunset rim light passes through the fabric. Combine the authenticity of an everyday-life documentary with the poetic composition of a cinematic still. Use a 35 mm lens, natural wind, and slight film grain, without an excessive romantic filter.<br>
-Real photographic and cinematic-still texture. Prioritize natural light and physically credible reflections, with a clear visual focal point and breathing room. Keep colors restrained with one or two narrative accents, finely realistic materials, and natural human gestures. Retain moderate 35 mm film grain, gentle highlight bloom, and realistic depth of field. The image should be refined, rewarding to look at, and capture a narrative moment. Avoid cheap-looking CG, plastic skin, excessive sharpening, HDR halos, randomly added objects, watermarks, borders, logos, or unnecessary text.</blockquote>
-
-<p><b>차를 마시기 전의 멈춤</b></p>
-<blockquote>Photograph a realistic portrait of a curly-haired person pausing before drinking tea. Include the head, shoulders, upper chest, and both hands holding a dark ceramic cup, with the face slightly turned. Warm light from the rear right grazes the hair against a darker interior wall. The edges of loose curls and a few flyaway strands glow translucently, with the dark background still visible between strands. Dense locks remain dark inside, and the bright rim breaks naturally where strands occlude one another. Very weak soft light from the camera's front left illuminates the face so the eyes, cheeks, and fingers remain visible. Only the edges of the ear and shoulder facing the rear light are lit. The ceramic cup has a broad, weak surface highlight, with contact shadows where its rim meets the fingers. Focus should cover the eyes, outer hair strands, and cup rim.</blockquote>
-
-<p><b>새벽의 플라밍고</b></p>
-<blockquote>In the shallows of a salt lake at dawn, five flamingos are spread across a broad, mirror-like water surface. The nearest bends its head to feed, the second stands on one leg, and three distant birds create a gentle rhythm of pink. The lake reflects a pale-pink sky and distant white salt crusts. Use an eye-level telephoto composition with water filling almost the entire frame and ample breathing room between the birds. Feather colors should have delicate gradations from grayish pink to coral pink. Water ripples, reflections, salt crusts, and bird legs must be realistic. Elegant nature photography, without crowded flocks or highly saturated cartoon colors.<br>
-Real photographic and cinematic-still texture. Prioritize natural light and physically credible reflections, with a clear visual focal point and breathing room. Keep colors restrained with one or two narrative accents, finely realistic materials, and natural human gestures. Retain moderate 35 mm film grain, gentle highlight bloom, and realistic depth of field. The image should be refined, rewarding to look at, and capture a narrative moment. Avoid cheap-looking CG, plastic skin, excessive sharpening, HDR halos, randomly added objects, watermarks, borders, logos, or unnecessary text.</blockquote>
+<blockquote>Photograph a living-room lifestyle scene for the spring furniture catalog for the brand “向阳家居” (Xiangyang Home). The first image shows the actual empty room, and the following nine images show the furniture currently on sale against white backgrounds. Retain the camera position, walls, doors, windows, and wooden floor of the empty room. Place each of the nine original furniture pieces in the room exactly once, creating a living room where two or three people can chat or read and write by the window. The lounge chair with leather-strap armrests is the featured product; show it from an angle that clearly reveals its wooden frame, leather-strap armrests, and cushion. Arrange the other furniture according to its actual size and function: tabletops should be accessible when seated, the desk chair should have room to pull out, and there should be an uninterrupted path from the doorway into the room.<br>
+Preserve the color, material, structure, and proportions of every product. Let light from the right-hand window fall naturally on the fabric, leather, and wood, with convincing contact shadows beneath table and chair legs. A few books or a single sprig of greenery are allowed; keep the display uncluttered. Real interior photography, with no text.</blockquote>
 
 </details>
 <!-- END showcase-prompts -->
 
+#### 교육, 과학 커뮤니케이션, 추론
+
+핵심 지식을 정보 위계가 분명한 다이어그램과 포스터로 만들고, 추론 문제는 이미지 위에서 직접 풉니다.
+
 <p align="center">
-<img src="assets/showcase/surreal.jpg" alt="초현실적인 에디토리얼 사진 세 장: 이발 의자에 앉은 구름을 다듬는 이발사, 밤의 잔디밭에서 달을 자르는 사람, 거대한 배에서 걸어 나오는 모델" width="100%"/>
+<img src="assets/showcase/knowledge.jpg" alt="왼쪽: 레서판다에 관한 번호 붙은 패널 14개로 구성된, 读懂小熊猫라는 제목의 세로형 중국어 인포그래픽. 오른쪽: 다섯 가지 조건과 도출된 정답이 적힌 중국어 인원 선발 논리 퍼즐, 용의자 여섯 명과 검증표가 담긴 CONFIDENTIAL FILE MISSING이라는 제목의 영어 탐정 보드" width="100%"/>
 </p>
-<p align="center"><em>초현실적인 에디토리얼 사진</em></p>
+<p align="center"><em>중국어 레서판다 인포그래픽(왼쪽), 중국어와 영어 논리 퍼즐을 이미지 안에서 올바르게 풀어낸 결과(오른쪽)</em></p>
 
 <!-- BEGIN showcase-prompts -->
 <details>
 <summary>프롬프트</summary>
 
-<p><b>이발 의자에 앉은 구름</b></p>
-<blockquote>A retro, playful, refined surreal fashion photograph. A cherry-red barber chair stands on a vivid green hill, with an enormous white cloud seated in it, its fluffy body wrapped in a mint-green barber cape. An adult female model in a pale-purple short-sleeved blouse, dark-purple pencil skirt, and white tall boots stands beside the chair, carefully trimming the cloud with silver scissors while lifting one corner of it with her other hand. Small cut-off tufts of cloud lie scattered on the lawn like freshly cut hair. The model has a neat retro short haircut and a focused expression. Use a low-angle wide shot with blue sky filling most of the frame, a simple set, and vivid colors. Give it the look of a live-action fashion editorial, with soft translucent cloud details, credible volumetric shadows, slight direct-flash fill, and film grain, without a cartoon feel. Landscape 16:9, no text.</blockquote>
+<p><b>레서판다 인포그래픽 (왼쪽)</b></p>
+<blockquote>Create a 2:3 portrait infographic in Chinese, with the exact Chinese title “读懂小熊猫” and subtitle “山地森林里的树栖生活家” (meaning “Understanding Red Pandas” and “Tree-Dwelling Specialists of Mountain Forests,” respectively). Use a dense animal field-guide style with flat vector illustrations, a pale lime background, dark pine-green text, terracotta-orange bodies, and creamy-white facial markings. Place a dark rounded title bar at the top, followed by a profile, scale bars, a distribution map, and behavioral icons. A central red panda should occupy about one quarter of the composition, standing sideways on a branch and looking back, with its ringed tail hanging naturally toward the lower right and accurate proportions. Arrange detail illustrations and annotations on both sides, with a continuous information strip along the bottom, keeping the entire panel visually consistent.<br>
+Include all 14 knowledge groups below, each with a heading, 3–5 short facts, and illustrations:<br>
+01 Identity: Class Mammalia, order Carnivora, family Ailuridae; use silhouettes to distinguish it from giant panda cubs and raccoons.<br>
+02 Size: Head-and-body length approximately 56–62.5 cm, excluding the tail; tail length approximately 37–47 cm. Use two scale bars and note individual variation.<br>
+03 Face: Round head, short muzzle, pointed ears, pale face with dark tear markings, and dark legs and belly; include close-up windows.<br>
+04 Fur: Long guard hairs, dense underfur, and fur on the soles; compare its colors with a moss-and-lichen environment.<br>
+05 Grip: Five toes on each foot and partially retractile claws; the false thumb is a specialized wrist bone that helps it grasp bamboo.<br>
+06 Tail: Ringed pattern, balance, and wrapping around the body for warmth; it cannot coil around a branch to support body weight.<br>
+07 Climbing: Rests and takes refuge in trees, grips trunks with its claws, and uses flexible ankles to descend headfirst.<br>
+08 Diet: Mainly bamboo leaves and tender shoots, with fruit and insects as well; do not invent dietary percentages.<br>
+09 Eating Bamboo: Forepaws hold the branch, the mouth selects tender leaves, and molars chew them; include a three-step diagram.<br>
+10 Habitat: Suitable mountain regions in Nepal, India, Bhutan, China, and Myanmar; include a regional distribution map and illustrations of forests, bamboo thickets, and water sources.<br>
+11 Activity: Active around dawn and dusk; rests in trees when hot, curls up when cold, and stretches out when warm. Do not invent an exact daily timetable.<br>
+12 Communication: Mostly solitary; communicates through scent, calls, and posture.<br>
+13 Development: Builds nests in secluded places; newborns have closed eyes, nurse from the mother, and gradually begin exploring. Include a four-stage diagram.<br>
+14 Conservation: Forest loss and fragmentation, poaching and trade, and free-roaming dogs; pair these with habitat protection, patrols and monitoring, and community participation.<br>
+Include at least 40 substantive facts and approximately 25 supporting illustrations. Keep forms and line weights consistent, organizing the content through numbering, alignment, and thin dividers. Avoid repetitive cards, large empty areas, and crossing leader lines. Maintain a clear Chinese text hierarchy with no garbled characters, repetitive filler, or invented data. Footer sources: Smithsonian National Zoo, San Diego Zoo Wildlife Alliance, Red Panda Network. Output a complete flat display panel, not a mockup.</blockquote>
 
-<p><b>달 자르기</b></p>
-<blockquote>A surreal fashion photograph with the texture of a retro film set. Beneath a cobalt-blue twilight sky, a long dining table covered with a white tablecloth stands on a green hill. An adult female model in a tomato-red velvet gown and long white gloves stands calmly at one side, using a silver dinner knife to cut a small wedge from an enormous full moon on a plate. The moon stands upright like a round cake, retaining realistic craters on its surface. The cut interior emits a soft milky-white glow, and the removed moon slice rests securely on a small porcelain plate beside it. Moonlight illuminates her gloves and jaw, while glasses on the table cast long, slender shadows. There is no second moon in the sky, only a lone small tree in the distance. Elegant, absurd, and subtly deadpan, with the photographic feel of real people and practical props, fine film grain, landscape 16:9, no text.</blockquote>
+<p><b>인원 선발 추리 문제 (오른쪽 위)</b></p>
+<blockquote>Solve the following personnel-selection reasoning problem and generate a visual explanation. Use 16:9 landscape format, a white background, and clear, standardized Chinese typography.<br>
+An organization must select exactly three of six staff members—甲, 乙, 丙, 丁, 戊, and 己—for a research team. All of the following conditions must be met:<br>
+If 甲 is selected, 乙 must also be selected.<br>
+Exactly one of 丙 and 丁 must be selected.<br>
+乙 and 戊 cannot both be selected.<br>
+If 己 is selected, 丙 must also be selected.<br>
+戊 has already been confirmed as selected.<br>
+Determine the three-person team using all the conditions.<br>
+Show the problem conditions at the top. Divide the lower section into “入选” (Selected) and “未入选” (Not Selected), placing each of the six staff cards in the correct area. Each card should contain a person icon and a prominent name label. Each person must appear exactly once, with no duplicates or omissions.<br>
+At the bottom, use brief notes to show the key reasons for exclusion. The card placements, selected names, and notes must agree. Do not add extra conditions. Output only the finished solution image.</blockquote>
 
-<p><b>배 모양 탈의실</b></p>
-<blockquote>A surreal photograph for a 2000s avant-garde fashion magazine. In a pale-pink studio, a three-meter-tall yellow-green pear has been converted into a changing room. A small round-cornered doorway is cut into its skin, with the door retaining a thick cross-section of peel and milky-white flesh. An adult female model steps one foot out of the pear, wearing a chocolate-brown satin dress, pale-blue tights, and pointed shoes. One hand rests on the doorway while the other adjusts an earring, with a nonchalant expression. The interior is lined with burgundy velvet padding and contains two elegant hanging garments. A normal-sized pear rests on a small silver chair nearby, establishing a clear scale contrast. Use an off-center composition with clean empty space, soft studio light, and a slight frontal flash. Pear-skin pores, juicy flesh, velvet, and satin all have tactile, realistic textures, with the look of a carefully constructed physical set. Landscape 16:9, no text.</blockquote>
+<p><em>오른쪽 아래 탐정 추리 보드의 프롬프트는 싣지 않았습니다.</em></p>
 
 </details>
 <!-- END showcase-prompts -->
+
+#### 산업 및 제품 디자인
+
+대상의 참조 이미지를 바탕으로 제품 형태, 부품 간 관계, 분해도를 그려 냅니다.
+
+<p align="center">
+<img src="assets/showcase/industrial.jpg" alt="위: 흰색 콘셉트 전기 오토바이와 라벨이 붙은 부품 분해도, 이어서 거치대 위의 제트 엔진과 그 분해 구조 렌더링. 아래: 주방 조리대 위의 모카포트, 대리석 위에 분해해 놓은 같은 모카포트, MOKA POT이라는 제목의 짙은 파란색 엔지니어링 설계도" width="100%"/>
+</p>
+<p align="center"><em>이미지 편집: 전기 오토바이와 제트 엔진을 분해도로 변환(위), 모카포트와 그 부품을 엔지니어링 설계도로 변환(아래)</em></p>
+
+<!-- BEGIN showcase-prompts -->
+<details>
+<summary>프롬프트</summary>
+
+<p><b>전기 오토바이 분해도 (윗줄 왼쪽 두 장)</b></p>
+<blockquote>Disassemble the concept electric motorcycle in image 1 into a highly detailed exploded parts diagram, keeping its form, white geometric bodywork, metallic-gray motor, hubless wheels, and orange-red light strips consistent with image 1.<br>
+<br>
+Disassembly layout: Use an isometric view centered on the motor unit, with all parts radiating outward along their respective assembly directions, clearly spaced and without overlap:<br>
+- Front: Split the front fairing into upper and lower sections. Separate the headlight strip, windshield, front fork, hubless front rim, tire, annular bearing inside the rim, and brake disc.<br>
+- Middle: Split the white geometric frame shell into multiple faceted panels on both sides, revealing the tubular main frame. Separate the motor housing, cooling fins, stator, rotor, and motor controller. Pull the battery pack out separately, placing the battery modules and wiring harness beside it.<br>
+- Rear: Separate the seat assembly into cushion and base, followed by the rear swingarm, rear shock absorber, rear rim, tire, and taillight strip.<br>
+- Small parts: Group bolts, washers, clips, bearings, and connectors beside their corresponding components according to their installation positions, with fine dashed lines leading back to the mounting points.<br>
+- Add two circular magnified insets showing the bearing structure of the hubless rim and the stator windings inside the motor.<br>
+<br>
+Text annotations: Connect every major component to an ALL-CAPS English label using a thin white leader line with a small dot at its endpoint. Text must be legible and correctly spelled, with labels arranged neatly along the edges.<br>
+<br>
+Use a dark-gray background with faint isometric grid lines, soft even lighting, and clean highlights along the component edges. The composition should be full, clearly layered, and orderly, resembling a structural breakdown from a professional industrial design firm.</blockquote>
+
+<p><b>제트 엔진 분해도 (윗줄 오른쪽 두 장)</b></p>
+<blockquote>Turn the jet engine in image 1 into a high-precision exploded structural rendering. Use a solid dark-gray background and an oblique overhead isometric view, with components floating apart along a diagonal axis from the upper right to the lower left: intake cowling, compressor blade discs, combustion chamber, turbine discs, central shaft, and exhaust nozzle in sequence. Divide the engine casing into curved panels suspended around the main shaft; distribute the electronic control box, fuel pump, accessory gears, fuel lines, and copper-colored wiring harnesses on either side. Use cool gray, silver, and matte white for the outer shell and casing, with warm gold and bronze for the turbine core and shaft. Keep components aligned and evenly spaced, with soft studio lighting and realistic metallic reflections. Connect major components to both sides of the image with thin white leader lines and label them in Chinese: “进气罩,” “压气机叶片盘,” “燃烧室,” “涡轮盘,” “中心主轴,” “尾喷管,” “机匣外壳,” “电子控制单元,” “燃油泵,” “附件齿轮箱,” and “燃油管路” (intake cowling, compressor blade discs, combustion chamber, turbine discs, central shaft, exhaust nozzle, engine casing, electronic control unit, fuel pump, accessory gearbox, and fuel lines, respectively). Use small, simple white sans-serif text in two neat columns, with leader lines that neither cross nor obscure components. Portrait 2:3, with no branding.</blockquote>
+
+<p><b>모카포트 설계도 (아랫줄)</b></p>
+<blockquote>Turn the octagonal moka pot in image 1 into a classic engineering blueprint poster, using image 2 as the reference for its component structure. Use a dark-blue background with a light grid, and render all graphics as white line drawings with a slightly weathered grain. Center the uppercase title “MOKA POT” at the top. Arrange an exploded view of the components vertically on the left: lid with small Bakelite knob, upper chamber with handle, stainless-steel filter screen, rubber gasket, funnel filter basket, and lower chamber with safety pressure-release valve. Place a larger cross-section at the upper right showing the internal water path and coffee chamber, and smaller top and side views at the lower right. Include dimension lines, leader lines, and letter labels throughout. Portrait 3:4, with a technical-drawing layout.</blockquote>
+
+</details>
+<!-- END showcase-prompts -->
+
+#### 로보틱스와 체화 지능
+
+참조 이미지나 설명을 바탕으로 로봇의 구조, 물체와의 상호작용, 작동 시나리오를 엔지니어링 도면으로 그립니다.
+
+<p align="center">
+<img src="assets/showcase/robotics.jpg" alt="왼쪽: 미사일 포드 두 개를 단 크림색과 주황색의 사족 메카, 그리고 중국어 라벨이 붙은 다시점 CAD 도면. 오른쪽: Ceiling Rail Courier라는 제목의 영어 엔지니어링 시트, 측면도와 3D 뷰, 액추에이터 표가 담긴 바퀴-다리 배송 로봇의 중국어 콘셉트 시트" width="100%"/>
+</p>
+<p align="center"><em>이미지 편집: 사족 메카를 다시점 CAD 도면으로 변환(왼쪽). 텍스트-이미지 생성: 천장 레일 배송기와 바퀴-다리 배송 로봇의 엔지니어링 시트(오른쪽)</em></p>
+
+<!-- BEGIN showcase-prompts -->
+<details>
+<summary>프롬프트</summary>
+
+<p><b>사족 메카 CAD 도면 (왼쪽 두 장)</b></p>
+<blockquote>Turn the quadruped mech in image 1 into a standardized CAD engineering drawing with multiple views. Use a white drawing-sheet background and fine black lines: solid lines for visible outlines, dashed lines for hidden structures, and dash-dot lines for axes of symmetry and joint centers.<br>
+<br>
+Include five neatly arranged views:<br>
+- Upper left: Front view.<br>
+- Upper right: Left-side view.<br>
+- Middle left: Top view, clearly showing the launch-port arrays of both weapon pods and the spread angles of all four legs.<br>
+- Middle right: Rear view.<br>
+- Bottom: A larger isometric wireframe view showing the overall three-dimensional structure.<br>
+<br>
+Use the same scale across all views, keeping the shapes of the body, weapon pods, leg joints, and thigh armor plates consistent with image 1. Annotate the main dimensions: overall height, length, width, leg span, and weapon-pod dimensions. Use leader lines to label the key parts “武器舱,” “翻盖,” “机身,” “大腿装甲板,” “膝关节,” and “足部” (weapon pod, hatch, body, thigh armor plate, knee joint, and foot). Place a standard title block in the lower right reading “四足机甲 总装图 1:20” (Quadruped Mech — General Assembly — 1:20). Use clean, accurate lines and an orderly layout resembling a formal mechanical design drawing.</blockquote>
+
+<p><b>천장 레일 배송기 (오른쪽 위)</b></p>
+<blockquote>Create a 16:9 English engineering concept sheet titled "Ceiling Rail Courier," marked "Fictional indoor transport concept." Show a long side elevation across the upper half, a detailed suspended carriage at lower left, and a three-position storyboard at lower right. Use warm white paper and cobalt linework.<br>
+A straight horizontal rail spans X = 0 to 2400 mm. Define three docking stations by carriage-center coordinates: A at X = 300, B at X = 1200, and C at X = 2100 mm. Adjacent station spacing is 900 mm. The carriage is 400 mm long along X, so its footprint at A is 100–500 mm and at C is 1900–2300 mm; all positions remain within the rail. The three storyboard panels show the same carriage at A, B, and C, not three simultaneous robots.<br>
+At the illustrated extension, the vertical suspension comprises an 80 mm carriage housing, a 120 mm mounting bracket, a 300 mm telescoping stem, and a 60 mm gripper, measured as consecutive segments. Mark their total as 560 mm, measured from the housing top to the gripper bottom; rail, rollers and parcel are excluded from this dimension. The gripper holds one sealed parcel throughout all panels. Include two rail rollers, one linear drive unit, one downward camera, and one two-finger gripper in the component ledger. Maintain the same dimensions, parcel, roller count, and sensor position across all views. Clearly separate horizontal station dimensions from the vertical stack.</blockquote>
+
+<p><b>바퀴-다리 배송 로봇 (오른쪽 아래)</b></p>
+<blockquote>Draw a 16:9 concept diagram in Chinese of a wheeled-legged delivery robot. Include side views of the same robot standing and crouching, a 3D view, and an actuator-axis table, labeled “虚构结构研究” (Fictional Structural Study). The body is 500 mm long, 360 mm wide, and 180 mm high. Each of its four corners has a two-joint leg ending in a powered wheel 120 mm in diameter. There are eight leg joints and four wheel-axis motors, for a total of 12 controlled rotary axes. Label the legs FL, FR, RL, and RR, with upper and lower joints numbered 1 and 2 and wheel axes labeled W. Left and right are from the robot's own perspective. The top of the body is 560 mm above the ground when standing and 440 mm when crouching. Use the same ground line to show the 120 mm reduction. Change only the joint angles between the two views; keep the body, wheel diameters, and link lengths identical. There is only one depth camera on the front panel and only one enclosed cargo box above the body; keep the box level in both poses. Use a comparison table to distinguish the eight leg joints from the four powered wheel axes, avoiding any depiction of 12 controlled axes as 12 legs or 12 wheels.</blockquote>
+
+</details>
+<!-- END showcase-prompts -->
+
+#### 복잡한 시각 과제
+
+물리적으로 일관성을 유지해야 하는 반사, 투영, 공간 추론을 다룹니다.
+
+<p align="center">
+<img src="assets/showcase/visual.jpg" alt="왼쪽: 직각으로 맞닿은 두 거울 사이에 놓인 기차역 모형과 거울에 비친 세 개의 상. 오른쪽: 프로젝터가 석고 흉상에 파란색과 흰색 체커보드를 투사하고, 조작자가 빛줄기 속에 손을 펼쳐 넣은 장면" width="100%"/>
+</p>
+<p align="center"><em>직각으로 놓인 두 거울 사이의 역 모형(왼쪽), 석고 흉상에 투사되는 체커보드 빛 속에 넣은 손(오른쪽)</em></p>
+
+<!-- BEGIN showcase-prompts -->
+<details>
+<summary>프롬프트</summary>
+
+<p><b>직각 거울 (왼쪽)</b></p>
+<blockquote>Show a tabletop optics demonstration as a realistic photograph: two upright plane mirrors meet along their vertical edges at a right angle, with their reflective surfaces facing inward. Photograph from the open side, slightly off-center, including the entire physical object in front of the mirror corner and all three corresponding sets of mirror images. The object is a small station model with a central clock tower, a tall water tower on only one side, a low waiting shelter on the other, and a small vehicle in front with a yellow front and black rear. A curved red line connects the base of the water tower to the waiting shelter. In front of the model stands a sign facing the mirror corner, bearing the text “R7”; the real camera view shows the back of the sign. Each side mirror contains one singly reflected image, and a doubly reflected image appears deep in the mirror corner. The side reflections show mirror-written text, while “R7” is readable normally in the double reflection. The water tower, waiting shelter, vehicle front, and red line all change direction together according to the reflections, preserving their spatial relationships to the clock tower. Make the mirror seam and apparatus base clearly visible, with sufficient space between reflections to identify each model image.</blockquote>
+
+<p><b>투사광 속의 손 (오른쪽)</b></p>
+<blockquote>A realistic on-site photograph of a projection art installation: a projector casts a blue-and-white checkerboard onto a white plaster bust, with the grid deforming over the bridge of the nose, cheeks, and curved chest. An operator stands beside the projection area and extends one hand with all five fingers spread into the beam in front of the sculpture's chest, palm facing the projector. Part of the checkerboard falls onto the palm itself, while a dark hand-shaped shadow without the checkerboard appears on the sculpture's chest behind it. Bright squares are cut off at the shadow boundary, while projected light still passes through the gaps between the fingers. Photograph from a front-side angle so that the actual hand and its shadow on the chest are offset in the composition, showing the person's upper body, the sculpture, and the operating projector at the side.</blockquote>
+
+</details>
+<!-- END showcase-prompts -->
+
+<p align="center">
+<img src="assets/showcase/edit_map.jpg" alt="왼쪽: 강, 폭포, 다리, 성, 마을, 광산, 항구가 그려져 있고 남쪽 호수에 빨간 화살표가 표시된 일러스트 게임 지도. 오른쪽: 호수에서 폭포, 현수교, 광산, 멀리 있는 성을 바라보는 1인칭 3D 게임 화면으로, 왼쪽 위에 지도가 미니맵으로 들어가 있음" width="100%"/>
+</p>
+<p align="center"><em>이미지 편집, 참조 이미지 1장: 게임 지도(왼쪽)를 빨간 화살표 위치에서 바라본 1인칭 3D 게임 화면으로 변환하고 지도를 미니맵으로 배치(오른쪽)</em></p>
+
+<!-- BEGIN showcase-prompts -->
+<details>
+<summary>프롬프트</summary>
+
+<blockquote>Using the supplied game map as the sole spatial reference, generate a 16:9 in-game screenshot of an open-world game in a realistic 3D CG style.<br>
+Camera Position and Direction<br>
+Use the tail of the red arrow as the camera position and the direction of its tip as the viewing direction. The camera is approximately 1.7 meters above the lake in the southern part of the map, looking slightly east of north in first person with a field of view of about 70° and natural perspective. Do not show the player's body.<br>
+Spatial Reconstruction<br>
+Strictly reproduce the map's terrain elevations, building locations, river course, bridge connections, and road relationships.<br>
+Determine the visible portions of the settlements on both banks, the mining area, the mountains, and the distant castle according to actual lines of sight. Preserve plausible occlusion and relative scale with distance. Do not move buildings, flatten the terrain, or widen the field of view merely to show every landmark.<br>
+Visual Style<br>
+Use high-quality, realistic game-engine rendering, with buildings and mountains at true scale, detailed rock, wood, vegetation, and water materials, natural daylight, global illumination, water reflections, and moderate atmospheric perspective. Convey the feeling of a player actually inhabiting this world. Avoid a hand-drawn map look, miniature diorama, isometric viewpoint, or bird's-eye composition.<br>
+Upper-Left Minimap<br>
+Add a clear game HUD minimap in the upper-left corner, approximately 15% of the image width. Use the surface map from the reference image as its thumbnail base, preserving the original proportions and north-up orientation. Retain major terrain and roads, and remove the underground inset.<br>
+Mark the player's position with a small directional arrow at the location corresponding to the tail of the original red arrow. Its direction must exactly match the main camera view, with a pale fan-shaped area indicating the field of view. Use a simple thin border and keep the map legible.<br>
+Output only one complete game screenshot. Do not include the original red arrow, place-name labels, elevation numbers, or map borders in the main scene. Add no interface elements other than the upper-left minimap.</blockquote>
+
+</details>
+<!-- END showcase-prompts -->
+
+### 창작 활용
+
+<p><b>아이디어를 하나의 세계로 만듭니다.</b> MiniMax-H3-Image는 콘셉트 아트에 특히 강합니다. 창작 아이디어를 구조가 분명하고 디테일이 풍부하며 개성 있는 스타일을 갖춘 시각 콘셉트로 바꾸어 게임과 영화, 브랜드 광고, 마케팅 에셋 제작에 활용할 수 있게 합니다.</p>
+
+#### 게임 세계
+
+에픽 판타지, SF, 포스트 아포칼립스 등 여러 방향에서 환경, 캐릭터, 세계관을 구축합니다.
 
 <p align="center">
 <img src="assets/showcase/scene.jpg" alt="환경 콘셉트 아트 네 장: ENVIRONMENT CONCEPT: THE ANCIENT THEATER라는 제목이 붙은 숲속 고대 야외극장 유적, 붉은 바위 절벽 위의 드래곤 라이더, ARRIVALS 표지판이 있는 버려진 기차역, 얼어붙은 바다에 갇힌 난파선" width="100%"/>
@@ -185,6 +382,76 @@ Real photographic and cinematic-still texture. Prioritize natural light and phys
 <!-- END showcase-prompts -->
 
 <p align="center">
+<img src="assets/showcase/edit_render.jpg" alt="왼쪽: 거주 모듈, 로버, 우주비행사가 있는 달 기지를 텍스처 없이 회색으로 렌더링한 3D 이미지. 오른쪽: 같은 장면을 달 표면에서 찍은 사실적인 영화 스틸로 바꾼 결과" width="100%"/>
+</p>
+<p align="center"><em>이미지 편집, 참조 이미지 1장: 텍스처 없는 3D 렌더링(왼쪽)을 달 연구 기지의 영화 스틸(오른쪽)로 변환</em></p>
+
+<!-- BEGIN showcase-prompts -->
+<details>
+<summary>프롬프트</summary>
+
+<blockquote>Render this untextured 3D model as a realistic cinematic lunar research scene. Add gray lunar soil, silvery-white thermal insulation, coated metal, glass, and wheel-mesh materials, with off-white spacesuits. Use strongly directional sunlight and limited ground bounce. Keep the distant sky pure black, with no blue sky, clouds, or Earth-like haze. Preserve the rover's six wheels and the arrangement of the people and modules. Keep shadow directions consistent and material detail visible in highlights. Preserve the original composition, camera angle, perspective, geometry, and the position and proportions of every subject. Output 4K in 16:9 landscape format, combining AAA photorealistic CG with cinematic live-action texture. Do not add text, brands, interface elements, or watermarks.</blockquote>
+
+</details>
+<!-- END showcase-prompts -->
+
+#### 현실 세계
+
+사실적인 빛과 섬세한 재질감으로 자연스럽고 설득력 있는 사진 같은 이미지를 만듭니다.
+
+<p align="center">
+<img src="assets/showcase/photo.jpg" alt="사실적인 사진 세 장: 보름달이 뜬 해 질 녘 옥상에서 빨랫줄의 흰 시트를 걷는 흰 셔츠 차림의 사람, 검은 컵으로 차를 마시는 곱슬머리 젊은 남성의 옆모습 클로즈업, 얕은 물을 걷는 플라밍고" width="100%"/>
+</p>
+<p align="center"><em>사실적인 사진</em></p>
+
+<!-- BEGIN showcase-prompts -->
+<details>
+<summary>프롬프트</summary>
+
+<p><b>해 질 녘 옥상</b></p>
+<blockquote>An old city rooftop at dusk in late summer. Several clotheslines cross the foreground, with white sheets lifted by the wind into soft waves. Through the gaps, show dense distant rooftops, antennas, and a low pale-gold moon. On the right, a backlit person in a white shirt takes down laundry, visible as a clear profile silhouette. The concrete rooftop has warm-gray textures and shallow puddles. The sky transitions from rose pink to smoky purple, and sunset rim light passes through the fabric. Combine the authenticity of an everyday-life documentary with the poetic composition of a cinematic still. Use a 35 mm lens, natural wind, and slight film grain, without an excessive romantic filter.<br>
+Real photographic and cinematic-still texture. Prioritize natural light and physically credible reflections, with a clear visual focal point and breathing room. Keep colors restrained with one or two narrative accents, finely realistic materials, and natural human gestures. Retain moderate 35 mm film grain, gentle highlight bloom, and realistic depth of field. The image should be refined, rewarding to look at, and capture a narrative moment. Avoid cheap-looking CG, plastic skin, excessive sharpening, HDR halos, randomly added objects, watermarks, borders, logos, or unnecessary text.</blockquote>
+
+<p><b>차를 마시기 전 잠깐</b></p>
+<blockquote>Photograph a realistic portrait of a curly-haired person pausing before drinking tea. Include the head, shoulders, upper chest, and both hands holding a dark ceramic cup, with the face slightly turned. Warm light from the rear right grazes the hair against a darker interior wall. The edges of loose curls and a few flyaway strands glow translucently, with the dark background still visible between strands. Dense locks remain dark inside, and the bright rim breaks naturally where strands occlude one another. Very weak soft light from the camera's front left illuminates the face so the eyes, cheeks, and fingers remain visible. Only the edges of the ear and shoulder facing the rear light are lit. The ceramic cup has a broad, weak surface highlight, with contact shadows where its rim meets the fingers. Focus should cover the eyes, outer hair strands, and cup rim.</blockquote>
+
+<p><b>새벽의 플라밍고</b></p>
+<blockquote>In the shallows of a salt lake at dawn, five flamingos are spread across a broad, mirror-like water surface. The nearest bends its head to feed, the second stands on one leg, and three distant birds create a gentle rhythm of pink. The lake reflects a pale-pink sky and distant white salt crusts. Use an eye-level telephoto composition with water filling almost the entire frame and ample breathing room between the birds. Feather colors should have delicate gradations from grayish pink to coral pink. Water ripples, reflections, salt crusts, and bird legs must be realistic. Elegant nature photography, without crowded flocks or highly saturated cartoon colors.<br>
+Real photographic and cinematic-still texture. Prioritize natural light and physically credible reflections, with a clear visual focal point and breathing room. Keep colors restrained with one or two narrative accents, finely realistic materials, and natural human gestures. Retain moderate 35 mm film grain, gentle highlight bloom, and realistic depth of field. The image should be refined, rewarding to look at, and capture a narrative moment. Avoid cheap-looking CG, plastic skin, excessive sharpening, HDR halos, randomly added objects, watermarks, borders, logos, or unnecessary text.</blockquote>
+
+</details>
+<!-- END showcase-prompts -->
+
+#### 초현실 세계
+
+창의적인 주제를 중심으로 레트로 영화 세트, 유쾌한 패션, 아방가르드 매거진 사진을 연출합니다.
+
+<p align="center">
+<img src="assets/showcase/surreal.jpg" alt="초현실적인 에디토리얼 사진 세 장: 이발 의자에 앉은 구름을 다듬는 이발사, 밤의 잔디밭에서 달을 자르는 사람, 거대한 서양배에서 걸어 나오는 모델" width="100%"/>
+</p>
+<p align="center"><em>초현실적인 에디토리얼 사진</em></p>
+
+<!-- BEGIN showcase-prompts -->
+<details>
+<summary>프롬프트</summary>
+
+<p><b>이발 의자에 앉은 구름</b></p>
+<blockquote>A retro, playful, refined surreal fashion photograph. A cherry-red barber chair stands on a vivid green hill, with an enormous white cloud seated in it, its fluffy body wrapped in a mint-green barber cape. An adult female model in a pale-purple short-sleeved blouse, dark-purple pencil skirt, and white tall boots stands beside the chair, carefully trimming the cloud with silver scissors while lifting one corner of it with her other hand. Small cut-off tufts of cloud lie scattered on the lawn like freshly cut hair. The model has a neat retro short haircut and a focused expression. Use a low-angle wide shot with blue sky filling most of the frame, a simple set, and vivid colors. Give it the look of a live-action fashion editorial, with soft translucent cloud details, credible volumetric shadows, slight direct-flash fill, and film grain, without a cartoon feel. Landscape 16:9, no text.</blockquote>
+
+<p><b>달 자르기</b></p>
+<blockquote>A surreal fashion photograph with the texture of a retro film set. Beneath a cobalt-blue twilight sky, a long dining table covered with a white tablecloth stands on a green hill. An adult female model in a tomato-red velvet gown and long white gloves stands calmly at one side, using a silver dinner knife to cut a small wedge from an enormous full moon on a plate. The moon stands upright like a round cake, retaining realistic craters on its surface. The cut interior emits a soft milky-white glow, and the removed moon slice rests securely on a small porcelain plate beside it. Moonlight illuminates her gloves and jaw, while glasses on the table cast long, slender shadows. There is no second moon in the sky, only a lone small tree in the distance. Elegant, absurd, and subtly deadpan, with the photographic feel of real people and practical props, fine film grain, landscape 16:9, no text.</blockquote>
+
+<p><b>서양배 탈의실</b></p>
+<blockquote>A surreal photograph for a 2000s avant-garde fashion magazine. In a pale-pink studio, a three-meter-tall yellow-green pear has been converted into a changing room. A small round-cornered doorway is cut into its skin, with the door retaining a thick cross-section of peel and milky-white flesh. An adult female model steps one foot out of the pear, wearing a chocolate-brown satin dress, pale-blue tights, and pointed shoes. One hand rests on the doorway while the other adjusts an earring, with a nonchalant expression. The interior is lined with burgundy velvet padding and contains two elegant hanging garments. A normal-sized pear rests on a small silver chair nearby, establishing a clear scale contrast. Use an off-center composition with clean empty space, soft studio light, and a slight frontal flash. Pear-skin pores, juicy flesh, velvet, and satin all have tactile, realistic textures, with the look of a carefully constructed physical set. Landscape 16:9, no text.</blockquote>
+
+</details>
+<!-- END showcase-prompts -->
+
+#### 예술 세계
+
+고전 유화, 르네상스, 중세 채식 필사본, 동양화 스타일을 표현합니다.
+
+<p align="center">
 <img src="assets/showcase/art.jpg" alt="회화와 일러스트 네 점: 고전 거장풍 유화로 그린 연잎 사이의 원앙, 인상파 유화로 그린 아침 안개 속 쑤저우 정원, 옥토끼가 절구에 달을 빻는 중세 채식 필사본 스타일의 XVIII THE MOON 페이지, 거울을 들여다보는 펠리컨과 서예 글자 네 자가 들어간 중국 공필화" width="100%"/>
 </p>
 <p align="center"><em>회화 및 일러스트 스타일</em></p>
@@ -222,88 +489,6 @@ Flat perspective, dark ink outlines, opaque tempera on aged parchment. Rich red,
 
 <p><b>거울 앞의 펠리컨, 공필화</b></p>
 <blockquote>Chinese gongbi painting in color on silk. A round bronze mirror stands on a dressing table in an ancient woman's chamber. A white pelican stands before it, lowering its head to groom its chest feathers with its long bill. The slightly yellowed, somewhat hazy mirror reflects the pelican's face and the carved wooden window behind it. Include a vertical inscription and a red seal in the upper-left corner.</blockquote>
-
-</details>
-<!-- END showcase-prompts -->
-
-<p align="center">
-<img src="assets/showcase/text.jpg" alt="논리 퍼즐 보드 두 장: 다섯 가지 조건과 도출된 정답이 적힌 중국어 후보 선발 퍼즐, 용의자 여섯 명과 참/거짓 도장, 검증표가 담긴 CONFIDENTIAL FILE MISSING이라는 제목의 영어 보드" width="100%"/>
-</p>
-<p align="center"><em>추론이 필요한 텍스트 렌더링: 중국어와 영어 논리 퍼즐을 보드 위에서 올바르게 풀어낸 결과</em></p>
-
-<!-- BEGIN showcase-prompts -->
-<details>
-<summary>프롬프트</summary>
-
-<p><b>인원 선발 추리 문제 (왼쪽)</b></p>
-<blockquote>Solve the following personnel-selection reasoning problem and generate a visual explanation. Use 16:9 landscape format, a white background, and clear, standardized Chinese typography.<br>
-An organization must select exactly three of six staff members—甲, 乙, 丙, 丁, 戊, and 己—for a research team. All of the following conditions must be met:<br>
-If 甲 is selected, 乙 must also be selected.<br>
-Exactly one of 丙 and 丁 must be selected.<br>
-乙 and 戊 cannot both be selected.<br>
-If 己 is selected, 丙 must also be selected.<br>
-戊 has already been confirmed as selected.<br>
-Determine the three-person team using all the conditions.<br>
-Show the problem conditions at the top. Divide the lower section into “入选” (Selected) and “未入选” (Not Selected), placing each of the six staff cards in the correct area. Each card should contain a person icon and a prominent name label. Each person must appear exactly once, with no duplicates or omissions.<br>
-At the bottom, use brief notes to show the key reasons for exclusion. The card placements, selected names, and notes must agree. Do not add extra conditions. Output only the finished solution image.</blockquote>
-
-<p><em>오른쪽 탐정 추리 보드의 프롬프트는 싣지 않았습니다.</em></p>
-
-</details>
-<!-- END showcase-prompts -->
-
-### 이미지 편집
-
-<p align="center">
-<img src="assets/showcase/edit_render.jpg" alt="왼쪽: 거주 모듈, 로버, 우주비행사가 있는 달 기지를 텍스처 없이 회색으로 렌더링한 3D 이미지. 오른쪽: 같은 장면을 달 표면에서 찍은 사실적인 영화 스틸로 바꾼 결과" width="100%"/>
-</p>
-<p align="center"><em>이미지 편집, 참조 이미지 1장: 텍스처 없는 3D 렌더링(왼쪽)을 달 연구 기지의 영화 스틸(오른쪽)로 변환</em></p>
-
-<!-- BEGIN showcase-prompts -->
-<details>
-<summary>프롬프트</summary>
-
-<blockquote>Render this untextured 3D model as a realistic cinematic lunar research scene. Add gray lunar soil, silvery-white thermal insulation, coated metal, glass, and wheel-mesh materials, with off-white spacesuits. Use strongly directional sunlight and limited ground bounce. Keep the distant sky pure black, with no blue sky, clouds, or Earth-like haze. Preserve the rover's six wheels and the arrangement of the people and modules. Keep shadow directions consistent and material detail visible in highlights. Preserve the original composition, camera angle, perspective, geometry, and the position and proportions of every subject. Output 4K in 16:9 landscape format, combining AAA photorealistic CG with cinematic live-action texture. Do not add text, brands, interface elements, or watermarks.</blockquote>
-
-</details>
-<!-- END showcase-prompts -->
-
-<p align="center">
-<img src="assets/showcase/edit_map.jpg" alt="왼쪽: 강, 폭포, 다리, 성, 마을, 광산, 항구가 그려져 있고 남쪽 호수에 빨간 화살표가 표시된 일러스트 게임 지도. 오른쪽: 호수에서 폭포, 현수교, 광산, 멀리 있는 성을 바라보는 1인칭 3D 게임 화면으로, 왼쪽 위에 지도가 미니맵으로 들어가 있음" width="100%"/>
-</p>
-<p align="center"><em>이미지 편집, 참조 이미지 1장: 게임 지도(왼쪽)를 빨간 화살표 위치에서 바라본 1인칭 3D 게임 화면으로 변환하고 지도를 미니맵으로 배치(오른쪽)</em></p>
-
-<!-- BEGIN showcase-prompts -->
-<details>
-<summary>프롬프트</summary>
-
-<blockquote>Using the supplied game map as the sole spatial reference, generate a 16:9 in-game screenshot of an open-world game in a realistic 3D CG style.<br>
-Camera Position and Direction<br>
-Use the tail of the red arrow as the camera position and the direction of its tip as the viewing direction. The camera is approximately 1.7 meters above the lake in the southern part of the map, looking slightly east of north in first person with a field of view of about 70° and natural perspective. Do not show the player's body.<br>
-Spatial Reconstruction<br>
-Strictly reproduce the map's terrain elevations, building locations, river course, bridge connections, and road relationships.<br>
-Determine the visible portions of the settlements on both banks, the mining area, the mountains, and the distant castle according to actual lines of sight. Preserve plausible occlusion and relative scale with distance. Do not move buildings, flatten the terrain, or widen the field of view merely to show every landmark.<br>
-Visual Style<br>
-Use high-quality, realistic game-engine rendering, with buildings and mountains at true scale, detailed rock, wood, vegetation, and water materials, natural daylight, global illumination, water reflections, and moderate atmospheric perspective. Convey the feeling of a player actually inhabiting this world. Avoid a hand-drawn map look, miniature diorama, isometric viewpoint, or bird's-eye composition.<br>
-Upper-Left Minimap<br>
-Add a clear game HUD minimap in the upper-left corner, approximately 15% of the image width. Use the surface map from the reference image as its thumbnail base, preserving the original proportions and north-up orientation. Retain major terrain and roads, and remove the underground inset.<br>
-Mark the player's position with a small directional arrow at the location corresponding to the tail of the original red arrow. Its direction must exactly match the main camera view, with a pale fan-shaped area indicating the field of view. Use a simple thin border and keep the map legible.<br>
-Output only one complete game screenshot. Do not include the original red arrow, place-name labels, elevation numbers, or map borders in the main scene. Add no interface elements other than the upper-left minimap.</blockquote>
-
-</details>
-<!-- END showcase-prompts -->
-
-<p align="center">
-<img src="assets/showcase/edit_multi.jpg" alt="위: 햇빛이 드는 빈방과 가구 아홉 점으로 이루어진 참조 이미지 열 장. 아래: 가구 아홉 점을 모두 배치해 거실로 꾸민 빈방" width="100%"/>
-</p>
-<p align="center"><em>이미지 편집, 참조 이미지 10장: 빈방과 가구 아홉 점(위)을 하나의 거실로 구성(아래)</em></p>
-
-<!-- BEGIN showcase-prompts -->
-<details>
-<summary>프롬프트</summary>
-
-<blockquote>Photograph a living-room lifestyle scene for the spring furniture catalog for the brand “向阳家居” (Xiangyang Home). The first image shows the actual empty room, and the following nine images show the furniture currently on sale against white backgrounds. Retain the camera position, walls, doors, windows, and wooden floor of the empty room. Place each of the nine original furniture pieces in the room exactly once, creating a living room where two or three people can chat or read and write by the window. The lounge chair with leather-strap armrests is the featured product; show it from an angle that clearly reveals its wooden frame, leather-strap armrests, and cushion. Arrange the other furniture according to its actual size and function: tabletops should be accessible when seated, the desk chair should have room to pull out, and there should be an uninterrupted path from the doorway into the room.<br>
-Preserve the color, material, structure, and proportions of every product. Let light from the right-hand window fall naturally on the fabric, leather, and wood, with convincing contact shadows beneath table and chair legs. A few books or a single sprig of greenery are allowed; keep the display uncluttered. Real interior photography, with no text.</blockquote>
 
 </details>
 <!-- END showcase-prompts -->
@@ -434,7 +619,10 @@ SGLang에서 텍스트-이미지 생성 요청은 `/v1/images/generations`로 �
 
 #### 이미지 크기
 
-MiniMax-H3-Image가 실제로 잘 동작하는 범위는 약 4 MP에서 20 MP이며, 대체로 16 MP 전후에서 가장 좋은 결과를 냅니다. 자주 쓰는 16 MP 크기는 다음과 같습니다:
+> [!TIP]
+> MiniMax-H3-Image가 실제로 잘 동작하는 범위는 약 4 MP에서 20 MP이며, 대체로 MiniMax API의 `4K` 면적에 해당하는 16 MP 전후에서 가장 좋은 결과를 냅니다.
+
+자주 쓰는 16 MP 크기는 다음과 같습니다:
 
 | 화면비 | 크기(너비 x 높이) |
 | --- | --- |
@@ -524,7 +712,7 @@ API 문서:
 
 ## 프롬프트 작성 팁
 
-아래 팁은 공식 MiniMax-H3-Image 사용자 가이드에서 가져왔습니다. MiniMax API로 보내는 짧은 요청과 직접 배포한 모델에 보내는 완전한 프롬프트 모두에 적용됩니다.
+아래 팁은 공식 MiniMax-H3-Image 사용자 가이드에서 가져왔습니다. MiniMax API로 보내는 짧은 요청과 직접 배포한 모델에 보내는 완전한 프롬프트 모두에 적용되며, [프롬프트 작성 스킬](#프롬프트-작성-스킬)은 이 팁을 자동으로 반영해 프롬프트를 작성합니다.
 
 ### 기본 설명
 

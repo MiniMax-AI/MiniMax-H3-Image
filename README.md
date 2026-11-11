@@ -22,91 +22,130 @@
   <a href="README.ja.md">日本語</a>
 </p>
 
-# MiniMax-H3-Image
+<h1 align="center">MiniMax-H3-Image</h1>
+
+<p align="center"><b><i>One idea with open weights. A world of uses.</i></b></p>
+
+<p align="center">
+  <a href="#prompt-writing-skill">Prompt Writing Skill</a> ·
+  <a href="#use-online">Use Online</a> ·
+  <a href="#overview">Overview</a> ·
+  <a href="#showcase">Showcase</a> ·
+  <a href="#run-locally">Run Locally</a> ·
+  <a href="#prompting-tips">Prompting Tips</a> ·
+  <a href="#license">License</a>
+</p>
 
 ## Prompt Writing Skill
 
-MiniMax-H3-Image works best with a detailed English description of the whole image. The
-`h3-image-prompt-writing` skill lets your own agent write that description from a short idea,
-a brief, an existing prompt or a set of reference images. Install it with the
-[skills CLI](https://github.com/vercel-labs/skills):
+MiniMax-H3-Image renders best from a detailed description of the whole image. The
+`h3-image-prompt-writing` skill teaches your agent to write that description from a short idea, a
+brief, an existing prompt or a set of reference images, and to render it through the MiniMax API.
+Install it with the [skills CLI](https://github.com/vercel-labs/skills):
 
 ```bash
 npx skills add https://github.com/MiniMax-AI/MiniMax-H3-Image --skill h3-image-prompt-writing
 ```
 
-It ships with two prompt guides under
-[`skills/h3-image-prompt-writing/references/`](skills/h3-image-prompt-writing/references/):
-[`t2i-en.txt`](skills/h3-image-prompt-writing/references/t2i-en.txt) for text-to-image and
-[`edit-en.txt`](skills/h3-image-prompt-writing/references/edit-en.txt) for image editing with
-one or more reference images.
+- **Writes** a text-to-image or editing prompt, with up to 16 reference images, together with an
+  aspect ratio.
+- **Follows** the official [Prompting Tips](#prompting-tips) and two detailed guides:
+  [`t2i-en.txt`](skills/h3-image-prompt-writing/references/t2i-en.txt) for text-to-image and
+  [`edit-en.txt`](skills/h3-image-prompt-writing/references/edit-en.txt) for image editing.
+- **Renders** the prompt through the MiniMax API with
+  [`scripts/generate.py`](skills/h3-image-prompt-writing/scripts/generate.py), which uses only the
+  Python standard library.
+- **Works in** Claude Code, the Claude Agent SDK, Codex, Cursor, Windsurf, LangChain and any other
+  agent that reads a `SKILL.md` and local files; rendering also needs an agent that can run Python
+  with network access. The bundled `agents/openai.yaml` only adds display metadata for the
+  ChatGPT/Codex skills UI.
 
-**Agent compatibility:** `h3-image-prompt-writing` is a plain Markdown + reference-file skill
-with no external API calls, so it works in Claude Code, the Claude Agent SDK, Cursor, Windsurf,
-OpenAI-based agents/Codex, LangChain, or any other harness that can read a `SKILL.md` and local
-files. The bundled `skills/h3-image-prompt-writing/agents/openai.yaml` only adds optional UI
-metadata (display name, description, default prompt) for the ChatGPT/Codex skills UI; it does not
-limit the skill to OpenAI agents.
+After installing, ask in plain words:
 
-The skill writes prompts only; it does not generate images. Send its output as `prompt` to your
-own deployment (see [Run Locally](#run-locally)). With the MiniMax text-to-image API, also set
-`disable_prompt_enhanced: true` and the `aspect_ratio` the skill gives, otherwise the API expands
-the prompt again; image editing requests are always expanded. To write prompts by hand, see
-[Prompting Tips](#prompting-tips). All skills are described in [`skills/README.md`](skills/README.md).
+```text
+Use h3-image-prompt-writing to make a 3:4 poster of a night market in the rain,
+titled "雨夜集市", and render it.
+```
+
+> [!TIP]
+> To render, set `MINIMAX_API_KEY` (and `MINIMAX_API_BASE=https://api.minimax.cn` in China). The
+> script turns off the API's own prompt expansion for text-to-image with
+> `disable_prompt_enhanced: true`, so the image follows the prompt the skill wrote; editing
+> requests are always expanded. To render on your own GPUs, send the prompt to the server you
+> start in [Run Locally](#run-locally), with a `size` from [Sizes](#sizes). All skills are listed in [`skills/README.md`](skills/README.md).
 
 ## Use Online
 
 Use MiniMax-H3-Image without any setup in the MiniMax apps, or call it through the MiniMax API.
 
-### App
-
-- WebApp Global: [hailuoai.video](https://hailuoai.video/) | CN: [hailuoai.com](https://hailuoai.com/)
-- Desktop Global: [agent.minimax.io](https://agent.minimax.io/) | CN: [agent.minimax.cn](https://agent.minimax.cn)
-
-### API
-
-- Global: [platform.minimax.io](https://platform.minimax.io/docs/guides/image-generation) | CN: [platform.minimax.cn](https://platform.minimax.cn/docs/guides/image-generation)
-
-API docs:
-- Text-to-image: [EN-docs](https://platform.minimax.io/docs/api-reference/image-generation-h3-generations), [CN-docs](https://platform.minimax.cn/docs/api-reference/image-generation-h3-generations)
-- Image editing: [EN-docs](https://platform.minimax.io/docs/api-reference/image-generation-h3-edits), [CN-docs](https://platform.minimax.cn/docs/api-reference/image-generation-h3-edits)
-- Prompt expansion: [EN-docs](https://platform.minimax.io/docs/api-reference/image-generation-h3-context-ir), [CN-docs](https://platform.minimax.cn/docs/api-reference/image-generation-h3-context-ir)
+| | Global | China |
+| --- | --- | --- |
+| Web app | [hailuoai.video](https://hailuoai.video/) | [hailuoai.com](https://hailuoai.com/) |
+| Desktop app | [agent.minimax.io](https://agent.minimax.io/) | [agent.minimax.cn](https://agent.minimax.cn) |
+| API platform | [platform.minimax.io](https://platform.minimax.io/docs/guides/image-generation) | [platform.minimax.cn](https://platform.minimax.cn/docs/guides/image-generation) |
+| API reference | [Text-to-image](https://platform.minimax.io/docs/api-reference/image-generation-h3-generations) · [Image editing](https://platform.minimax.io/docs/api-reference/image-generation-h3-edits) · [Prompt expansion](https://platform.minimax.io/docs/api-reference/image-generation-h3-context-ir) | [Text-to-image](https://platform.minimax.cn/docs/api-reference/image-generation-h3-generations) · [Image editing](https://platform.minimax.cn/docs/api-reference/image-generation-h3-edits) · [Prompt expansion](https://platform.minimax.cn/docs/api-reference/image-generation-h3-context-ir) |
 
 ## Overview
 
-MiniMax-H3-Image is a state-of-the-art open-source model for image generation and editing from
-the [MiniMax H3](https://huggingface.co/MiniMaxAI/MiniMax-H3) family. It combines intelligent
-understanding of creative intent with the ability to build visual worlds: with precise
-instruction following, it develops a creative concept into concrete characters, scenes and
-atmosphere. Generation and editing are unified in one checkpoint, which generates images from
-text (text-to-image) and edits one or more reference images (image editing), giving creators
-and developers a flexible and controllable way to create images.
+**MiniMax-H3-Image is a state-of-the-art open-source model for image generation and editing,
+combining a sophisticated understanding of creative intent with the ability to build rich visual
+worlds.** Through precise instruction following, it turns creative concepts into fully realized
+characters, scenes and visual atmospheres. Generation and editing are unified in one checkpoint,
+which gives creators and developers a flexible, controllable way to create images.
 
-It generates images of about 16 megapixels at every aspect ratio, from 4096x4096 (1:1) to
-6272x2688 (21:9), directly and without an upscaler (see [Sizes](#sizes)). The checkpoint is
-distilled to 6 sampling steps (6 NFEs) with no classifier-free guidance. Its diffusion
-transformer (DiT) has the H3 architecture without the audio layers, and it uses the
-MiniMax-H3 text encoder unchanged.
+The model belongs to the [MiniMax H3](https://huggingface.co/MiniMaxAI/MiniMax-H3) family. It
+generates images of about 16 megapixels at every aspect ratio, from 4096x4096 (1:1) to 6272x2688
+(21:9), directly and without an upscaler. The checkpoint is distilled to 6 sampling steps
+(6 NFEs) with no classifier-free guidance. Its diffusion transformer (DiT) has the H3 architecture
+without the audio layers, and it uses the MiniMax-H3 text encoder unchanged.
 
 ![Fifteen MiniMax-H3-Image text-to-image results in landscape and portrait formats: a 3D fantasy battle, a blue-green landscape painting, a tree frog, an indigo-dyed rabbit, a 3D white-haired girl, a portrait among flowers, a sci-fi city, dumplings, a highland cow, a mirror portrait, a 3D otter and sheep, a pixel art cat, a jewel beetle, giant cherries and a fisheye selfie](assets/showcase_hero.jpg)
 
 ### Highlights
 
-MiniMax-H3-Image brings together three core strengths: speed, image quality, and instruction
-following.
+<table>
+<tr>
+<td width="33%" valign="top">
+<b>16 MP at a practical cost</b><br><br>
+Compared with the 1–4 MP outputs common today, 16 MP (4096 × 4096) images offer far more detail
+but usually cost much more to compute. MiniMax-H3-Image keeps that cost manageable, making
+16 MP generation practical for everyday creation.
+</td>
+<td width="33%" valign="top">
+<b>Rich detail, remarkable realism</b><br><br>
+MiniMax-H3-Image goes beyond the familiar “AI look” to produce images with intricate detail and
+lifelike realism, bringing generated imagery closer to the richness and nuance of the real
+visual world.
+</td>
+<td width="33%" valign="top">
+<b>Stronger instruction following</b><br><br>
+Great image generation helps creators bring their ideas to life. MiniMax-H3-Image delivers the
+strongest instruction following among open-source models and supports up to 16 reference images,
+giving creators more control over the final result.
+</td>
+</tr>
+</table>
 
-1. **16-megapixel images at a practical computational cost.** Compared with the 1–4 MP outputs
-   common today, 16 MP (4096 × 4096) images offer far more detail but typically require
-   substantially more computation. MiniMax-H3-Image keeps that computational cost manageable,
-   making 16 MP generation practical for everyday creation.
-2. **Rich detail. Remarkable realism.** MiniMax-H3-Image goes beyond the familiar “AI look” to
-   produce images with intricate detail and lifelike realism, opening up more possibilities for
-   creative and professional use. It brings generated imagery closer to the richness and nuance
-   of the real visual world.
-3. **Stronger instruction following.** Greater creative control. Great image generation goes
-   beyond beautiful pictures—it helps creators bring their ideas to life. MiniMax-H3-Image
-   delivers the strongest instruction following among open-source models and supports up to 16
-   reference images, giving creators more control over the final result.
+### Specifications
+
+The MiniMax API serves the model with the following specifications. A local deployment does not
+expand prompts, so send it a full prompt (see [Prompts for a Local Deployment](#prompts-for-a-local-deployment));
+its sizes and request fields are in [Requests and Sizes](#requests-and-sizes).
+
+| Parameter | Specification |
+| --- | --- |
+| Model ID | `MiniMax-H3-Image` |
+| Tasks | Text-to-image, image editing |
+| Image size | `width` + `height`, or `area` + `aspect_ratio`. Default `auto`: 4K area, automatic aspect ratio |
+| Output area | `1K`, `2K` or **`4K` (best results 👍)**; a custom `width` × `height` covers 655,360 to 20,000,000 pixels |
+| Aspect ratio | 1:3 to 3:1 |
+| Prompt | Up to 32,000 characters; content beyond 4,096 tokens is truncated |
+| Reference images | Up to 16, each at most 64 MiB, with sides of 128 to 8192 pixels and an aspect ratio from 1:4 to 4:1 |
+| Reference formats | JPG, PNG, WebP, HEIC or HEIF, sent as an HTTP(S) URL, Base64 or MiniMax file ID |
+| Images per request | 1 to 10 |
+| Prompt expansion | On by default for text-to-image and can be turned off; always on for image editing; the expanded prompt can be returned |
+| Output | PNG (default), JPEG or WebP, with `output_compression` from 0 to 100; returned as a URL (default) or Base64 |
+| Not yet supported | Mask-based inpainting, transparent backgrounds, user-specified seeds, preview images |
 
 ### Model Zoo
 
@@ -135,58 +174,220 @@ into the image.
 
 ## Showcase
 
-Text-to-image and image editing results, shown downscaled. Open **Prompts** under an image to
-see what was typed for it. These are requests as a user writes them, not the expanded prompts
-the model receives: the MiniMax API expands them with H3-Image-Context-IR before generation (by
-default for text-to-image, always for editing), so you can send them as they are. For a local deployment, expand them first as in
-[Full Workflow](#full-workflow). Most prompts were written in Chinese; the English versions come
-from the official English user guide, and [简体中文](README.zh-CN.md) shows the originals.
+Results from the official user guide, shown downscaled. Expand the prompt block under an image to
+see the request that produced it. These are requests as a user writes them: the MiniMax API expands them
+with H3-Image-Context-IR before generation (by default for text-to-image, always for editing), so
+you can send them as they are. For a local deployment, expand them first as in
+[Full Workflow](#full-workflow). Most were written in Chinese; the English versions come from the
+official English user guide, and [简体中文](README.zh-CN.md) shows the originals.
 
-### Text-to-Image
+### Advanced Open-Source Capabilities
+
+<p><i>Bring complex ideas to life.</i> MiniMax-H3-Image understands the knowledge, structure and
+presentation a prompt asks for and organizes them into clear images, from many reference images at
+once to diagrams, engineering drawings and visual puzzles.</p>
+
+#### Up to 16 Reference Images
+
+Assign separate references for content, style and layout, and combine scattered visual assets in
+one image, from asset arrangement and spatial planning to product packaging.
 
 <p align="center">
-<img src="assets/showcase/photo.jpg" alt="Three photorealistic photographs: a person in a white shirt taking down white sheets from a clothesline on a rooftop at dusk under a full moon, a close-up profile of a curly-haired young man drinking from a dark cup, and flamingos wading in shallow water" width="100%"/>
+<img src="assets/showcase/edit_multi.jpg" alt="Top: ten reference images, an empty sunlit room and nine pieces of furniture. Bottom: the empty room furnished with all nine pieces as a living room" width="100%"/>
 </p>
-<p align="center"><em>Photorealistic photography</em></p>
+<p align="center"><em>Image editing, ten references: an empty room and nine pieces of furniture (top) composed into one living room (bottom)</em></p>
+
+<!-- BEGIN showcase-prompts -->
+<details>
+<summary>Prompt</summary>
+
+<blockquote>Photograph a living-room lifestyle scene for the spring furniture catalog for the brand “向阳家居” (Xiangyang Home). The first image shows the actual empty room, and the following nine images show the furniture currently on sale against white backgrounds. Retain the camera position, walls, doors, windows, and wooden floor of the empty room. Place each of the nine original furniture pieces in the room exactly once, creating a living room where two or three people can chat or read and write by the window. The lounge chair with leather-strap armrests is the featured product; show it from an angle that clearly reveals its wooden frame, leather-strap armrests, and cushion. Arrange the other furniture according to its actual size and function: tabletops should be accessible when seated, the desk chair should have room to pull out, and there should be an uninterrupted path from the doorway into the room.<br>
+Preserve the color, material, structure, and proportions of every product. Let light from the right-hand window fall naturally on the fabric, leather, and wood, with convincing contact shadows beneath table and chair legs. A few books or a single sprig of greenery are allowed; keep the display uncluttered. Real interior photography, with no text.</blockquote>
+
+</details>
+<!-- END showcase-prompts -->
+
+#### Education, Science Communication and Reasoning
+
+Key knowledge becomes diagrams and posters with a clear information hierarchy, and reasoning
+problems are solved on the page.
+
+<p align="center">
+<img src="assets/showcase/knowledge.jpg" alt="Left: a portrait Chinese infographic titled 读懂小熊猫 with fourteen numbered panels on red pandas. Right: a Chinese staff-selection logic puzzle with five conditions and the derived answer, and an English detective board titled CONFIDENTIAL FILE MISSING with six suspects and a verification table" width="100%"/>
+</p>
+<p align="center"><em>A red panda infographic in Chinese (left), and two logic puzzles solved correctly in the image, in Chinese and English (right)</em></p>
 
 <!-- BEGIN showcase-prompts -->
 <details>
 <summary>Prompts</summary>
 
-<p><b>Rooftop at dusk</b></p>
-<blockquote>An old city rooftop at dusk in late summer. Several clotheslines cross the foreground, with white sheets lifted by the wind into soft waves. Through the gaps, show dense distant rooftops, antennas, and a low pale-gold moon. On the right, a backlit person in a white shirt takes down laundry, visible as a clear profile silhouette. The concrete rooftop has warm-gray textures and shallow puddles. The sky transitions from rose pink to smoky purple, and sunset rim light passes through the fabric. Combine the authenticity of an everyday-life documentary with the poetic composition of a cinematic still. Use a 35 mm lens, natural wind, and slight film grain, without an excessive romantic filter.<br>
-Real photographic and cinematic-still texture. Prioritize natural light and physically credible reflections, with a clear visual focal point and breathing room. Keep colors restrained with one or two narrative accents, finely realistic materials, and natural human gestures. Retain moderate 35 mm film grain, gentle highlight bloom, and realistic depth of field. The image should be refined, rewarding to look at, and capture a narrative moment. Avoid cheap-looking CG, plastic skin, excessive sharpening, HDR halos, randomly added objects, watermarks, borders, logos, or unnecessary text.</blockquote>
+<p><b>Red panda infographic (left)</b></p>
+<blockquote>Create a 2:3 portrait infographic in Chinese, with the exact Chinese title “读懂小熊猫” and subtitle “山地森林里的树栖生活家” (meaning “Understanding Red Pandas” and “Tree-Dwelling Specialists of Mountain Forests,” respectively). Use a dense animal field-guide style with flat vector illustrations, a pale lime background, dark pine-green text, terracotta-orange bodies, and creamy-white facial markings. Place a dark rounded title bar at the top, followed by a profile, scale bars, a distribution map, and behavioral icons. A central red panda should occupy about one quarter of the composition, standing sideways on a branch and looking back, with its ringed tail hanging naturally toward the lower right and accurate proportions. Arrange detail illustrations and annotations on both sides, with a continuous information strip along the bottom, keeping the entire panel visually consistent.<br>
+Include all 14 knowledge groups below, each with a heading, 3–5 short facts, and illustrations:<br>
+01 Identity: Class Mammalia, order Carnivora, family Ailuridae; use silhouettes to distinguish it from giant panda cubs and raccoons.<br>
+02 Size: Head-and-body length approximately 56–62.5 cm, excluding the tail; tail length approximately 37–47 cm. Use two scale bars and note individual variation.<br>
+03 Face: Round head, short muzzle, pointed ears, pale face with dark tear markings, and dark legs and belly; include close-up windows.<br>
+04 Fur: Long guard hairs, dense underfur, and fur on the soles; compare its colors with a moss-and-lichen environment.<br>
+05 Grip: Five toes on each foot and partially retractile claws; the false thumb is a specialized wrist bone that helps it grasp bamboo.<br>
+06 Tail: Ringed pattern, balance, and wrapping around the body for warmth; it cannot coil around a branch to support body weight.<br>
+07 Climbing: Rests and takes refuge in trees, grips trunks with its claws, and uses flexible ankles to descend headfirst.<br>
+08 Diet: Mainly bamboo leaves and tender shoots, with fruit and insects as well; do not invent dietary percentages.<br>
+09 Eating Bamboo: Forepaws hold the branch, the mouth selects tender leaves, and molars chew them; include a three-step diagram.<br>
+10 Habitat: Suitable mountain regions in Nepal, India, Bhutan, China, and Myanmar; include a regional distribution map and illustrations of forests, bamboo thickets, and water sources.<br>
+11 Activity: Active around dawn and dusk; rests in trees when hot, curls up when cold, and stretches out when warm. Do not invent an exact daily timetable.<br>
+12 Communication: Mostly solitary; communicates through scent, calls, and posture.<br>
+13 Development: Builds nests in secluded places; newborns have closed eyes, nurse from the mother, and gradually begin exploring. Include a four-stage diagram.<br>
+14 Conservation: Forest loss and fragmentation, poaching and trade, and free-roaming dogs; pair these with habitat protection, patrols and monitoring, and community participation.<br>
+Include at least 40 substantive facts and approximately 25 supporting illustrations. Keep forms and line weights consistent, organizing the content through numbering, alignment, and thin dividers. Avoid repetitive cards, large empty areas, and crossing leader lines. Maintain a clear Chinese text hierarchy with no garbled characters, repetitive filler, or invented data. Footer sources: Smithsonian National Zoo, San Diego Zoo Wildlife Alliance, Red Panda Network. Output a complete flat display panel, not a mockup.</blockquote>
 
-<p><b>A pause before tea</b></p>
-<blockquote>Photograph a realistic portrait of a curly-haired person pausing before drinking tea. Include the head, shoulders, upper chest, and both hands holding a dark ceramic cup, with the face slightly turned. Warm light from the rear right grazes the hair against a darker interior wall. The edges of loose curls and a few flyaway strands glow translucently, with the dark background still visible between strands. Dense locks remain dark inside, and the bright rim breaks naturally where strands occlude one another. Very weak soft light from the camera's front left illuminates the face so the eyes, cheeks, and fingers remain visible. Only the edges of the ear and shoulder facing the rear light are lit. The ceramic cup has a broad, weak surface highlight, with contact shadows where its rim meets the fingers. Focus should cover the eyes, outer hair strands, and cup rim.</blockquote>
+<p><b>Staff-selection puzzle (top right)</b></p>
+<blockquote>Solve the following personnel-selection reasoning problem and generate a visual explanation. Use 16:9 landscape format, a white background, and clear, standardized Chinese typography.<br>
+An organization must select exactly three of six staff members—甲, 乙, 丙, 丁, 戊, and 己—for a research team. All of the following conditions must be met:<br>
+If 甲 is selected, 乙 must also be selected.<br>
+Exactly one of 丙 and 丁 must be selected.<br>
+乙 and 戊 cannot both be selected.<br>
+If 己 is selected, 丙 must also be selected.<br>
+戊 has already been confirmed as selected.<br>
+Determine the three-person team using all the conditions.<br>
+Show the problem conditions at the top. Divide the lower section into “入选” (Selected) and “未入选” (Not Selected), placing each of the six staff cards in the correct area. Each card should contain a person icon and a prominent name label. Each person must appear exactly once, with no duplicates or omissions.<br>
+At the bottom, use brief notes to show the key reasons for exclusion. The card placements, selected names, and notes must agree. Do not add extra conditions. Output only the finished solution image.</blockquote>
 
-<p><b>Flamingos at dawn</b></p>
-<blockquote>In the shallows of a salt lake at dawn, five flamingos are spread across a broad, mirror-like water surface. The nearest bends its head to feed, the second stands on one leg, and three distant birds create a gentle rhythm of pink. The lake reflects a pale-pink sky and distant white salt crusts. Use an eye-level telephoto composition with water filling almost the entire frame and ample breathing room between the birds. Feather colors should have delicate gradations from grayish pink to coral pink. Water ripples, reflections, salt crusts, and bird legs must be realistic. Elegant nature photography, without crowded flocks or highly saturated cartoon colors.<br>
-Real photographic and cinematic-still texture. Prioritize natural light and physically credible reflections, with a clear visual focal point and breathing room. Keep colors restrained with one or two narrative accents, finely realistic materials, and natural human gestures. Retain moderate 35 mm film grain, gentle highlight bloom, and realistic depth of field. The image should be refined, rewarding to look at, and capture a narrative moment. Avoid cheap-looking CG, plastic skin, excessive sharpening, HDR halos, randomly added objects, watermarks, borders, logos, or unnecessary text.</blockquote>
+<p><em>The prompt for the detective board (bottom right) is not included.</em></p>
 
 </details>
 <!-- END showcase-prompts -->
 
+#### Industrial and Product Design
+
+Product forms, component relationships and exploded views, built from a reference image of the
+object.
+
 <p align="center">
-<img src="assets/showcase/surreal.jpg" alt="Three surreal editorial photographs: a barber trimming a cloud seated in a barber chair, a person slicing the moon on a lawn at night, and a model stepping out of a giant pear" width="100%"/>
+<img src="assets/showcase/industrial.jpg" alt="Top: a white concept electric motorcycle and its labeled exploded parts diagram, then a jet engine on a stand and its exploded structural rendering. Bottom: a moka pot on a kitchen counter, the same pot taken apart on marble, and a dark-blue engineering blueprint titled MOKA POT" width="100%"/>
 </p>
-<p align="center"><em>Surreal editorial photography</em></p>
+<p align="center"><em>Image editing: an electric motorcycle and a jet engine taken apart into exploded views (top), and a moka pot and its parts turned into an engineering blueprint (bottom)</em></p>
 
 <!-- BEGIN showcase-prompts -->
 <details>
 <summary>Prompts</summary>
 
-<p><b>A cloud in a barber chair</b></p>
-<blockquote>A retro, playful, refined surreal fashion photograph. A cherry-red barber chair stands on a vivid green hill, with an enormous white cloud seated in it, its fluffy body wrapped in a mint-green barber cape. An adult female model in a pale-purple short-sleeved blouse, dark-purple pencil skirt, and white tall boots stands beside the chair, carefully trimming the cloud with silver scissors while lifting one corner of it with her other hand. Small cut-off tufts of cloud lie scattered on the lawn like freshly cut hair. The model has a neat retro short haircut and a focused expression. Use a low-angle wide shot with blue sky filling most of the frame, a simple set, and vivid colors. Give it the look of a live-action fashion editorial, with soft translucent cloud details, credible volumetric shadows, slight direct-flash fill, and film grain, without a cartoon feel. Landscape 16:9, no text.</blockquote>
+<p><b>Electric motorcycle, exploded view (top row, left pair)</b></p>
+<blockquote>Disassemble the concept electric motorcycle in image 1 into a highly detailed exploded parts diagram, keeping its form, white geometric bodywork, metallic-gray motor, hubless wheels, and orange-red light strips consistent with image 1.<br>
+<br>
+Disassembly layout: Use an isometric view centered on the motor unit, with all parts radiating outward along their respective assembly directions, clearly spaced and without overlap:<br>
+- Front: Split the front fairing into upper and lower sections. Separate the headlight strip, windshield, front fork, hubless front rim, tire, annular bearing inside the rim, and brake disc.<br>
+- Middle: Split the white geometric frame shell into multiple faceted panels on both sides, revealing the tubular main frame. Separate the motor housing, cooling fins, stator, rotor, and motor controller. Pull the battery pack out separately, placing the battery modules and wiring harness beside it.<br>
+- Rear: Separate the seat assembly into cushion and base, followed by the rear swingarm, rear shock absorber, rear rim, tire, and taillight strip.<br>
+- Small parts: Group bolts, washers, clips, bearings, and connectors beside their corresponding components according to their installation positions, with fine dashed lines leading back to the mounting points.<br>
+- Add two circular magnified insets showing the bearing structure of the hubless rim and the stator windings inside the motor.<br>
+<br>
+Text annotations: Connect every major component to an ALL-CAPS English label using a thin white leader line with a small dot at its endpoint. Text must be legible and correctly spelled, with labels arranged neatly along the edges.<br>
+<br>
+Use a dark-gray background with faint isometric grid lines, soft even lighting, and clean highlights along the component edges. The composition should be full, clearly layered, and orderly, resembling a structural breakdown from a professional industrial design firm.</blockquote>
 
-<p><b>Slicing the moon</b></p>
-<blockquote>A surreal fashion photograph with the texture of a retro film set. Beneath a cobalt-blue twilight sky, a long dining table covered with a white tablecloth stands on a green hill. An adult female model in a tomato-red velvet gown and long white gloves stands calmly at one side, using a silver dinner knife to cut a small wedge from an enormous full moon on a plate. The moon stands upright like a round cake, retaining realistic craters on its surface. The cut interior emits a soft milky-white glow, and the removed moon slice rests securely on a small porcelain plate beside it. Moonlight illuminates her gloves and jaw, while glasses on the table cast long, slender shadows. There is no second moon in the sky, only a lone small tree in the distance. Elegant, absurd, and subtly deadpan, with the photographic feel of real people and practical props, fine film grain, landscape 16:9, no text.</blockquote>
+<p><b>Jet engine, exploded view (top row, right pair)</b></p>
+<blockquote>Turn the jet engine in image 1 into a high-precision exploded structural rendering. Use a solid dark-gray background and an oblique overhead isometric view, with components floating apart along a diagonal axis from the upper right to the lower left: intake cowling, compressor blade discs, combustion chamber, turbine discs, central shaft, and exhaust nozzle in sequence. Divide the engine casing into curved panels suspended around the main shaft; distribute the electronic control box, fuel pump, accessory gears, fuel lines, and copper-colored wiring harnesses on either side. Use cool gray, silver, and matte white for the outer shell and casing, with warm gold and bronze for the turbine core and shaft. Keep components aligned and evenly spaced, with soft studio lighting and realistic metallic reflections. Connect major components to both sides of the image with thin white leader lines and label them in Chinese: “进气罩,” “压气机叶片盘,” “燃烧室,” “涡轮盘,” “中心主轴,” “尾喷管,” “机匣外壳,” “电子控制单元,” “燃油泵,” “附件齿轮箱,” and “燃油管路” (intake cowling, compressor blade discs, combustion chamber, turbine discs, central shaft, exhaust nozzle, engine casing, electronic control unit, fuel pump, accessory gearbox, and fuel lines, respectively). Use small, simple white sans-serif text in two neat columns, with leader lines that neither cross nor obscure components. Portrait 2:3, with no branding.</blockquote>
 
-<p><b>A pear as a dressing room</b></p>
-<blockquote>A surreal photograph for a 2000s avant-garde fashion magazine. In a pale-pink studio, a three-meter-tall yellow-green pear has been converted into a changing room. A small round-cornered doorway is cut into its skin, with the door retaining a thick cross-section of peel and milky-white flesh. An adult female model steps one foot out of the pear, wearing a chocolate-brown satin dress, pale-blue tights, and pointed shoes. One hand rests on the doorway while the other adjusts an earring, with a nonchalant expression. The interior is lined with burgundy velvet padding and contains two elegant hanging garments. A normal-sized pear rests on a small silver chair nearby, establishing a clear scale contrast. Use an off-center composition with clean empty space, soft studio light, and a slight frontal flash. Pear-skin pores, juicy flesh, velvet, and satin all have tactile, realistic textures, with the look of a carefully constructed physical set. Landscape 16:9, no text.</blockquote>
+<p><b>Moka pot blueprint (bottom row)</b></p>
+<blockquote>Turn the octagonal moka pot in image 1 into a classic engineering blueprint poster, using image 2 as the reference for its component structure. Use a dark-blue background with a light grid, and render all graphics as white line drawings with a slightly weathered grain. Center the uppercase title “MOKA POT” at the top. Arrange an exploded view of the components vertically on the left: lid with small Bakelite knob, upper chamber with handle, stainless-steel filter screen, rubber gasket, funnel filter basket, and lower chamber with safety pressure-release valve. Place a larger cross-section at the upper right showing the internal water path and coffee chamber, and smaller top and side views at the lower right. Include dimension lines, leader lines, and letter labels throughout. Portrait 3:4, with a technical-drawing layout.</blockquote>
 
 </details>
 <!-- END showcase-prompts -->
+
+#### Robotics and Embodied Intelligence
+
+Robot structures, object interactions and operating scenarios, drawn as engineering sheets from a
+reference or a description.
+
+<p align="center">
+<img src="assets/showcase/robotics.jpg" alt="Left: a cream and orange quadruped mech with two missile pods and its multi-view CAD drawing with Chinese labels. Right: an English engineering sheet titled Ceiling Rail Courier, and a Chinese concept sheet for a wheel-legged delivery robot with side views, a 3D view and an actuator table" width="100%"/>
+</p>
+<p align="center"><em>Image editing: a quadruped mech turned into a multi-view CAD drawing (left). Text-to-image: engineering sheets for a ceiling rail courier and a wheel-legged delivery robot (right)</em></p>
+
+<!-- BEGIN showcase-prompts -->
+<details>
+<summary>Prompts</summary>
+
+<p><b>Quadruped mech, CAD drawing (left pair)</b></p>
+<blockquote>Turn the quadruped mech in image 1 into a standardized CAD engineering drawing with multiple views. Use a white drawing-sheet background and fine black lines: solid lines for visible outlines, dashed lines for hidden structures, and dash-dot lines for axes of symmetry and joint centers.<br>
+<br>
+Include five neatly arranged views:<br>
+- Upper left: Front view.<br>
+- Upper right: Left-side view.<br>
+- Middle left: Top view, clearly showing the launch-port arrays of both weapon pods and the spread angles of all four legs.<br>
+- Middle right: Rear view.<br>
+- Bottom: A larger isometric wireframe view showing the overall three-dimensional structure.<br>
+<br>
+Use the same scale across all views, keeping the shapes of the body, weapon pods, leg joints, and thigh armor plates consistent with image 1. Annotate the main dimensions: overall height, length, width, leg span, and weapon-pod dimensions. Use leader lines to label the key parts “武器舱,” “翻盖,” “机身,” “大腿装甲板,” “膝关节,” and “足部” (weapon pod, hatch, body, thigh armor plate, knee joint, and foot). Place a standard title block in the lower right reading “四足机甲 总装图 1:20” (Quadruped Mech — General Assembly — 1:20). Use clean, accurate lines and an orderly layout resembling a formal mechanical design drawing.</blockquote>
+
+<p><b>Ceiling rail courier (top right)</b></p>
+<blockquote>Create a 16:9 English engineering concept sheet titled "Ceiling Rail Courier," marked "Fictional indoor transport concept." Show a long side elevation across the upper half, a detailed suspended carriage at lower left, and a three-position storyboard at lower right. Use warm white paper and cobalt linework.<br>
+A straight horizontal rail spans X = 0 to 2400 mm. Define three docking stations by carriage-center coordinates: A at X = 300, B at X = 1200, and C at X = 2100 mm. Adjacent station spacing is 900 mm. The carriage is 400 mm long along X, so its footprint at A is 100–500 mm and at C is 1900–2300 mm; all positions remain within the rail. The three storyboard panels show the same carriage at A, B, and C, not three simultaneous robots.<br>
+At the illustrated extension, the vertical suspension comprises an 80 mm carriage housing, a 120 mm mounting bracket, a 300 mm telescoping stem, and a 60 mm gripper, measured as consecutive segments. Mark their total as 560 mm, measured from the housing top to the gripper bottom; rail, rollers and parcel are excluded from this dimension. The gripper holds one sealed parcel throughout all panels. Include two rail rollers, one linear drive unit, one downward camera, and one two-finger gripper in the component ledger. Maintain the same dimensions, parcel, roller count, and sensor position across all views. Clearly separate horizontal station dimensions from the vertical stack.</blockquote>
+
+<p><b>Wheel-legged delivery robot (bottom right)</b></p>
+<blockquote>Draw a 16:9 concept diagram in Chinese of a wheeled-legged delivery robot. Include side views of the same robot standing and crouching, a 3D view, and an actuator-axis table, labeled “虚构结构研究” (Fictional Structural Study). The body is 500 mm long, 360 mm wide, and 180 mm high. Each of its four corners has a two-joint leg ending in a powered wheel 120 mm in diameter. There are eight leg joints and four wheel-axis motors, for a total of 12 controlled rotary axes. Label the legs FL, FR, RL, and RR, with upper and lower joints numbered 1 and 2 and wheel axes labeled W. Left and right are from the robot's own perspective. The top of the body is 560 mm above the ground when standing and 440 mm when crouching. Use the same ground line to show the 120 mm reduction. Change only the joint angles between the two views; keep the body, wheel diameters, and link lengths identical. There is only one depth camera on the front panel and only one enclosed cargo box above the body; keep the box level in both poses. Use a comparison table to distinguish the eight leg joints from the four powered wheel axes, avoiding any depiction of 12 controlled axes as 12 legs or 12 wheels.</blockquote>
+
+</details>
+<!-- END showcase-prompts -->
+
+#### Complex Visual Challenges
+
+Reflections, projections and spatial reasoning that must stay physically consistent.
+
+<p align="center">
+<img src="assets/showcase/visual.jpg" alt="Left: a model railway station between two mirrors meeting at a right angle, with its three reflections. Right: a projector casting a blue and white checkerboard on a plaster bust while an operator holds an open hand in the beam" width="100%"/>
+</p>
+<p align="center"><em>A station model between two mirrors at a right angle (left), and a hand held in the beam of a checkerboard projected onto a plaster bust (right)</em></p>
+
+<!-- BEGIN showcase-prompts -->
+<details>
+<summary>Prompts</summary>
+
+<p><b>Corner mirrors (left)</b></p>
+<blockquote>Show a tabletop optics demonstration as a realistic photograph: two upright plane mirrors meet along their vertical edges at a right angle, with their reflective surfaces facing inward. Photograph from the open side, slightly off-center, including the entire physical object in front of the mirror corner and all three corresponding sets of mirror images. The object is a small station model with a central clock tower, a tall water tower on only one side, a low waiting shelter on the other, and a small vehicle in front with a yellow front and black rear. A curved red line connects the base of the water tower to the waiting shelter. In front of the model stands a sign facing the mirror corner, bearing the text “R7”; the real camera view shows the back of the sign. Each side mirror contains one singly reflected image, and a doubly reflected image appears deep in the mirror corner. The side reflections show mirror-written text, while “R7” is readable normally in the double reflection. The water tower, waiting shelter, vehicle front, and red line all change direction together according to the reflections, preserving their spatial relationships to the clock tower. Make the mirror seam and apparatus base clearly visible, with sufficient space between reflections to identify each model image.</blockquote>
+
+<p><b>A hand in the projection (right)</b></p>
+<blockquote>A realistic on-site photograph of a projection art installation: a projector casts a blue-and-white checkerboard onto a white plaster bust, with the grid deforming over the bridge of the nose, cheeks, and curved chest. An operator stands beside the projection area and extends one hand with all five fingers spread into the beam in front of the sculpture's chest, palm facing the projector. Part of the checkerboard falls onto the palm itself, while a dark hand-shaped shadow without the checkerboard appears on the sculpture's chest behind it. Bright squares are cut off at the shadow boundary, while projected light still passes through the gaps between the fingers. Photograph from a front-side angle so that the actual hand and its shadow on the chest are offset in the composition, showing the person's upper body, the sculpture, and the operating projector at the side.</blockquote>
+
+</details>
+<!-- END showcase-prompts -->
+
+<p align="center">
+<img src="assets/showcase/edit_map.jpg" alt="Left: illustrated game map with a river, a waterfall, bridges, a castle, a village, a mine and a harbor, and a red arrow on the southern lake. Right: first-person 3D game view from the lake towards the waterfall, the suspension bridge, the mine and the distant castle, with the map as a minimap in the top-left corner" width="100%"/>
+</p>
+<p align="center"><em>Image editing, one reference: a game map (left) turned into a first-person 3D game view from the red arrow's position, with the map as a minimap (right)</em></p>
+
+<!-- BEGIN showcase-prompts -->
+<details>
+<summary>Prompt</summary>
+
+<blockquote>Using the supplied game map as the sole spatial reference, generate a 16:9 in-game screenshot of an open-world game in a realistic 3D CG style.<br>
+Camera Position and Direction<br>
+Use the tail of the red arrow as the camera position and the direction of its tip as the viewing direction. The camera is approximately 1.7 meters above the lake in the southern part of the map, looking slightly east of north in first person with a field of view of about 70° and natural perspective. Do not show the player's body.<br>
+Spatial Reconstruction<br>
+Strictly reproduce the map's terrain elevations, building locations, river course, bridge connections, and road relationships.<br>
+Determine the visible portions of the settlements on both banks, the mining area, the mountains, and the distant castle according to actual lines of sight. Preserve plausible occlusion and relative scale with distance. Do not move buildings, flatten the terrain, or widen the field of view merely to show every landmark.<br>
+Visual Style<br>
+Use high-quality, realistic game-engine rendering, with buildings and mountains at true scale, detailed rock, wood, vegetation, and water materials, natural daylight, global illumination, water reflections, and moderate atmospheric perspective. Convey the feeling of a player actually inhabiting this world. Avoid a hand-drawn map look, miniature diorama, isometric viewpoint, or bird's-eye composition.<br>
+Upper-Left Minimap<br>
+Add a clear game HUD minimap in the upper-left corner, approximately 15% of the image width. Use the surface map from the reference image as its thumbnail base, preserving the original proportions and north-up orientation. Retain major terrain and roads, and remove the underground inset.<br>
+Mark the player's position with a small directional arrow at the location corresponding to the tail of the original red arrow. Its direction must exactly match the main camera view, with a pale fan-shaped area indicating the field of view. Use a simple thin border and keep the map legible.<br>
+Output only one complete game screenshot. Do not include the original red arrow, place-name labels, elevation numbers, or map borders in the main scene. Add no interface elements other than the upper-left minimap.</blockquote>
+
+</details>
+<!-- END showcase-prompts -->
+
+### Creative Applications
+
+<p><i>Turn ideas into worlds.</i> MiniMax-H3-Image excels at concept art: it turns creative ideas
+into visual concepts with clear structure, rich detail and distinctive style, for games and film,
+brand advertising and marketing assets.</p>
+
+#### Game Worlds
+
+Environments, characters and worldbuilding across epic fantasy, science fiction and
+post-apocalyptic settings.
 
 <p align="center">
 <img src="assets/showcase/scene.jpg" alt="Four environment concepts: ruins of an ancient open-air theater in a forest titled ENVIRONMENT CONCEPT: THE ANCIENT THEATER, a dragon rider on a red rock cliff, an abandoned railway station with an ARRIVALS sign, and shipwrecks frozen in an icy sea" width="100%"/>
@@ -236,6 +437,76 @@ Real photographic and cinematic-still texture. Prioritize natural light and phys
 <!-- END showcase-prompts -->
 
 <p align="center">
+<img src="assets/showcase/edit_render.jpg" alt="Left: untextured grey 3D render of a lunar base with habitat modules, a rover and an astronaut. Right: the same scene as a photorealistic film still on the lunar surface" width="100%"/>
+</p>
+<p align="center"><em>Image editing, one reference: an untextured 3D render (left) turned into a film still of a lunar research base (right)</em></p>
+
+<!-- BEGIN showcase-prompts -->
+<details>
+<summary>Prompt</summary>
+
+<blockquote>Render this untextured 3D model as a realistic cinematic lunar research scene. Add gray lunar soil, silvery-white thermal insulation, coated metal, glass, and wheel-mesh materials, with off-white spacesuits. Use strongly directional sunlight and limited ground bounce. Keep the distant sky pure black, with no blue sky, clouds, or Earth-like haze. Preserve the rover's six wheels and the arrangement of the people and modules. Keep shadow directions consistent and material detail visible in highlights. Preserve the original composition, camera angle, perspective, geometry, and the position and proportions of every subject. Output 4K in 16:9 landscape format, combining AAA photorealistic CG with cinematic live-action texture. Do not add text, brands, interface elements, or watermarks.</blockquote>
+
+</details>
+<!-- END showcase-prompts -->
+
+#### The Real World
+
+Realistic light and subtle material textures give images a natural, convincing photographic look.
+
+<p align="center">
+<img src="assets/showcase/photo.jpg" alt="Three photorealistic photographs: a person in a white shirt taking down white sheets from a clothesline on a rooftop at dusk under a full moon, a close-up profile of a curly-haired young man drinking from a dark cup, and flamingos wading in shallow water" width="100%"/>
+</p>
+<p align="center"><em>Photorealistic photography</em></p>
+
+<!-- BEGIN showcase-prompts -->
+<details>
+<summary>Prompts</summary>
+
+<p><b>Rooftop at dusk</b></p>
+<blockquote>An old city rooftop at dusk in late summer. Several clotheslines cross the foreground, with white sheets lifted by the wind into soft waves. Through the gaps, show dense distant rooftops, antennas, and a low pale-gold moon. On the right, a backlit person in a white shirt takes down laundry, visible as a clear profile silhouette. The concrete rooftop has warm-gray textures and shallow puddles. The sky transitions from rose pink to smoky purple, and sunset rim light passes through the fabric. Combine the authenticity of an everyday-life documentary with the poetic composition of a cinematic still. Use a 35 mm lens, natural wind, and slight film grain, without an excessive romantic filter.<br>
+Real photographic and cinematic-still texture. Prioritize natural light and physically credible reflections, with a clear visual focal point and breathing room. Keep colors restrained with one or two narrative accents, finely realistic materials, and natural human gestures. Retain moderate 35 mm film grain, gentle highlight bloom, and realistic depth of field. The image should be refined, rewarding to look at, and capture a narrative moment. Avoid cheap-looking CG, plastic skin, excessive sharpening, HDR halos, randomly added objects, watermarks, borders, logos, or unnecessary text.</blockquote>
+
+<p><b>A pause before tea</b></p>
+<blockquote>Photograph a realistic portrait of a curly-haired person pausing before drinking tea. Include the head, shoulders, upper chest, and both hands holding a dark ceramic cup, with the face slightly turned. Warm light from the rear right grazes the hair against a darker interior wall. The edges of loose curls and a few flyaway strands glow translucently, with the dark background still visible between strands. Dense locks remain dark inside, and the bright rim breaks naturally where strands occlude one another. Very weak soft light from the camera's front left illuminates the face so the eyes, cheeks, and fingers remain visible. Only the edges of the ear and shoulder facing the rear light are lit. The ceramic cup has a broad, weak surface highlight, with contact shadows where its rim meets the fingers. Focus should cover the eyes, outer hair strands, and cup rim.</blockquote>
+
+<p><b>Flamingos at dawn</b></p>
+<blockquote>In the shallows of a salt lake at dawn, five flamingos are spread across a broad, mirror-like water surface. The nearest bends its head to feed, the second stands on one leg, and three distant birds create a gentle rhythm of pink. The lake reflects a pale-pink sky and distant white salt crusts. Use an eye-level telephoto composition with water filling almost the entire frame and ample breathing room between the birds. Feather colors should have delicate gradations from grayish pink to coral pink. Water ripples, reflections, salt crusts, and bird legs must be realistic. Elegant nature photography, without crowded flocks or highly saturated cartoon colors.<br>
+Real photographic and cinematic-still texture. Prioritize natural light and physically credible reflections, with a clear visual focal point and breathing room. Keep colors restrained with one or two narrative accents, finely realistic materials, and natural human gestures. Retain moderate 35 mm film grain, gentle highlight bloom, and realistic depth of field. The image should be refined, rewarding to look at, and capture a narrative moment. Avoid cheap-looking CG, plastic skin, excessive sharpening, HDR halos, randomly added objects, watermarks, borders, logos, or unnecessary text.</blockquote>
+
+</details>
+<!-- END showcase-prompts -->
+
+#### Surreal Worlds
+
+Retro film sets, playful fashion and avant-garde magazine photography around a creative theme.
+
+<p align="center">
+<img src="assets/showcase/surreal.jpg" alt="Three surreal editorial photographs: a barber trimming a cloud seated in a barber chair, a person slicing the moon on a lawn at night, and a model stepping out of a giant pear" width="100%"/>
+</p>
+<p align="center"><em>Surreal editorial photography</em></p>
+
+<!-- BEGIN showcase-prompts -->
+<details>
+<summary>Prompts</summary>
+
+<p><b>A cloud in a barber chair</b></p>
+<blockquote>A retro, playful, refined surreal fashion photograph. A cherry-red barber chair stands on a vivid green hill, with an enormous white cloud seated in it, its fluffy body wrapped in a mint-green barber cape. An adult female model in a pale-purple short-sleeved blouse, dark-purple pencil skirt, and white tall boots stands beside the chair, carefully trimming the cloud with silver scissors while lifting one corner of it with her other hand. Small cut-off tufts of cloud lie scattered on the lawn like freshly cut hair. The model has a neat retro short haircut and a focused expression. Use a low-angle wide shot with blue sky filling most of the frame, a simple set, and vivid colors. Give it the look of a live-action fashion editorial, with soft translucent cloud details, credible volumetric shadows, slight direct-flash fill, and film grain, without a cartoon feel. Landscape 16:9, no text.</blockquote>
+
+<p><b>Slicing the moon</b></p>
+<blockquote>A surreal fashion photograph with the texture of a retro film set. Beneath a cobalt-blue twilight sky, a long dining table covered with a white tablecloth stands on a green hill. An adult female model in a tomato-red velvet gown and long white gloves stands calmly at one side, using a silver dinner knife to cut a small wedge from an enormous full moon on a plate. The moon stands upright like a round cake, retaining realistic craters on its surface. The cut interior emits a soft milky-white glow, and the removed moon slice rests securely on a small porcelain plate beside it. Moonlight illuminates her gloves and jaw, while glasses on the table cast long, slender shadows. There is no second moon in the sky, only a lone small tree in the distance. Elegant, absurd, and subtly deadpan, with the photographic feel of real people and practical props, fine film grain, landscape 16:9, no text.</blockquote>
+
+<p><b>A pear as a dressing room</b></p>
+<blockquote>A surreal photograph for a 2000s avant-garde fashion magazine. In a pale-pink studio, a three-meter-tall yellow-green pear has been converted into a changing room. A small round-cornered doorway is cut into its skin, with the door retaining a thick cross-section of peel and milky-white flesh. An adult female model steps one foot out of the pear, wearing a chocolate-brown satin dress, pale-blue tights, and pointed shoes. One hand rests on the doorway while the other adjusts an earring, with a nonchalant expression. The interior is lined with burgundy velvet padding and contains two elegant hanging garments. A normal-sized pear rests on a small silver chair nearby, establishing a clear scale contrast. Use an off-center composition with clean empty space, soft studio light, and a slight frontal flash. Pear-skin pores, juicy flesh, velvet, and satin all have tactile, realistic textures, with the look of a carefully constructed physical set. Landscape 16:9, no text.</blockquote>
+
+</details>
+<!-- END showcase-prompts -->
+
+#### Artistic Worlds
+
+Classical oil painting, the Renaissance, illuminated manuscripts and East Asian painting.
+
+<p align="center">
 <img src="assets/showcase/art.jpg" alt="Four paintings and illustrations: mandarin ducks among lotus leaves as an Old Master oil painting, a Suzhou garden in morning mist as an Impressionist oil painting, an illuminated-manuscript page XVIII THE MOON with the Jade Rabbit grinding the moon in a mortar, and a gongbi painting of a pelican looking into a mirror with four calligraphy characters" width="100%"/>
 </p>
 <p align="center"><em>Painting and illustration styles</em></p>
@@ -273,88 +544,6 @@ Flat perspective, dark ink outlines, opaque tempera on aged parchment. Rich red,
 
 <p><b>Pelican at a mirror, gongbi painting</b></p>
 <blockquote>Chinese gongbi painting in color on silk. A round bronze mirror stands on a dressing table in an ancient woman's chamber. A white pelican stands before it, lowering its head to groom its chest feathers with its long bill. The slightly yellowed, somewhat hazy mirror reflects the pelican's face and the carved wooden window behind it. Include a vertical inscription and a red seal in the upper-left corner.</blockquote>
-
-</details>
-<!-- END showcase-prompts -->
-
-<p align="center">
-<img src="assets/showcase/text.jpg" alt="Two logic puzzle boards: a Chinese candidate-selection puzzle with five conditions and the derived answer, and an English board titled CONFIDENTIAL FILE MISSING with six suspects, true/false stamps and a verification table" width="100%"/>
-</p>
-<p align="center"><em>Text rendering with reasoning: logic puzzles in Chinese and English, solved correctly on the board</em></p>
-
-<!-- BEGIN showcase-prompts -->
-<details>
-<summary>Prompt</summary>
-
-<p><b>Staff-selection puzzle (left)</b></p>
-<blockquote>Solve the following personnel-selection reasoning problem and generate a visual explanation. Use 16:9 landscape format, a white background, and clear, standardized Chinese typography.<br>
-An organization must select exactly three of six staff members—甲, 乙, 丙, 丁, 戊, and 己—for a research team. All of the following conditions must be met:<br>
-If 甲 is selected, 乙 must also be selected.<br>
-Exactly one of 丙 and 丁 must be selected.<br>
-乙 and 戊 cannot both be selected.<br>
-If 己 is selected, 丙 must also be selected.<br>
-戊 has already been confirmed as selected.<br>
-Determine the three-person team using all the conditions.<br>
-Show the problem conditions at the top. Divide the lower section into “入选” (Selected) and “未入选” (Not Selected), placing each of the six staff cards in the correct area. Each card should contain a person icon and a prominent name label. Each person must appear exactly once, with no duplicates or omissions.<br>
-At the bottom, use brief notes to show the key reasons for exclusion. The card placements, selected names, and notes must agree. Do not add extra conditions. Output only the finished solution image.</blockquote>
-
-<p><em>The prompt for the detective board (right) is not included.</em></p>
-
-</details>
-<!-- END showcase-prompts -->
-
-### Image Editing
-
-<p align="center">
-<img src="assets/showcase/edit_render.jpg" alt="Left: untextured grey 3D render of a lunar base with habitat modules, a rover and an astronaut. Right: the same scene as a photorealistic film still on the lunar surface" width="100%"/>
-</p>
-<p align="center"><em>Image editing, one reference: an untextured 3D render (left) turned into a film still of a lunar research base (right)</em></p>
-
-<!-- BEGIN showcase-prompts -->
-<details>
-<summary>Prompt</summary>
-
-<blockquote>Render this untextured 3D model as a realistic cinematic lunar research scene. Add gray lunar soil, silvery-white thermal insulation, coated metal, glass, and wheel-mesh materials, with off-white spacesuits. Use strongly directional sunlight and limited ground bounce. Keep the distant sky pure black, with no blue sky, clouds, or Earth-like haze. Preserve the rover's six wheels and the arrangement of the people and modules. Keep shadow directions consistent and material detail visible in highlights. Preserve the original composition, camera angle, perspective, geometry, and the position and proportions of every subject. Output 4K in 16:9 landscape format, combining AAA photorealistic CG with cinematic live-action texture. Do not add text, brands, interface elements, or watermarks.</blockquote>
-
-</details>
-<!-- END showcase-prompts -->
-
-<p align="center">
-<img src="assets/showcase/edit_map.jpg" alt="Left: illustrated game map with a river, a waterfall, bridges, a castle, a village, a mine and a harbor, and a red arrow on the southern lake. Right: first-person 3D game view from the lake towards the waterfall, the suspension bridge, the mine and the distant castle, with the map as a minimap in the top-left corner" width="100%"/>
-</p>
-<p align="center"><em>Image editing, one reference: a game map (left) turned into a first-person 3D game view from the red arrow's position, with the map as a minimap (right)</em></p>
-
-<!-- BEGIN showcase-prompts -->
-<details>
-<summary>Prompt</summary>
-
-<blockquote>Using the supplied game map as the sole spatial reference, generate a 16:9 in-game screenshot of an open-world game in a realistic 3D CG style.<br>
-Camera Position and Direction<br>
-Use the tail of the red arrow as the camera position and the direction of its tip as the viewing direction. The camera is approximately 1.7 meters above the lake in the southern part of the map, looking slightly east of north in first person with a field of view of about 70° and natural perspective. Do not show the player's body.<br>
-Spatial Reconstruction<br>
-Strictly reproduce the map's terrain elevations, building locations, river course, bridge connections, and road relationships.<br>
-Determine the visible portions of the settlements on both banks, the mining area, the mountains, and the distant castle according to actual lines of sight. Preserve plausible occlusion and relative scale with distance. Do not move buildings, flatten the terrain, or widen the field of view merely to show every landmark.<br>
-Visual Style<br>
-Use high-quality, realistic game-engine rendering, with buildings and mountains at true scale, detailed rock, wood, vegetation, and water materials, natural daylight, global illumination, water reflections, and moderate atmospheric perspective. Convey the feeling of a player actually inhabiting this world. Avoid a hand-drawn map look, miniature diorama, isometric viewpoint, or bird's-eye composition.<br>
-Upper-Left Minimap<br>
-Add a clear game HUD minimap in the upper-left corner, approximately 15% of the image width. Use the surface map from the reference image as its thumbnail base, preserving the original proportions and north-up orientation. Retain major terrain and roads, and remove the underground inset.<br>
-Mark the player's position with a small directional arrow at the location corresponding to the tail of the original red arrow. Its direction must exactly match the main camera view, with a pale fan-shaped area indicating the field of view. Use a simple thin border and keep the map legible.<br>
-Output only one complete game screenshot. Do not include the original red arrow, place-name labels, elevation numbers, or map borders in the main scene. Add no interface elements other than the upper-left minimap.</blockquote>
-
-</details>
-<!-- END showcase-prompts -->
-
-<p align="center">
-<img src="assets/showcase/edit_multi.jpg" alt="Top: ten reference images, an empty sunlit room and nine pieces of furniture. Bottom: the empty room furnished with all nine pieces as a living room" width="100%"/>
-</p>
-<p align="center"><em>Image editing, ten references: an empty room and nine pieces of furniture (top) composed into one living room (bottom)</em></p>
-
-<!-- BEGIN showcase-prompts -->
-<details>
-<summary>Prompt</summary>
-
-<blockquote>Photograph a living-room lifestyle scene for the spring furniture catalog for the brand “向阳家居” (Xiangyang Home). The first image shows the actual empty room, and the following nine images show the furniture currently on sale against white backgrounds. Retain the camera position, walls, doors, windows, and wooden floor of the empty room. Place each of the nine original furniture pieces in the room exactly once, creating a living room where two or three people can chat or read and write by the window. The lounge chair with leather-strap armrests is the featured product; show it from an angle that clearly reveals its wooden frame, leather-strap armrests, and cushion. Arrange the other furniture according to its actual size and function: tabletops should be accessible when seated, the desk chair should have room to pull out, and there should be an uninterrupted path from the doorway into the room.<br>
-Preserve the color, material, structure, and proportions of every product. Let light from the right-hand window fall naturally on the fabric, leather, and wood, with convincing contact shadows beneath table and chair legs. A few books or a single sprig of greenery are allowed; keep the display uncluttered. Real interior photography, with no text.</blockquote>
 
 </details>
 <!-- END showcase-prompts -->
@@ -509,8 +698,11 @@ slightly different fields, for example `min_generation_area` inside `extra_args`
 
 #### Sizes
 
-The effective working range of MiniMax-H3-Image is about 4 MP to 20 MP, and it generally gives
-the best results at around 16 MP. Common 16 MP sizes are listed below:
+> [!TIP]
+> The effective working range of MiniMax-H3-Image is about 4 MP to 20 MP, and it generally gives
+> the best results at around 16 MP, the `4K` area of the MiniMax API.
+
+Common 16 MP sizes:
 
 | Aspect ratio | Size (width x height) |
 | --- | --- |
@@ -611,7 +803,8 @@ as `<Picture 1>`.
 ## Prompting Tips
 
 These tips come from the official MiniMax-H3-Image user guide. They hold both for a short request
-sent to the MiniMax API and for a full prompt sent to your own deployment.
+sent to the MiniMax API and for a full prompt sent to your own deployment, and the
+[Prompt Writing Skill](#prompt-writing-skill) applies them for you.
 
 ### Basic Descriptions
 
