@@ -59,111 +59,111 @@ h3-image-prompt-writing으로 비 내리는 야시장을 담은 3:4 포스터를
 <table>
 <tr><th colspan="4" align="left">오픈소스 고급 역량</th></tr>
 <tr>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#16명의-군상-여섯-장면"><img src="assets/showcase/tiles/multi-ref-group-a-output.jpg" alt="16명의 군상, 여섯 장면"></a><br><sub><a href="SHOWCASE.ko.md#16명의-군상-여섯-장면">16명의 군상, 여섯 장면</a></sub></td>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#다중-참조-의상-배색"><img src="assets/showcase/tiles/multi-ref-outfit-color-output.jpg" alt="다중 참조 의상 배색"></a><br><sub><a href="SHOWCASE.ko.md#다중-참조-의상-배색">다중 참조 의상 배색</a></sub></td>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#참조-이미지-10장으로-만든-거실"><img src="assets/showcase/tiles/furniture-room-output.jpg" alt="참조 이미지 10장으로 만든 거실"></a><br><sub><a href="SHOWCASE.ko.md#참조-이미지-10장으로-만든-거실">참조 이미지 10장으로 만든 거실</a></sub></td>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#논문-페이지로-만든-생물학-그림"><img src="assets/showcase/tiles/bio-figure-output.jpg" alt="논문 페이지로 만든 생물학 그림"></a><br><sub><a href="SHOWCASE.ko.md#논문-페이지로-만든-생물학-그림">논문 페이지로 만든 생물학 그림</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/multi-reference.ko.md#16명의-군상-여섯-장면"><img src="assets/showcase/tiles/multi-ref-group-a-output.jpg" alt="16명의 군상, 여섯 장면"></a><br><sub><a href="showcase/multi-reference.ko.md#16명의-군상-여섯-장면">16명의 군상, 여섯 장면</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/multi-reference.ko.md#다중-참조-의상-배색"><img src="assets/showcase/tiles/multi-ref-outfit-color-output.jpg" alt="다중 참조 의상 배색"></a><br><sub><a href="showcase/multi-reference.ko.md#다중-참조-의상-배색">다중 참조 의상 배색</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/multi-reference.ko.md#참조-이미지-10장으로-만든-거실"><img src="assets/showcase/tiles/furniture-room-output.jpg" alt="참조 이미지 10장으로 만든 거실"></a><br><sub><a href="showcase/multi-reference.ko.md#참조-이미지-10장으로-만든-거실">참조 이미지 10장으로 만든 거실</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/education-and-reasoning.ko.md#논문-페이지로-만든-생물학-그림"><img src="assets/showcase/tiles/bio-figure-output.jpg" alt="논문 페이지로 만든 생물학 그림"></a><br><sub><a href="showcase/education-and-reasoning.ko.md#논문-페이지로-만든-생물학-그림">논문 페이지로 만든 생물학 그림</a></sub></td>
 </tr>
 <tr>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#레서판다-인포그래픽"><img src="assets/showcase/tiles/red-panda-infographic.jpg" alt="레서판다 인포그래픽"></a><br><sub><a href="SHOWCASE.ko.md#레서판다-인포그래픽">레서판다 인포그래픽</a></sub></td>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#인원-선발-추리-문제"><img src="assets/showcase/tiles/staffing-logic-puzzle.jpg" alt="인원 선발 추리 문제"></a><br><sub><a href="SHOWCASE.ko.md#인원-선발-추리-문제">인원 선발 추리 문제</a></sub></td>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#전기-오토바이-분해도"><img src="assets/showcase/tiles/e-motorcycle-exploded.jpg" alt="전기 오토바이 분해도"></a><br><sub><a href="SHOWCASE.ko.md#전기-오토바이-분해도">전기 오토바이 분해도</a></sub></td>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#제트-엔진-분해도"><img src="assets/showcase/tiles/jet-engine-exploded.jpg" alt="제트 엔진 분해도"></a><br><sub><a href="SHOWCASE.ko.md#제트-엔진-분해도">제트 엔진 분해도</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/education-and-reasoning.ko.md#레서판다-인포그래픽"><img src="assets/showcase/tiles/red-panda-infographic.jpg" alt="레서판다 인포그래픽"></a><br><sub><a href="showcase/education-and-reasoning.ko.md#레서판다-인포그래픽">레서판다 인포그래픽</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/education-and-reasoning.ko.md#인원-선발-추리-문제"><img src="assets/showcase/tiles/staffing-logic-puzzle.jpg" alt="인원 선발 추리 문제"></a><br><sub><a href="showcase/education-and-reasoning.ko.md#인원-선발-추리-문제">인원 선발 추리 문제</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/product-design.ko.md#전기-오토바이-분해도"><img src="assets/showcase/tiles/e-motorcycle-exploded.jpg" alt="전기 오토바이 분해도"></a><br><sub><a href="showcase/product-design.ko.md#전기-오토바이-분해도">전기 오토바이 분해도</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/product-design.ko.md#제트-엔진-분해도"><img src="assets/showcase/tiles/jet-engine-exploded.jpg" alt="제트 엔진 분해도"></a><br><sub><a href="showcase/product-design.ko.md#제트-엔진-분해도">제트 엔진 분해도</a></sub></td>
 </tr>
 <tr>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#모카포트-설계도"><img src="assets/showcase/tiles/moka-pot-blueprint.jpg" alt="모카포트 설계도"></a><br><sub><a href="SHOWCASE.ko.md#모카포트-설계도">모카포트 설계도</a></sub></td>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#개미형-육족-메카-선화"><img src="assets/showcase/tiles/ant-hexapod-mech-lineart.jpg" alt="개미형 육족 메카 선화"></a><br><sub><a href="SHOWCASE.ko.md#개미형-육족-메카-선화">개미형 육족 메카 선화</a></sub></td>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#사족-메카-cad-도면"><img src="assets/showcase/tiles/quadruped-mech-cad.jpg" alt="사족 메카 CAD 도면"></a><br><sub><a href="SHOWCASE.ko.md#사족-메카-cad-도면">사족 메카 CAD 도면</a></sub></td>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#메카-야수-분해-cad-도면"><img src="assets/showcase/tiles/mech-monster-exploded-cad.jpg" alt="메카 야수 분해 CAD 도면"></a><br><sub><a href="SHOWCASE.ko.md#메카-야수-분해-cad-도면">메카 야수 분해 CAD 도면</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/product-design.ko.md#모카포트-설계도"><img src="assets/showcase/tiles/moka-pot-blueprint.jpg" alt="모카포트 설계도"></a><br><sub><a href="showcase/product-design.ko.md#모카포트-설계도">모카포트 설계도</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/product-design.ko.md#개미형-육족-메카-선화"><img src="assets/showcase/tiles/ant-hexapod-mech-lineart.jpg" alt="개미형 육족 메카 선화"></a><br><sub><a href="showcase/product-design.ko.md#개미형-육족-메카-선화">개미형 육족 메카 선화</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/robotics.ko.md#사족-메카-cad-도면"><img src="assets/showcase/tiles/quadruped-mech-cad.jpg" alt="사족 메카 CAD 도면"></a><br><sub><a href="showcase/robotics.ko.md#사족-메카-cad-도면">사족 메카 CAD 도면</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/robotics.ko.md#메카-야수-분해-cad-도면"><img src="assets/showcase/tiles/mech-monster-exploded-cad.jpg" alt="메카 야수 분해 CAD 도면"></a><br><sub><a href="showcase/robotics.ko.md#메카-야수-분해-cad-도면">메카 야수 분해 CAD 도면</a></sub></td>
 </tr>
 <tr>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#천장-레일-배송기"><img src="assets/showcase/tiles/ceiling-rail-courier.jpg" alt="천장 레일 배송기"></a><br><sub><a href="SHOWCASE.ko.md#천장-레일-배송기">천장 레일 배송기</a></sub></td>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#휠-레그-배송-로봇"><img src="assets/showcase/tiles/wheel-leg-robot.jpg" alt="휠-레그 배송 로봇"></a><br><sub><a href="SHOWCASE.ko.md#휠-레그-배송-로봇">휠-레그 배송 로봇</a></sub></td>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#직각-거울"><img src="assets/showcase/tiles/mirror-reflection.jpg" alt="직각 거울"></a><br><sub><a href="SHOWCASE.ko.md#직각-거울">직각 거울</a></sub></td>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#투사광-속의-손"><img src="assets/showcase/tiles/projection-hand-shadow.jpg" alt="투사광 속의 손"></a><br><sub><a href="SHOWCASE.ko.md#투사광-속의-손">투사광 속의 손</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/robotics.ko.md#천장-레일-배송기"><img src="assets/showcase/tiles/ceiling-rail-courier.jpg" alt="천장 레일 배송기"></a><br><sub><a href="showcase/robotics.ko.md#천장-레일-배송기">천장 레일 배송기</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/robotics.ko.md#휠-레그-배송-로봇"><img src="assets/showcase/tiles/wheel-leg-robot.jpg" alt="휠-레그 배송 로봇"></a><br><sub><a href="showcase/robotics.ko.md#휠-레그-배송-로봇">휠-레그 배송 로봇</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/visual-challenges.ko.md#직각-거울"><img src="assets/showcase/tiles/mirror-reflection.jpg" alt="직각 거울"></a><br><sub><a href="showcase/visual-challenges.ko.md#직각-거울">직각 거울</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/visual-challenges.ko.md#투사광-속의-손"><img src="assets/showcase/tiles/projection-hand-shadow.jpg" alt="투사광 속의 손"></a><br><sub><a href="showcase/visual-challenges.ko.md#투사광-속의-손">투사광 속의 손</a></sub></td>
 </tr>
 <tr>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#게임-지도에서-3d-게임-화면으로"><img src="assets/showcase/tiles/game-map-to-3d.jpg" alt="게임 지도에서 3D 게임 화면으로"></a><br><sub><a href="SHOWCASE.ko.md#게임-지도에서-3d-게임-화면으로">게임 지도에서 3D 게임 화면으로</a></sub></td>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#펠리컨-졸업-피라미드"><img src="assets/showcase/tiles/pelican-graduation-pyramid.jpg" alt="펠리컨 졸업 피라미드"></a><br><sub><a href="SHOWCASE.ko.md#펠리컨-졸업-피라미드">펠리컨 졸업 피라미드</a></sub></td>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#펠리컨-크리스마스트리"><img src="assets/showcase/tiles/pelican-christmas-tree.jpg" alt="펠리컨 크리스마스트리"></a><br><sub><a href="SHOWCASE.ko.md#펠리컨-크리스마스트리">펠리컨 크리스마스트리</a></sub></td>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#펠리컨-균형-잡기"><img src="assets/showcase/tiles/pelican-challenge-3.jpg" alt="펠리컨 균형 잡기"></a><br><sub><a href="SHOWCASE.ko.md#펠리컨-균형-잡기">펠리컨 균형 잡기</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/visual-challenges.ko.md#게임-지도에서-3d-게임-화면으로"><img src="assets/showcase/tiles/game-map-to-3d.jpg" alt="게임 지도에서 3D 게임 화면으로"></a><br><sub><a href="showcase/visual-challenges.ko.md#게임-지도에서-3d-게임-화면으로">게임 지도에서 3D 게임 화면으로</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/visual-challenges.ko.md#펠리컨-졸업-피라미드"><img src="assets/showcase/tiles/pelican-graduation-pyramid.jpg" alt="펠리컨 졸업 피라미드"></a><br><sub><a href="showcase/visual-challenges.ko.md#펠리컨-졸업-피라미드">펠리컨 졸업 피라미드</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/visual-challenges.ko.md#펠리컨-크리스마스트리"><img src="assets/showcase/tiles/pelican-christmas-tree.jpg" alt="펠리컨 크리스마스트리"></a><br><sub><a href="showcase/visual-challenges.ko.md#펠리컨-크리스마스트리">펠리컨 크리스마스트리</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/visual-challenges.ko.md#펠리컨-균형-잡기"><img src="assets/showcase/tiles/pelican-challenge-3.jpg" alt="펠리컨 균형 잡기"></a><br><sub><a href="showcase/visual-challenges.ko.md#펠리컨-균형-잡기">펠리컨 균형 잡기</a></sub></td>
 </tr>
 <tr><th colspan="4" align="left">창작 활용</th></tr>
 <tr>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#변방의-기수"><img src="assets/showcase/tiles/frontier-rider.jpg" alt="변방의 기수"></a><br><sub><a href="SHOWCASE.ko.md#변방의-기수">변방의 기수</a></sub></td>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#사막의-대집회"><img src="assets/showcase/tiles/desert-gathering.jpg" alt="사막의 대집회"></a><br><sub><a href="SHOWCASE.ko.md#사막의-대집회">사막의 대집회</a></sub></td>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#차가운-색의-광물-황야-항공샷"><img src="assets/showcase/tiles/cold-mineral-aerial.jpg" alt="차가운 색의 광물 황야 항공샷"></a><br><sub><a href="SHOWCASE.ko.md#차가운-색의-광물-황야-항공샷">차가운 색의 광물 황야 항공샷</a></sub></td>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#적갈색-광물-황야-항공샷"><img src="assets/showcase/tiles/desert-mineral-aerial.jpg" alt="적갈색 광물 황야 항공샷"></a><br><sub><a href="SHOWCASE.ko.md#적갈색-광물-황야-항공샷">적갈색 광물 황야 항공샷</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/game-worlds.ko.md#변방의-기수"><img src="assets/showcase/tiles/frontier-rider.jpg" alt="변방의 기수"></a><br><sub><a href="showcase/game-worlds.ko.md#변방의-기수">변방의 기수</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/game-worlds.ko.md#사막의-대집회"><img src="assets/showcase/tiles/desert-gathering.jpg" alt="사막의 대집회"></a><br><sub><a href="showcase/game-worlds.ko.md#사막의-대집회">사막의 대집회</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/game-worlds.ko.md#차가운-색의-광물-황야-항공샷"><img src="assets/showcase/tiles/cold-mineral-aerial.jpg" alt="차가운 색의 광물 황야 항공샷"></a><br><sub><a href="showcase/game-worlds.ko.md#차가운-색의-광물-황야-항공샷">차가운 색의 광물 황야 항공샷</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/game-worlds.ko.md#적갈색-광물-황야-항공샷"><img src="assets/showcase/tiles/desert-mineral-aerial.jpg" alt="적갈색 광물 황야 항공샷"></a><br><sub><a href="showcase/game-worlds.ko.md#적갈색-광물-황야-항공샷">적갈색 광물 황야 항공샷</a></sub></td>
 </tr>
 <tr>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#숲속-원형-극장"><img src="assets/showcase/tiles/forest-amphitheater.jpg" alt="숲속 원형 극장"></a><br><sub><a href="SHOWCASE.ko.md#숲속-원형-극장">숲속 원형 극장</a></sub></td>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#운해-위의-궁전"><img src="assets/showcase/tiles/mountain-temple.jpg" alt="운해 위의 궁전"></a><br><sub><a href="SHOWCASE.ko.md#운해-위의-궁전">운해 위의 궁전</a></sub></td>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#부채꼴-화염을-쏘는-마법사"><img src="assets/showcase/tiles/fire-mage-vfx.jpg" alt="부채꼴 화염을 쏘는 마법사"></a><br><sub><a href="SHOWCASE.ko.md#부채꼴-화염을-쏘는-마법사">부채꼴 화염을 쏘는 마법사</a></sub></td>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#폭발의-두-단계"><img src="assets/showcase/tiles/explosion-two-state.jpg" alt="폭발의 두 단계"></a><br><sub><a href="SHOWCASE.ko.md#폭발의-두-단계">폭발의 두 단계</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/game-worlds.ko.md#숲속-원형-극장"><img src="assets/showcase/tiles/forest-amphitheater.jpg" alt="숲속 원형 극장"></a><br><sub><a href="showcase/game-worlds.ko.md#숲속-원형-극장">숲속 원형 극장</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/game-worlds.ko.md#운해-위의-궁전"><img src="assets/showcase/tiles/mountain-temple.jpg" alt="운해 위의 궁전"></a><br><sub><a href="showcase/game-worlds.ko.md#운해-위의-궁전">운해 위의 궁전</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/game-worlds.ko.md#부채꼴-화염을-쏘는-마법사"><img src="assets/showcase/tiles/fire-mage-vfx.jpg" alt="부채꼴 화염을 쏘는 마법사"></a><br><sub><a href="showcase/game-worlds.ko.md#부채꼴-화염을-쏘는-마법사">부채꼴 화염을 쏘는 마법사</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/game-worlds.ko.md#폭발의-두-단계"><img src="assets/showcase/tiles/explosion-two-state.jpg" alt="폭발의 두 단계"></a><br><sub><a href="showcase/game-worlds.ko.md#폭발의-두-단계">폭발의 두 단계</a></sub></td>
 </tr>
 <tr>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#중갑-기사-캐릭터-시트"><img src="assets/showcase/tiles/armored-knight-sheet.jpg" alt="중갑 기사 캐릭터 시트"></a><br><sub><a href="SHOWCASE.ko.md#중갑-기사-캐릭터-시트">중갑 기사 캐릭터 시트</a></sub></td>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#사자왕-얼굴-클로즈업"><img src="assets/showcase/tiles/lion-king-face.jpg" alt="사자왕 얼굴 클로즈업"></a><br><sub><a href="SHOWCASE.ko.md#사자왕-얼굴-클로즈업">사자왕 얼굴 클로즈업</a></sub></td>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#숲속의-용"><img src="assets/showcase/tiles/forest-dragon.jpg" alt="숲속의 용"></a><br><sub><a href="SHOWCASE.ko.md#숲속의-용">숲속의 용</a></sub></td>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#1인칭-슈팅-장면"><img src="assets/showcase/tiles/fps-wasteland.jpg" alt="1인칭 슈팅 장면"></a><br><sub><a href="SHOWCASE.ko.md#1인칭-슈팅-장면">1인칭 슈팅 장면</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/game-worlds.ko.md#중갑-기사-캐릭터-시트"><img src="assets/showcase/tiles/armored-knight-sheet.jpg" alt="중갑 기사 캐릭터 시트"></a><br><sub><a href="showcase/game-worlds.ko.md#중갑-기사-캐릭터-시트">중갑 기사 캐릭터 시트</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/game-worlds.ko.md#사자왕-얼굴-클로즈업"><img src="assets/showcase/tiles/lion-king-face.jpg" alt="사자왕 얼굴 클로즈업"></a><br><sub><a href="showcase/game-worlds.ko.md#사자왕-얼굴-클로즈업">사자왕 얼굴 클로즈업</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/game-worlds.ko.md#숲속의-용"><img src="assets/showcase/tiles/forest-dragon.jpg" alt="숲속의 용"></a><br><sub><a href="showcase/game-worlds.ko.md#숲속의-용">숲속의 용</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/game-worlds.ko.md#1인칭-슈팅-장면"><img src="assets/showcase/tiles/fps-wasteland.jpg" alt="1인칭 슈팅 장면"></a><br><sub><a href="showcase/game-worlds.ko.md#1인칭-슈팅-장면">1인칭 슈팅 장면</a></sub></td>
 </tr>
 <tr>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#텍스처-없는-렌더링에서-영화-스틸로"><img src="assets/showcase/tiles/moon-rover-render.jpg" alt="텍스처 없는 렌더링에서 영화 스틸로"></a><br><sub><a href="SHOWCASE.ko.md#텍스처-없는-렌더링에서-영화-스틸로">텍스처 없는 렌더링에서 영화 스틸로</a></sub></td>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#협곡의-수력발전소-매트-페인팅"><img src="assets/showcase/tiles/hydro-station-canyon.jpg" alt="협곡의 수력발전소, 매트 페인팅"></a><br><sub><a href="SHOWCASE.ko.md#협곡의-수력발전소-매트-페인팅">협곡의 수력발전소, 매트 페인팅</a></sub></td>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#버려진-역"><img src="assets/showcase/tiles/abandoned-station.jpg" alt="버려진 역"></a><br><sub><a href="SHOWCASE.ko.md#버려진-역">버려진 역</a></sub></td>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#폐허가-된-공업-단지"><img src="assets/showcase/tiles/industrial-ruins.jpg" alt="폐허가 된 공업 단지"></a><br><sub><a href="SHOWCASE.ko.md#폐허가-된-공업-단지">폐허가 된 공업 단지</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/game-worlds.ko.md#텍스처-없는-렌더링에서-영화-스틸로"><img src="assets/showcase/tiles/moon-rover-render.jpg" alt="텍스처 없는 렌더링에서 영화 스틸로"></a><br><sub><a href="showcase/game-worlds.ko.md#텍스처-없는-렌더링에서-영화-스틸로">텍스처 없는 렌더링에서 영화 스틸로</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/game-worlds.ko.md#협곡의-수력발전소-매트-페인팅"><img src="assets/showcase/tiles/hydro-station-canyon.jpg" alt="협곡의 수력발전소, 매트 페인팅"></a><br><sub><a href="showcase/game-worlds.ko.md#협곡의-수력발전소-매트-페인팅">협곡의 수력발전소, 매트 페인팅</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/game-worlds.ko.md#버려진-역"><img src="assets/showcase/tiles/abandoned-station.jpg" alt="버려진 역"></a><br><sub><a href="showcase/game-worlds.ko.md#버려진-역">버려진 역</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/game-worlds.ko.md#폐허가-된-공업-단지"><img src="assets/showcase/tiles/industrial-ruins.jpg" alt="폐허가 된 공업 단지"></a><br><sub><a href="showcase/game-worlds.ko.md#폐허가-된-공업-단지">폐허가 된 공업 단지</a></sub></td>
 </tr>
 <tr>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#얼어붙은-만의-난파선"><img src="assets/showcase/tiles/frozen-shipwreck-bay.jpg" alt="얼어붙은 만의 난파선"></a><br><sub><a href="SHOWCASE.ko.md#얼어붙은-만의-난파선">얼어붙은 만의 난파선</a></sub></td>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#전투-조종사"><img src="assets/showcase/tiles/combat-pilot.jpg" alt="전투 조종사"></a><br><sub><a href="SHOWCASE.ko.md#전투-조종사">전투 조종사</a></sub></td>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#극지-의상-코스튬-보드"><img src="assets/showcase/tiles/polar-costume-board.jpg" alt="극지 의상 코스튬 보드"></a><br><sub><a href="SHOWCASE.ko.md#극지-의상-코스튬-보드">극지 의상 코스튬 보드</a></sub></td>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#붉은-황야의-헬멧"><img src="assets/showcase/tiles/helmet-key-art.jpg" alt="붉은 황야의 헬멧"></a><br><sub><a href="SHOWCASE.ko.md#붉은-황야의-헬멧">붉은 황야의 헬멧</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/game-worlds.ko.md#얼어붙은-만의-난파선"><img src="assets/showcase/tiles/frozen-shipwreck-bay.jpg" alt="얼어붙은 만의 난파선"></a><br><sub><a href="showcase/game-worlds.ko.md#얼어붙은-만의-난파선">얼어붙은 만의 난파선</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/game-worlds.ko.md#전투-조종사"><img src="assets/showcase/tiles/combat-pilot.jpg" alt="전투 조종사"></a><br><sub><a href="showcase/game-worlds.ko.md#전투-조종사">전투 조종사</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/game-worlds.ko.md#극지-의상-코스튬-보드"><img src="assets/showcase/tiles/polar-costume-board.jpg" alt="극지 의상 코스튬 보드"></a><br><sub><a href="showcase/game-worlds.ko.md#극지-의상-코스튬-보드">극지 의상 코스튬 보드</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/game-worlds.ko.md#붉은-황야의-헬멧"><img src="assets/showcase/tiles/helmet-key-art.jpg" alt="붉은 황야의 헬멧"></a><br><sub><a href="showcase/game-worlds.ko.md#붉은-황야의-헬멧">붉은 황야의 헬멧</a></sub></td>
 </tr>
 <tr>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#sf-전투기"><img src="assets/showcase/tiles/scifi-fighter.jpg" alt="SF 전투기"></a><br><sub><a href="SHOWCASE.ko.md#sf-전투기">SF 전투기</a></sub></td>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#개조-머슬카"><img src="assets/showcase/tiles/modded-muscle-car.jpg" alt="개조 머슬카"></a><br><sub><a href="SHOWCASE.ko.md#개조-머슬카">개조 머슬카</a></sub></td>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#안개-낀-농장-다큐멘터리-필름-사진"><img src="assets/showcase/tiles/farm-documentary-film.jpg" alt="안개 낀 농장, 다큐멘터리 필름 사진"></a><br><sub><a href="SHOWCASE.ko.md#안개-낀-농장-다큐멘터리-필름-사진">안개 낀 농장, 다큐멘터리 필름 사진</a></sub></td>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#필름으로-찍은-피크닉"><img src="assets/showcase/tiles/picnic-film.jpg" alt="필름으로 찍은 피크닉"></a><br><sub><a href="SHOWCASE.ko.md#필름으로-찍은-피크닉">필름으로 찍은 피크닉</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/game-worlds.ko.md#sf-전투기"><img src="assets/showcase/tiles/scifi-fighter.jpg" alt="SF 전투기"></a><br><sub><a href="showcase/game-worlds.ko.md#sf-전투기">SF 전투기</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/game-worlds.ko.md#개조-머슬카"><img src="assets/showcase/tiles/modded-muscle-car.jpg" alt="개조 머슬카"></a><br><sub><a href="showcase/game-worlds.ko.md#개조-머슬카">개조 머슬카</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/real-world.ko.md#안개-낀-농장-다큐멘터리-필름-사진"><img src="assets/showcase/tiles/farm-documentary-film.jpg" alt="안개 낀 농장, 다큐멘터리 필름 사진"></a><br><sub><a href="showcase/real-world.ko.md#안개-낀-농장-다큐멘터리-필름-사진">안개 낀 농장, 다큐멘터리 필름 사진</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/real-world.ko.md#필름으로-찍은-피크닉"><img src="assets/showcase/tiles/picnic-film.jpg" alt="필름으로 찍은 피크닉"></a><br><sub><a href="showcase/real-world.ko.md#필름으로-찍은-피크닉">필름으로 찍은 피크닉</a></sub></td>
 </tr>
 <tr>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#필름-클로즈업-인물-사진"><img src="assets/showcase/tiles/film-portrait-closeup.jpg" alt="필름 클로즈업 인물 사진"></a><br><sub><a href="SHOWCASE.ko.md#필름-클로즈업-인물-사진">필름 클로즈업 인물 사진</a></sub></td>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#오래된-휴대폰-스냅"><img src="assets/showcase/tiles/iphone7-snapshot.jpg" alt="오래된 휴대폰 스냅"></a><br><sub><a href="SHOWCASE.ko.md#오래된-휴대폰-스냅">오래된 휴대폰 스냅</a></sub></td>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#직광-플래시-필름-인물-사진"><img src="assets/showcase/tiles/flash-film-portrait.jpg" alt="직광 플래시 필름 인물 사진"></a><br><sub><a href="SHOWCASE.ko.md#직광-플래시-필름-인물-사진">직광 플래시 필름 인물 사진</a></sub></td>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#할머니의-생일-홈비디오"><img src="assets/showcase/tiles/grandma-birthday-dv.jpg" alt="할머니의 생일, 홈비디오"></a><br><sub><a href="SHOWCASE.ko.md#할머니의-생일-홈비디오">할머니의 생일, 홈비디오</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/real-world.ko.md#필름-클로즈업-인물-사진"><img src="assets/showcase/tiles/film-portrait-closeup.jpg" alt="필름 클로즈업 인물 사진"></a><br><sub><a href="showcase/real-world.ko.md#필름-클로즈업-인물-사진">필름 클로즈업 인물 사진</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/real-world.ko.md#오래된-휴대폰-스냅"><img src="assets/showcase/tiles/iphone7-snapshot.jpg" alt="오래된 휴대폰 스냅"></a><br><sub><a href="showcase/real-world.ko.md#오래된-휴대폰-스냅">오래된 휴대폰 스냅</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/real-world.ko.md#직광-플래시-필름-인물-사진"><img src="assets/showcase/tiles/flash-film-portrait.jpg" alt="직광 플래시 필름 인물 사진"></a><br><sub><a href="showcase/real-world.ko.md#직광-플래시-필름-인물-사진">직광 플래시 필름 인물 사진</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/real-world.ko.md#할머니의-생일-홈비디오"><img src="assets/showcase/tiles/grandma-birthday-dv.jpg" alt="할머니의 생일, 홈비디오"></a><br><sub><a href="showcase/real-world.ko.md#할머니의-생일-홈비디오">할머니의 생일, 홈비디오</a></sub></td>
 </tr>
 <tr>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#해-질-녘-옥상"><img src="assets/showcase/tiles/rooftop-bedsheets.jpg" alt="해 질 녘 옥상"></a><br><sub><a href="SHOWCASE.ko.md#해-질-녘-옥상">해 질 녘 옥상</a></sub></td>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#차를-마시기-전-잠깐"><img src="assets/showcase/tiles/tea-portrait.jpg" alt="차를 마시기 전 잠깐"></a><br><sub><a href="SHOWCASE.ko.md#차를-마시기-전-잠깐">차를 마시기 전 잠깐</a></sub></td>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#새벽의-플라밍고"><img src="assets/showcase/tiles/flamingo-salt-lake.jpg" alt="새벽의 플라밍고"></a><br><sub><a href="SHOWCASE.ko.md#새벽의-플라밍고">새벽의 플라밍고</a></sub></td>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#이발-의자에-앉은-구름"><img src="assets/showcase/tiles/surreal-cloud-barber-chair.jpg" alt="이발 의자에 앉은 구름"></a><br><sub><a href="SHOWCASE.ko.md#이발-의자에-앉은-구름">이발 의자에 앉은 구름</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/real-world.ko.md#해-질-녘-옥상"><img src="assets/showcase/tiles/rooftop-bedsheets.jpg" alt="해 질 녘 옥상"></a><br><sub><a href="showcase/real-world.ko.md#해-질-녘-옥상">해 질 녘 옥상</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/real-world.ko.md#차를-마시기-전-잠깐"><img src="assets/showcase/tiles/tea-portrait.jpg" alt="차를 마시기 전 잠깐"></a><br><sub><a href="showcase/real-world.ko.md#차를-마시기-전-잠깐">차를 마시기 전 잠깐</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/real-world.ko.md#새벽의-플라밍고"><img src="assets/showcase/tiles/flamingo-salt-lake.jpg" alt="새벽의 플라밍고"></a><br><sub><a href="showcase/real-world.ko.md#새벽의-플라밍고">새벽의 플라밍고</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/surreal-worlds.ko.md#이발-의자에-앉은-구름"><img src="assets/showcase/tiles/surreal-cloud-barber-chair.jpg" alt="이발 의자에 앉은 구름"></a><br><sub><a href="showcase/surreal-worlds.ko.md#이발-의자에-앉은-구름">이발 의자에 앉은 구름</a></sub></td>
 </tr>
 <tr>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#달-자르기"><img src="assets/showcase/tiles/surreal-long-table.jpg" alt="달 자르기"></a><br><sub><a href="SHOWCASE.ko.md#달-자르기">달 자르기</a></sub></td>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#서양배-탈의실"><img src="assets/showcase/tiles/surreal-pear-dressing-room.jpg" alt="서양배 탈의실"></a><br><sub><a href="SHOWCASE.ko.md#서양배-탈의실">서양배 탈의실</a></sub></td>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#종이-오리기-콜라주"><img src="assets/showcase/tiles/blue-collage.jpg" alt="종이 오리기 콜라주"></a><br><sub><a href="SHOWCASE.ko.md#종이-오리기-콜라주">종이 오리기 콜라주</a></sub></td>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#스티커-자국-타이포그래피-포스터"><img src="assets/showcase/tiles/sticker-type-poster.jpg" alt="스티커 자국 타이포그래피 포스터"></a><br><sub><a href="SHOWCASE.ko.md#스티커-자국-타이포그래피-포스터">스티커 자국 타이포그래피 포스터</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/surreal-worlds.ko.md#달-자르기"><img src="assets/showcase/tiles/surreal-long-table.jpg" alt="달 자르기"></a><br><sub><a href="showcase/surreal-worlds.ko.md#달-자르기">달 자르기</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/surreal-worlds.ko.md#서양배-탈의실"><img src="assets/showcase/tiles/surreal-pear-dressing-room.jpg" alt="서양배 탈의실"></a><br><sub><a href="showcase/surreal-worlds.ko.md#서양배-탈의실">서양배 탈의실</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/surreal-worlds.ko.md#종이-오리기-콜라주"><img src="assets/showcase/tiles/blue-collage.jpg" alt="종이 오리기 콜라주"></a><br><sub><a href="showcase/surreal-worlds.ko.md#종이-오리기-콜라주">종이 오리기 콜라주</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/surreal-worlds.ko.md#스티커-자국-타이포그래피-포스터"><img src="assets/showcase/tiles/sticker-type-poster.jpg" alt="스티커 자국 타이포그래피 포스터"></a><br><sub><a href="showcase/surreal-worlds.ko.md#스티커-자국-타이포그래피-포스터">스티커 자국 타이포그래피 포스터</a></sub></td>
 </tr>
 <tr>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#픽셀-아트-흰-고양이-포스터"><img src="assets/showcase/tiles/pixel-white-cat.jpg" alt="픽셀 아트 흰 고양이 포스터"></a><br><sub><a href="SHOWCASE.ko.md#픽셀-아트-흰-고양이-포스터">픽셀 아트 흰 고양이 포스터</a></sub></td>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#원앙-고전-거장풍-유화"><img src="assets/showcase/tiles/baroque-mandarin-ducks.jpg" alt="원앙, 고전 거장풍 유화"></a><br><sub><a href="SHOWCASE.ko.md#원앙-고전-거장풍-유화">원앙, 고전 거장풍 유화</a></sub></td>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#어부와-펠리컨-카라바조풍"><img src="assets/showcase/tiles/caravaggio-pelican.jpg" alt="어부와 펠리컨, 카라바조풍"></a><br><sub><a href="SHOWCASE.ko.md#어부와-펠리컨-카라바조풍">어부와 펠리컨, 카라바조풍</a></sub></td>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#탁구-경기-카라바조풍"><img src="assets/showcase/tiles/caravaggio-ping-pong.jpg" alt="탁구 경기, 카라바조풍"></a><br><sub><a href="SHOWCASE.ko.md#탁구-경기-카라바조풍">탁구 경기, 카라바조풍</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/surreal-worlds.ko.md#픽셀-아트-흰-고양이-포스터"><img src="assets/showcase/tiles/pixel-white-cat.jpg" alt="픽셀 아트 흰 고양이 포스터"></a><br><sub><a href="showcase/surreal-worlds.ko.md#픽셀-아트-흰-고양이-포스터">픽셀 아트 흰 고양이 포스터</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/artistic-worlds.ko.md#원앙-고전-거장풍-유화"><img src="assets/showcase/tiles/baroque-mandarin-ducks.jpg" alt="원앙, 고전 거장풍 유화"></a><br><sub><a href="showcase/artistic-worlds.ko.md#원앙-고전-거장풍-유화">원앙, 고전 거장풍 유화</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/artistic-worlds.ko.md#어부와-펠리컨-카라바조풍"><img src="assets/showcase/tiles/caravaggio-pelican.jpg" alt="어부와 펠리컨, 카라바조풍"></a><br><sub><a href="showcase/artistic-worlds.ko.md#어부와-펠리컨-카라바조풍">어부와 펠리컨, 카라바조풍</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/artistic-worlds.ko.md#탁구-경기-카라바조풍"><img src="assets/showcase/tiles/caravaggio-ping-pong.jpg" alt="탁구 경기, 카라바조풍"></a><br><sub><a href="showcase/artistic-worlds.ko.md#탁구-경기-카라바조풍">탁구 경기, 카라바조풍</a></sub></td>
 </tr>
 <tr>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#쑤저우-정원의-원앙-인상파-유화"><img src="assets/showcase/tiles/impressionist-suzhou-garden.jpg" alt="쑤저우 정원의 원앙, 인상파 유화"></a><br><sub><a href="SHOWCASE.ko.md#쑤저우-정원의-원앙-인상파-유화">쑤저우 정원의 원앙, 인상파 유화</a></sub></td>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#태양-중세-채식-필사본"><img src="assets/showcase/tiles/illuminated-manuscript-a.jpg" alt="태양, 중세 채식 필사본"></a><br><sub><a href="SHOWCASE.ko.md#태양-중세-채식-필사본">태양, 중세 채식 필사본</a></sub></td>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#옥토끼-중세-채식-필사본"><img src="assets/showcase/tiles/illuminated-manuscript-b.jpg" alt="옥토끼, 중세 채식 필사본"></a><br><sub><a href="SHOWCASE.ko.md#옥토끼-중세-채식-필사본">옥토끼, 중세 채식 필사본</a></sub></td>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#우주정거장-수리-둔황-벽화"><img src="assets/showcase/tiles/dunhuang-space-station.jpg" alt="우주정거장 수리, 둔황 벽화"></a><br><sub><a href="SHOWCASE.ko.md#우주정거장-수리-둔황-벽화">우주정거장 수리, 둔황 벽화</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/artistic-worlds.ko.md#쑤저우-정원의-원앙-인상파-유화"><img src="assets/showcase/tiles/impressionist-suzhou-garden.jpg" alt="쑤저우 정원의 원앙, 인상파 유화"></a><br><sub><a href="showcase/artistic-worlds.ko.md#쑤저우-정원의-원앙-인상파-유화">쑤저우 정원의 원앙, 인상파 유화</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/artistic-worlds.ko.md#태양-중세-채식-필사본"><img src="assets/showcase/tiles/illuminated-manuscript-a.jpg" alt="태양, 중세 채식 필사본"></a><br><sub><a href="showcase/artistic-worlds.ko.md#태양-중세-채식-필사본">태양, 중세 채식 필사본</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/artistic-worlds.ko.md#옥토끼-중세-채식-필사본"><img src="assets/showcase/tiles/illuminated-manuscript-b.jpg" alt="옥토끼, 중세 채식 필사본"></a><br><sub><a href="showcase/artistic-worlds.ko.md#옥토끼-중세-채식-필사본">옥토끼, 중세 채식 필사본</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/artistic-worlds.ko.md#우주정거장-수리-둔황-벽화"><img src="assets/showcase/tiles/dunhuang-space-station.jpg" alt="우주정거장 수리, 둔황 벽화"></a><br><sub><a href="showcase/artistic-worlds.ko.md#우주정거장-수리-둔황-벽화">우주정거장 수리, 둔황 벽화</a></sub></td>
 </tr>
 <tr>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#펠리컨-그림자극"><img src="assets/showcase/tiles/shadow-puppet-pelican.jpg" alt="펠리컨 그림자극"></a><br><sub><a href="SHOWCASE.ko.md#펠리컨-그림자극">펠리컨 그림자극</a></sub></td>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#회로와-꽃-공필화-직물-문양"><img src="assets/showcase/tiles/gongbi-circuit-textile.jpg" alt="회로와 꽃, 공필화 직물 문양"></a><br><sub><a href="SHOWCASE.ko.md#회로와-꽃-공필화-직물-문양">회로와 꽃, 공필화 직물 문양</a></sub></td>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#거울-앞의-펠리컨-공필화"><img src="assets/showcase/tiles/gongbi-pelican-mirror.jpg" alt="거울 앞의 펠리컨, 공필화"></a><br><sub><a href="SHOWCASE.ko.md#거울-앞의-펠리컨-공필화">거울 앞의 펠리컨, 공필화</a></sub></td>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ko.md#금빛-불꽃-동양-판타지-일러스트"><img src="assets/showcase/tiles/eastern-fantasy-lineart.jpg" alt="금빛 불꽃, 동양 판타지 일러스트"></a><br><sub><a href="SHOWCASE.ko.md#금빛-불꽃-동양-판타지-일러스트">금빛 불꽃, 동양 판타지 일러스트</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/artistic-worlds.ko.md#펠리컨-그림자극"><img src="assets/showcase/tiles/shadow-puppet-pelican.jpg" alt="펠리컨 그림자극"></a><br><sub><a href="showcase/artistic-worlds.ko.md#펠리컨-그림자극">펠리컨 그림자극</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/artistic-worlds.ko.md#회로와-꽃-공필화-직물-문양"><img src="assets/showcase/tiles/gongbi-circuit-textile.jpg" alt="회로와 꽃, 공필화 직물 문양"></a><br><sub><a href="showcase/artistic-worlds.ko.md#회로와-꽃-공필화-직물-문양">회로와 꽃, 공필화 직물 문양</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/artistic-worlds.ko.md#거울-앞의-펠리컨-공필화"><img src="assets/showcase/tiles/gongbi-pelican-mirror.jpg" alt="거울 앞의 펠리컨, 공필화"></a><br><sub><a href="showcase/artistic-worlds.ko.md#거울-앞의-펠리컨-공필화">거울 앞의 펠리컨, 공필화</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="showcase/artistic-worlds.ko.md#금빛-불꽃-동양-판타지-일러스트"><img src="assets/showcase/tiles/eastern-fantasy-lineart.jpg" alt="금빛 불꽃, 동양 판타지 일러스트"></a><br><sub><a href="showcase/artistic-worlds.ko.md#금빛-불꽃-동양-판타지-일러스트">금빛 불꽃, 동양 판타지 일러스트</a></sub></td>
 </tr>
 </table>
 
-이미지를 선택하면 큰 이미지와 프롬프트를 볼 수 있습니다.
+이미지를 선택하면 큰 이미지와 프롬프트를 볼 수 있습니다. [섹션별로 보기](showcase/README.ko.md)도 가능합니다.
 <!-- END showcase-grid -->
 
 ## 온라인 사용
