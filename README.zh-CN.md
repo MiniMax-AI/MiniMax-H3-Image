@@ -58,29 +58,77 @@ npx skills add https://github.com/MiniMax-AI/MiniMax-H3-Image --skill h3-image-p
 <table>
 <tr><th colspan="4" align="left">开源高智能</th></tr>
 <tr>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#16-人群像6-种场景"><img src="assets/showcase/tiles/multi-ref-group-a-output.jpg" alt="16 人群像，6 种场景"></a><br><sub><a href="SHOWCASE.zh-CN.md#16-人群像6-种场景">16 人群像，6 种场景</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#多图服饰配色"><img src="assets/showcase/tiles/multi-ref-outfit-color-output.jpg" alt="多图服饰配色"></a><br><sub><a href="SHOWCASE.zh-CN.md#多图服饰配色">多图服饰配色</a></sub></td>
 <td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#十张参考图组合成客厅"><img src="assets/showcase/tiles/furniture-room-output.jpg" alt="十张参考图组合成客厅"></a><br><sub><a href="SHOWCASE.zh-CN.md#十张参考图组合成客厅">十张参考图组合成客厅</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#论文页生成生物学科研配图"><img src="assets/showcase/tiles/bio-figure-output.jpg" alt="论文页生成生物学科研配图"></a><br><sub><a href="SHOWCASE.zh-CN.md#论文页生成生物学科研配图">论文页生成生物学科研配图</a></sub></td>
+</tr>
+<tr>
 <td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#小熊猫科普图"><img src="assets/showcase/tiles/red-panda-infographic.jpg" alt="小熊猫科普图"></a><br><sub><a href="SHOWCASE.zh-CN.md#小熊猫科普图">小熊猫科普图</a></sub></td>
 <td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#人员选派推理题"><img src="assets/showcase/tiles/staffing-logic-puzzle.jpg" alt="人员选派推理题"></a><br><sub><a href="SHOWCASE.zh-CN.md#人员选派推理题">人员选派推理题</a></sub></td>
 <td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#电动摩托爆炸图"><img src="assets/showcase/tiles/e-motorcycle-exploded.jpg" alt="电动摩托爆炸图"></a><br><sub><a href="SHOWCASE.zh-CN.md#电动摩托爆炸图">电动摩托爆炸图</a></sub></td>
-</tr>
-<tr>
 <td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#喷气发动机爆炸图"><img src="assets/showcase/tiles/jet-engine-exploded.jpg" alt="喷气发动机爆炸图"></a><br><sub><a href="SHOWCASE.zh-CN.md#喷气发动机爆炸图">喷气发动机爆炸图</a></sub></td>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#摩卡壶工程蓝图"><img src="assets/showcase/tiles/moka-pot-blueprint.jpg" alt="摩卡壶工程蓝图"></a><br><sub><a href="SHOWCASE.zh-CN.md#摩卡壶工程蓝图">摩卡壶工程蓝图</a></sub></td>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#四足机甲-cad-图纸"><img src="assets/showcase/tiles/quadruped-mech-cad.jpg" alt="四足机甲 CAD 图纸"></a><br><sub><a href="SHOWCASE.zh-CN.md#四足机甲-cad-图纸">四足机甲 CAD 图纸</a></sub></td>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#吊轨配送机"><img src="assets/showcase/tiles/ceiling-rail-courier.jpg" alt="吊轨配送机"></a><br><sub><a href="SHOWCASE.zh-CN.md#吊轨配送机">吊轨配送机</a></sub></td>
 </tr>
 <tr>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#摩卡壶工程蓝图"><img src="assets/showcase/tiles/moka-pot-blueprint.jpg" alt="摩卡壶工程蓝图"></a><br><sub><a href="SHOWCASE.zh-CN.md#摩卡壶工程蓝图">摩卡壶工程蓝图</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#蚂蚁六足机甲线稿"><img src="assets/showcase/tiles/ant-hexapod-mech-lineart.jpg" alt="蚂蚁六足机甲线稿"></a><br><sub><a href="SHOWCASE.zh-CN.md#蚂蚁六足机甲线稿">蚂蚁六足机甲线稿</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#四足机甲-cad-图纸"><img src="assets/showcase/tiles/quadruped-mech-cad.jpg" alt="四足机甲 CAD 图纸"></a><br><sub><a href="SHOWCASE.zh-CN.md#四足机甲-cad-图纸">四足机甲 CAD 图纸</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#机甲巨兽爆炸-cad-图"><img src="assets/showcase/tiles/mech-monster-exploded-cad.jpg" alt="机甲巨兽爆炸 CAD 图"></a><br><sub><a href="SHOWCASE.zh-CN.md#机甲巨兽爆炸-cad-图">机甲巨兽爆炸 CAD 图</a></sub></td>
+</tr>
+<tr>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#吊轨配送机"><img src="assets/showcase/tiles/ceiling-rail-courier.jpg" alt="吊轨配送机"></a><br><sub><a href="SHOWCASE.zh-CN.md#吊轨配送机">吊轨配送机</a></sub></td>
 <td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#轮腿配送机器人"><img src="assets/showcase/tiles/wheel-leg-robot.jpg" alt="轮腿配送机器人"></a><br><sub><a href="SHOWCASE.zh-CN.md#轮腿配送机器人">轮腿配送机器人</a></sub></td>
 <td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#直角镜面"><img src="assets/showcase/tiles/mirror-reflection.jpg" alt="直角镜面"></a><br><sub><a href="SHOWCASE.zh-CN.md#直角镜面">直角镜面</a></sub></td>
 <td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#伸进投影的手"><img src="assets/showcase/tiles/projection-hand-shadow.jpg" alt="伸进投影的手"></a><br><sub><a href="SHOWCASE.zh-CN.md#伸进投影的手">伸进投影的手</a></sub></td>
+</tr>
+<tr>
 <td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#游戏地图变-3d-游戏画面"><img src="assets/showcase/tiles/game-map-to-3d.jpg" alt="游戏地图变 3D 游戏画面"></a><br><sub><a href="SHOWCASE.zh-CN.md#游戏地图变-3d-游戏画面">游戏地图变 3D 游戏画面</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#鹈鹕毕业叠罗汉"><img src="assets/showcase/tiles/pelican-graduation-pyramid.jpg" alt="鹈鹕毕业叠罗汉"></a><br><sub><a href="SHOWCASE.zh-CN.md#鹈鹕毕业叠罗汉">鹈鹕毕业叠罗汉</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#鹈鹕圣诞树"><img src="assets/showcase/tiles/pelican-christmas-tree.jpg" alt="鹈鹕圣诞树"></a><br><sub><a href="SHOWCASE.zh-CN.md#鹈鹕圣诞树">鹈鹕圣诞树</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#鹈鹕平衡挑战"><img src="assets/showcase/tiles/pelican-challenge-3.jpg" alt="鹈鹕平衡挑战"></a><br><sub><a href="SHOWCASE.zh-CN.md#鹈鹕平衡挑战">鹈鹕平衡挑战</a></sub></td>
 </tr>
 <tr><th colspan="4" align="left">创意生产</th></tr>
 <tr>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#边境骑手"><img src="assets/showcase/tiles/frontier-rider.jpg" alt="边境骑手"></a><br><sub><a href="SHOWCASE.zh-CN.md#边境骑手">边境骑手</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#荒漠大集会"><img src="assets/showcase/tiles/desert-gathering.jpg" alt="荒漠大集会"></a><br><sub><a href="SHOWCASE.zh-CN.md#荒漠大集会">荒漠大集会</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#冷色矿物荒原航拍"><img src="assets/showcase/tiles/cold-mineral-aerial.jpg" alt="冷色矿物荒原航拍"></a><br><sub><a href="SHOWCASE.zh-CN.md#冷色矿物荒原航拍">冷色矿物荒原航拍</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#红褐矿物荒原航拍"><img src="assets/showcase/tiles/desert-mineral-aerial.jpg" alt="红褐矿物荒原航拍"></a><br><sub><a href="SHOWCASE.zh-CN.md#红褐矿物荒原航拍">红褐矿物荒原航拍</a></sub></td>
+</tr>
+<tr>
 <td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#森林中的古剧场"><img src="assets/showcase/tiles/forest-amphitheater.jpg" alt="森林中的古剧场"></a><br><sub><a href="SHOWCASE.zh-CN.md#森林中的古剧场">森林中的古剧场</a></sub></td>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#战斗驾驶员"><img src="assets/showcase/tiles/combat-pilot.jpg" alt="战斗驾驶员"></a><br><sub><a href="SHOWCASE.zh-CN.md#战斗驾驶员">战斗驾驶员</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#云海仙山宫阙"><img src="assets/showcase/tiles/mountain-temple.jpg" alt="云海仙山宫阙"></a><br><sub><a href="SHOWCASE.zh-CN.md#云海仙山宫阙">云海仙山宫阙</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#巫师释放扇形火焰"><img src="assets/showcase/tiles/fire-mage-vfx.jpg" alt="巫师释放扇形火焰"></a><br><sub><a href="SHOWCASE.zh-CN.md#巫师释放扇形火焰">巫师释放扇形火焰</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#爆炸的两个阶段"><img src="assets/showcase/tiles/explosion-two-state.jpg" alt="爆炸的两个阶段"></a><br><sub><a href="SHOWCASE.zh-CN.md#爆炸的两个阶段">爆炸的两个阶段</a></sub></td>
+</tr>
+<tr>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#重甲骑士角色设定"><img src="assets/showcase/tiles/armored-knight-sheet.jpg" alt="重甲骑士角色设定"></a><br><sub><a href="SHOWCASE.zh-CN.md#重甲骑士角色设定">重甲骑士角色设定</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#狮王面部特写"><img src="assets/showcase/tiles/lion-king-face.jpg" alt="狮王面部特写"></a><br><sub><a href="SHOWCASE.zh-CN.md#狮王面部特写">狮王面部特写</a></sub></td>
 <td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#森林中的龙"><img src="assets/showcase/tiles/forest-dragon.jpg" alt="森林中的龙"></a><br><sub><a href="SHOWCASE.zh-CN.md#森林中的龙">森林中的龙</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#第一人称射击场景"><img src="assets/showcase/tiles/fps-wasteland.jpg" alt="第一人称射击场景"></a><br><sub><a href="SHOWCASE.zh-CN.md#第一人称射击场景">第一人称射击场景</a></sub></td>
+</tr>
+<tr>
 <td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#白模渲染图变电影剧照"><img src="assets/showcase/tiles/moon-rover-render.jpg" alt="白模渲染图变电影剧照"></a><br><sub><a href="SHOWCASE.zh-CN.md#白模渲染图变电影剧照">白模渲染图变电影剧照</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#峡谷水电站绘景"><img src="assets/showcase/tiles/hydro-station-canyon.jpg" alt="峡谷水电站绘景"></a><br><sub><a href="SHOWCASE.zh-CN.md#峡谷水电站绘景">峡谷水电站绘景</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#废弃车站"><img src="assets/showcase/tiles/abandoned-station.jpg" alt="废弃车站"></a><br><sub><a href="SHOWCASE.zh-CN.md#废弃车站">废弃车站</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#末世工业厂区"><img src="assets/showcase/tiles/industrial-ruins.jpg" alt="末世工业厂区"></a><br><sub><a href="SHOWCASE.zh-CN.md#末世工业厂区">末世工业厂区</a></sub></td>
+</tr>
+<tr>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#冰封海湾中的沉船"><img src="assets/showcase/tiles/frozen-shipwreck-bay.jpg" alt="冰封海湾中的沉船"></a><br><sub><a href="SHOWCASE.zh-CN.md#冰封海湾中的沉船">冰封海湾中的沉船</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#战斗驾驶员"><img src="assets/showcase/tiles/combat-pilot.jpg" alt="战斗驾驶员"></a><br><sub><a href="SHOWCASE.zh-CN.md#战斗驾驶员">战斗驾驶员</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#极地服装设定"><img src="assets/showcase/tiles/polar-costume-board.jpg" alt="极地服装设定"></a><br><sub><a href="SHOWCASE.zh-CN.md#极地服装设定">极地服装设定</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#红色荒原上的头盔"><img src="assets/showcase/tiles/helmet-key-art.jpg" alt="红色荒原上的头盔"></a><br><sub><a href="SHOWCASE.zh-CN.md#红色荒原上的头盔">红色荒原上的头盔</a></sub></td>
+</tr>
+<tr>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#科幻战斗机"><img src="assets/showcase/tiles/scifi-fighter.jpg" alt="科幻战斗机"></a><br><sub><a href="SHOWCASE.zh-CN.md#科幻战斗机">科幻战斗机</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#科幻改装肌肉车"><img src="assets/showcase/tiles/modded-muscle-car.jpg" alt="科幻改装肌肉车"></a><br><sub><a href="SHOWCASE.zh-CN.md#科幻改装肌肉车">科幻改装肌肉车</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#雾中农场纪实胶片"><img src="assets/showcase/tiles/farm-documentary-film.jpg" alt="雾中农场，纪实胶片"></a><br><sub><a href="SHOWCASE.zh-CN.md#雾中农场纪实胶片">雾中农场，纪实胶片</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#胶片质感野餐"><img src="assets/showcase/tiles/picnic-film.jpg" alt="胶片质感野餐"></a><br><sub><a href="SHOWCASE.zh-CN.md#胶片质感野餐">胶片质感野餐</a></sub></td>
+</tr>
+<tr>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#胶片人像特写"><img src="assets/showcase/tiles/film-portrait-closeup.jpg" alt="胶片人像特写"></a><br><sub><a href="SHOWCASE.zh-CN.md#胶片人像特写">胶片人像特写</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#老手机随手拍"><img src="assets/showcase/tiles/iphone7-snapshot.jpg" alt="老手机随手拍"></a><br><sub><a href="SHOWCASE.zh-CN.md#老手机随手拍">老手机随手拍</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#直闪胶片人像"><img src="assets/showcase/tiles/flash-film-portrait.jpg" alt="直闪胶片人像"></a><br><sub><a href="SHOWCASE.zh-CN.md#直闪胶片人像">直闪胶片人像</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#奶奶的生日家用-dv"><img src="assets/showcase/tiles/grandma-birthday-dv.jpg" alt="奶奶的生日，家用 DV"></a><br><sub><a href="SHOWCASE.zh-CN.md#奶奶的生日家用-dv">奶奶的生日，家用 DV</a></sub></td>
 </tr>
 <tr>
 <td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#黄昏屋顶"><img src="assets/showcase/tiles/rooftop-bedsheets.jpg" alt="黄昏屋顶"></a><br><sub><a href="SHOWCASE.zh-CN.md#黄昏屋顶">黄昏屋顶</a></sub></td>
@@ -90,9 +138,27 @@ npx skills add https://github.com/MiniMax-AI/MiniMax-H3-Image --skill h3-image-p
 </tr>
 <tr>
 <td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#切月亮"><img src="assets/showcase/tiles/surreal-long-table.jpg" alt="切月亮"></a><br><sub><a href="SHOWCASE.zh-CN.md#切月亮">切月亮</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#梨子更衣室"><img src="assets/showcase/tiles/surreal-pear-dressing-room.jpg" alt="梨子更衣室"></a><br><sub><a href="SHOWCASE.zh-CN.md#梨子更衣室">梨子更衣室</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#剪纸拼贴"><img src="assets/showcase/tiles/blue-collage.jpg" alt="剪纸拼贴"></a><br><sub><a href="SHOWCASE.zh-CN.md#剪纸拼贴">剪纸拼贴</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#贴纸残迹字体海报"><img src="assets/showcase/tiles/sticker-type-poster.jpg" alt="贴纸残迹字体海报"></a><br><sub><a href="SHOWCASE.zh-CN.md#贴纸残迹字体海报">贴纸残迹字体海报</a></sub></td>
+</tr>
+<tr>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#像素白猫海报"><img src="assets/showcase/tiles/pixel-white-cat.jpg" alt="像素白猫海报"></a><br><sub><a href="SHOWCASE.zh-CN.md#像素白猫海报">像素白猫海报</a></sub></td>
 <td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#鸳鸯古典大师油画"><img src="assets/showcase/tiles/baroque-mandarin-ducks.jpg" alt="鸳鸯，古典大师油画"></a><br><sub><a href="SHOWCASE.zh-CN.md#鸳鸯古典大师油画">鸳鸯，古典大师油画</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#渔夫与鹈鹕卡拉瓦乔风格"><img src="assets/showcase/tiles/caravaggio-pelican.jpg" alt="渔夫与鹈鹕，卡拉瓦乔风格"></a><br><sub><a href="SHOWCASE.zh-CN.md#渔夫与鹈鹕卡拉瓦乔风格">渔夫与鹈鹕，卡拉瓦乔风格</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#乒乓球赛卡拉瓦乔风格"><img src="assets/showcase/tiles/caravaggio-ping-pong.jpg" alt="乒乓球赛，卡拉瓦乔风格"></a><br><sub><a href="SHOWCASE.zh-CN.md#乒乓球赛卡拉瓦乔风格">乒乓球赛，卡拉瓦乔风格</a></sub></td>
+</tr>
+<tr>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#苏州园林鸳鸯印象派油画"><img src="assets/showcase/tiles/impressionist-suzhou-garden.jpg" alt="苏州园林鸳鸯，印象派油画"></a><br><sub><a href="SHOWCASE.zh-CN.md#苏州园林鸳鸯印象派油画">苏州园林鸳鸯，印象派油画</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#太阳中世纪泥金手抄本"><img src="assets/showcase/tiles/illuminated-manuscript-a.jpg" alt="太阳，中世纪泥金手抄本"></a><br><sub><a href="SHOWCASE.zh-CN.md#太阳中世纪泥金手抄本">太阳，中世纪泥金手抄本</a></sub></td>
 <td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#玉兔中世纪泥金手抄本"><img src="assets/showcase/tiles/illuminated-manuscript-b.jpg" alt="玉兔，中世纪泥金手抄本"></a><br><sub><a href="SHOWCASE.zh-CN.md#玉兔中世纪泥金手抄本">玉兔，中世纪泥金手抄本</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#空间站维修敦煌壁画"><img src="assets/showcase/tiles/dunhuang-space-station.jpg" alt="空间站维修，敦煌壁画"></a><br><sub><a href="SHOWCASE.zh-CN.md#空间站维修敦煌壁画">空间站维修，敦煌壁画</a></sub></td>
+</tr>
+<tr>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#鹈鹕皮影戏"><img src="assets/showcase/tiles/shadow-puppet-pelican.jpg" alt="鹈鹕皮影戏"></a><br><sub><a href="SHOWCASE.zh-CN.md#鹈鹕皮影戏">鹈鹕皮影戏</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#电路与花工笔织物纹样"><img src="assets/showcase/tiles/gongbi-circuit-textile.jpg" alt="电路与花，工笔织物纹样"></a><br><sub><a href="SHOWCASE.zh-CN.md#电路与花工笔织物纹样">电路与花，工笔织物纹样</a></sub></td>
 <td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#照镜子的鹈鹕工笔画"><img src="assets/showcase/tiles/gongbi-pelican-mirror.jpg" alt="照镜子的鹈鹕，工笔画"></a><br><sub><a href="SHOWCASE.zh-CN.md#照镜子的鹈鹕工笔画">照镜子的鹈鹕，工笔画</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.zh-CN.md#金色烈焰东方幻想插画"><img src="assets/showcase/tiles/eastern-fantasy-lineart.jpg" alt="金色烈焰，东方幻想插画"></a><br><sub><a href="SHOWCASE.zh-CN.md#金色烈焰东方幻想插画">金色烈焰，东方幻想插画</a></sub></td>
 </tr>
 </table>
 

@@ -59,29 +59,77 @@ h3-image-prompt-writing を使って、雨の夜市を描いた 3:4 のポスタ
 <table>
 <tr><th colspan="4" align="left">オープンソースの先進的な能力</th></tr>
 <tr>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#16-人の群像6-つのシーン"><img src="assets/showcase/tiles/multi-ref-group-a-output.jpg" alt="16 人の群像、6 つのシーン"></a><br><sub><a href="SHOWCASE.ja.md#16-人の群像6-つのシーン">16 人の群像、6 つのシーン</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#複数参照による服の配色"><img src="assets/showcase/tiles/multi-ref-outfit-color-output.jpg" alt="複数参照による服の配色"></a><br><sub><a href="SHOWCASE.ja.md#複数参照による服の配色">複数参照による服の配色</a></sub></td>
 <td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#参照画像-10-枚からリビングルーム"><img src="assets/showcase/tiles/furniture-room-output.jpg" alt="参照画像 10 枚からリビングルーム"></a><br><sub><a href="SHOWCASE.ja.md#参照画像-10-枚からリビングルーム">参照画像 10 枚からリビングルーム</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#論文ページから生物学の図"><img src="assets/showcase/tiles/bio-figure-output.jpg" alt="論文ページから生物学の図"></a><br><sub><a href="SHOWCASE.ja.md#論文ページから生物学の図">論文ページから生物学の図</a></sub></td>
+</tr>
+<tr>
 <td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#レッサーパンダの図解"><img src="assets/showcase/tiles/red-panda-infographic.jpg" alt="レッサーパンダの図解"></a><br><sub><a href="SHOWCASE.ja.md#レッサーパンダの図解">レッサーパンダの図解</a></sub></td>
 <td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#人員選抜の推理問題"><img src="assets/showcase/tiles/staffing-logic-puzzle.jpg" alt="人員選抜の推理問題"></a><br><sub><a href="SHOWCASE.ja.md#人員選抜の推理問題">人員選抜の推理問題</a></sub></td>
 <td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#電動バイクの分解図"><img src="assets/showcase/tiles/e-motorcycle-exploded.jpg" alt="電動バイクの分解図"></a><br><sub><a href="SHOWCASE.ja.md#電動バイクの分解図">電動バイクの分解図</a></sub></td>
-</tr>
-<tr>
 <td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#ジェットエンジンの分解図"><img src="assets/showcase/tiles/jet-engine-exploded.jpg" alt="ジェットエンジンの分解図"></a><br><sub><a href="SHOWCASE.ja.md#ジェットエンジンの分解図">ジェットエンジンの分解図</a></sub></td>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#モカポットの設計図"><img src="assets/showcase/tiles/moka-pot-blueprint.jpg" alt="モカポットの設計図"></a><br><sub><a href="SHOWCASE.ja.md#モカポットの設計図">モカポットの設計図</a></sub></td>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#四脚メカの-cad-図面"><img src="assets/showcase/tiles/quadruped-mech-cad.jpg" alt="四脚メカの CAD 図面"></a><br><sub><a href="SHOWCASE.ja.md#四脚メカの-cad-図面">四脚メカの CAD 図面</a></sub></td>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#天井レール配送機"><img src="assets/showcase/tiles/ceiling-rail-courier.jpg" alt="天井レール配送機"></a><br><sub><a href="SHOWCASE.ja.md#天井レール配送機">天井レール配送機</a></sub></td>
 </tr>
 <tr>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#モカポットの設計図"><img src="assets/showcase/tiles/moka-pot-blueprint.jpg" alt="モカポットの設計図"></a><br><sub><a href="SHOWCASE.ja.md#モカポットの設計図">モカポットの設計図</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#アリ型六脚メカの線画"><img src="assets/showcase/tiles/ant-hexapod-mech-lineart.jpg" alt="アリ型六脚メカの線画"></a><br><sub><a href="SHOWCASE.ja.md#アリ型六脚メカの線画">アリ型六脚メカの線画</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#四脚メカの-cad-図面"><img src="assets/showcase/tiles/quadruped-mech-cad.jpg" alt="四脚メカの CAD 図面"></a><br><sub><a href="SHOWCASE.ja.md#四脚メカの-cad-図面">四脚メカの CAD 図面</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#メカ獣の分解-cad-図"><img src="assets/showcase/tiles/mech-monster-exploded-cad.jpg" alt="メカ獣の分解 CAD 図"></a><br><sub><a href="SHOWCASE.ja.md#メカ獣の分解-cad-図">メカ獣の分解 CAD 図</a></sub></td>
+</tr>
+<tr>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#天井レール配送機"><img src="assets/showcase/tiles/ceiling-rail-courier.jpg" alt="天井レール配送機"></a><br><sub><a href="SHOWCASE.ja.md#天井レール配送機">天井レール配送機</a></sub></td>
 <td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#車輪脚型配送ロボット"><img src="assets/showcase/tiles/wheel-leg-robot.jpg" alt="車輪脚型配送ロボット"></a><br><sub><a href="SHOWCASE.ja.md#車輪脚型配送ロボット">車輪脚型配送ロボット</a></sub></td>
 <td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#直角の合わせ鏡"><img src="assets/showcase/tiles/mirror-reflection.jpg" alt="直角の合わせ鏡"></a><br><sub><a href="SHOWCASE.ja.md#直角の合わせ鏡">直角の合わせ鏡</a></sub></td>
 <td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#投影に差し入れた手"><img src="assets/showcase/tiles/projection-hand-shadow.jpg" alt="投影に差し入れた手"></a><br><sub><a href="SHOWCASE.ja.md#投影に差し入れた手">投影に差し入れた手</a></sub></td>
+</tr>
+<tr>
 <td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#ゲームマップから-3d-ゲーム画面"><img src="assets/showcase/tiles/game-map-to-3d.jpg" alt="ゲームマップから 3D ゲーム画面"></a><br><sub><a href="SHOWCASE.ja.md#ゲームマップから-3d-ゲーム画面">ゲームマップから 3D ゲーム画面</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#ペリカンの卒業ピラミッド"><img src="assets/showcase/tiles/pelican-graduation-pyramid.jpg" alt="ペリカンの卒業ピラミッド"></a><br><sub><a href="SHOWCASE.ja.md#ペリカンの卒業ピラミッド">ペリカンの卒業ピラミッド</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#ペリカンのクリスマスツリー"><img src="assets/showcase/tiles/pelican-christmas-tree.jpg" alt="ペリカンのクリスマスツリー"></a><br><sub><a href="SHOWCASE.ja.md#ペリカンのクリスマスツリー">ペリカンのクリスマスツリー</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#ペリカンのバランス芸"><img src="assets/showcase/tiles/pelican-challenge-3.jpg" alt="ペリカンのバランス芸"></a><br><sub><a href="SHOWCASE.ja.md#ペリカンのバランス芸">ペリカンのバランス芸</a></sub></td>
 </tr>
 <tr><th colspan="4" align="left">クリエイティブな活用</th></tr>
 <tr>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#辺境の騎手"><img src="assets/showcase/tiles/frontier-rider.jpg" alt="辺境の騎手"></a><br><sub><a href="SHOWCASE.ja.md#辺境の騎手">辺境の騎手</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#砂漠の大集会"><img src="assets/showcase/tiles/desert-gathering.jpg" alt="砂漠の大集会"></a><br><sub><a href="SHOWCASE.ja.md#砂漠の大集会">砂漠の大集会</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#寒色の鉱物荒野空撮"><img src="assets/showcase/tiles/cold-mineral-aerial.jpg" alt="寒色の鉱物荒野、空撮"></a><br><sub><a href="SHOWCASE.ja.md#寒色の鉱物荒野空撮">寒色の鉱物荒野、空撮</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#赤褐色の鉱物荒野空撮"><img src="assets/showcase/tiles/desert-mineral-aerial.jpg" alt="赤褐色の鉱物荒野、空撮"></a><br><sub><a href="SHOWCASE.ja.md#赤褐色の鉱物荒野空撮">赤褐色の鉱物荒野、空撮</a></sub></td>
+</tr>
+<tr>
 <td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#森の古代劇場"><img src="assets/showcase/tiles/forest-amphitheater.jpg" alt="森の古代劇場"></a><br><sub><a href="SHOWCASE.ja.md#森の古代劇場">森の古代劇場</a></sub></td>
-<td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#戦闘パイロット"><img src="assets/showcase/tiles/combat-pilot.jpg" alt="戦闘パイロット"></a><br><sub><a href="SHOWCASE.ja.md#戦闘パイロット">戦闘パイロット</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#雲海の上の宮殿"><img src="assets/showcase/tiles/mountain-temple.jpg" alt="雲海の上の宮殿"></a><br><sub><a href="SHOWCASE.ja.md#雲海の上の宮殿">雲海の上の宮殿</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#扇状の炎を放つ魔法使い"><img src="assets/showcase/tiles/fire-mage-vfx.jpg" alt="扇状の炎を放つ魔法使い"></a><br><sub><a href="SHOWCASE.ja.md#扇状の炎を放つ魔法使い">扇状の炎を放つ魔法使い</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#爆発の-2-段階"><img src="assets/showcase/tiles/explosion-two-state.jpg" alt="爆発の 2 段階"></a><br><sub><a href="SHOWCASE.ja.md#爆発の-2-段階">爆発の 2 段階</a></sub></td>
+</tr>
+<tr>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#重装騎士のキャラクターシート"><img src="assets/showcase/tiles/armored-knight-sheet.jpg" alt="重装騎士のキャラクターシート"></a><br><sub><a href="SHOWCASE.ja.md#重装騎士のキャラクターシート">重装騎士のキャラクターシート</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#獅子王の顔のクローズアップ"><img src="assets/showcase/tiles/lion-king-face.jpg" alt="獅子王の顔のクローズアップ"></a><br><sub><a href="SHOWCASE.ja.md#獅子王の顔のクローズアップ">獅子王の顔のクローズアップ</a></sub></td>
 <td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#森のドラゴン"><img src="assets/showcase/tiles/forest-dragon.jpg" alt="森のドラゴン"></a><br><sub><a href="SHOWCASE.ja.md#森のドラゴン">森のドラゴン</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#一人称シューティングの場面"><img src="assets/showcase/tiles/fps-wasteland.jpg" alt="一人称シューティングの場面"></a><br><sub><a href="SHOWCASE.ja.md#一人称シューティングの場面">一人称シューティングの場面</a></sub></td>
+</tr>
+<tr>
 <td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#白モデルのレンダリングを映画のスチルに"><img src="assets/showcase/tiles/moon-rover-render.jpg" alt="白モデルのレンダリングを映画のスチルに"></a><br><sub><a href="SHOWCASE.ja.md#白モデルのレンダリングを映画のスチルに">白モデルのレンダリングを映画のスチルに</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#峡谷の水力発電所マットペインティング"><img src="assets/showcase/tiles/hydro-station-canyon.jpg" alt="峡谷の水力発電所、マットペインティング"></a><br><sub><a href="SHOWCASE.ja.md#峡谷の水力発電所マットペインティング">峡谷の水力発電所、マットペインティング</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#廃駅"><img src="assets/showcase/tiles/abandoned-station.jpg" alt="廃駅"></a><br><sub><a href="SHOWCASE.ja.md#廃駅">廃駅</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#荒廃した工業地帯"><img src="assets/showcase/tiles/industrial-ruins.jpg" alt="荒廃した工業地帯"></a><br><sub><a href="SHOWCASE.ja.md#荒廃した工業地帯">荒廃した工業地帯</a></sub></td>
+</tr>
+<tr>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#凍った湾の難破船"><img src="assets/showcase/tiles/frozen-shipwreck-bay.jpg" alt="凍った湾の難破船"></a><br><sub><a href="SHOWCASE.ja.md#凍った湾の難破船">凍った湾の難破船</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#戦闘パイロット"><img src="assets/showcase/tiles/combat-pilot.jpg" alt="戦闘パイロット"></a><br><sub><a href="SHOWCASE.ja.md#戦闘パイロット">戦闘パイロット</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#極地服のコスチュームボード"><img src="assets/showcase/tiles/polar-costume-board.jpg" alt="極地服のコスチュームボード"></a><br><sub><a href="SHOWCASE.ja.md#極地服のコスチュームボード">極地服のコスチュームボード</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#赤い荒野のヘルメット"><img src="assets/showcase/tiles/helmet-key-art.jpg" alt="赤い荒野のヘルメット"></a><br><sub><a href="SHOWCASE.ja.md#赤い荒野のヘルメット">赤い荒野のヘルメット</a></sub></td>
+</tr>
+<tr>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#sf-戦闘機"><img src="assets/showcase/tiles/scifi-fighter.jpg" alt="SF 戦闘機"></a><br><sub><a href="SHOWCASE.ja.md#sf-戦闘機">SF 戦闘機</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#改造マッスルカー"><img src="assets/showcase/tiles/modded-muscle-car.jpg" alt="改造マッスルカー"></a><br><sub><a href="SHOWCASE.ja.md#改造マッスルカー">改造マッスルカー</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#霧の農場ドキュメンタリーのフィルム写真"><img src="assets/showcase/tiles/farm-documentary-film.jpg" alt="霧の農場、ドキュメンタリーのフィルム写真"></a><br><sub><a href="SHOWCASE.ja.md#霧の農場ドキュメンタリーのフィルム写真">霧の農場、ドキュメンタリーのフィルム写真</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#フィルムで撮ったピクニック"><img src="assets/showcase/tiles/picnic-film.jpg" alt="フィルムで撮ったピクニック"></a><br><sub><a href="SHOWCASE.ja.md#フィルムで撮ったピクニック">フィルムで撮ったピクニック</a></sub></td>
+</tr>
+<tr>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#フィルムのクローズアップポートレート"><img src="assets/showcase/tiles/film-portrait-closeup.jpg" alt="フィルムのクローズアップポートレート"></a><br><sub><a href="SHOWCASE.ja.md#フィルムのクローズアップポートレート">フィルムのクローズアップポートレート</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#古いスマホのスナップ"><img src="assets/showcase/tiles/iphone7-snapshot.jpg" alt="古いスマホのスナップ"></a><br><sub><a href="SHOWCASE.ja.md#古いスマホのスナップ">古いスマホのスナップ</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#直射フラッシュのフィルムポートレート"><img src="assets/showcase/tiles/flash-film-portrait.jpg" alt="直射フラッシュのフィルムポートレート"></a><br><sub><a href="SHOWCASE.ja.md#直射フラッシュのフィルムポートレート">直射フラッシュのフィルムポートレート</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#おばあちゃんの誕生日ホームビデオ"><img src="assets/showcase/tiles/grandma-birthday-dv.jpg" alt="おばあちゃんの誕生日、ホームビデオ"></a><br><sub><a href="SHOWCASE.ja.md#おばあちゃんの誕生日ホームビデオ">おばあちゃんの誕生日、ホームビデオ</a></sub></td>
 </tr>
 <tr>
 <td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#夕暮れの屋上"><img src="assets/showcase/tiles/rooftop-bedsheets.jpg" alt="夕暮れの屋上"></a><br><sub><a href="SHOWCASE.ja.md#夕暮れの屋上">夕暮れの屋上</a></sub></td>
@@ -91,9 +139,27 @@ h3-image-prompt-writing を使って、雨の夜市を描いた 3:4 のポスタ
 </tr>
 <tr>
 <td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#月を切り分ける"><img src="assets/showcase/tiles/surreal-long-table.jpg" alt="月を切り分ける"></a><br><sub><a href="SHOWCASE.ja.md#月を切り分ける">月を切り分ける</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#洋梨の更衣室"><img src="assets/showcase/tiles/surreal-pear-dressing-room.jpg" alt="洋梨の更衣室"></a><br><sub><a href="SHOWCASE.ja.md#洋梨の更衣室">洋梨の更衣室</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#切り紙コラージュ"><img src="assets/showcase/tiles/blue-collage.jpg" alt="切り紙コラージュ"></a><br><sub><a href="SHOWCASE.ja.md#切り紙コラージュ">切り紙コラージュ</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#剥がし跡のタイポグラフィポスター"><img src="assets/showcase/tiles/sticker-type-poster.jpg" alt="剥がし跡のタイポグラフィポスター"></a><br><sub><a href="SHOWCASE.ja.md#剥がし跡のタイポグラフィポスター">剥がし跡のタイポグラフィポスター</a></sub></td>
+</tr>
+<tr>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#ピクセルアートの白猫ポスター"><img src="assets/showcase/tiles/pixel-white-cat.jpg" alt="ピクセルアートの白猫ポスター"></a><br><sub><a href="SHOWCASE.ja.md#ピクセルアートの白猫ポスター">ピクセルアートの白猫ポスター</a></sub></td>
 <td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#オシドリオールドマスター風油彩"><img src="assets/showcase/tiles/baroque-mandarin-ducks.jpg" alt="オシドリ、オールドマスター風油彩"></a><br><sub><a href="SHOWCASE.ja.md#オシドリオールドマスター風油彩">オシドリ、オールドマスター風油彩</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#漁師とペリカンカラヴァッジョ風"><img src="assets/showcase/tiles/caravaggio-pelican.jpg" alt="漁師とペリカン、カラヴァッジョ風"></a><br><sub><a href="SHOWCASE.ja.md#漁師とペリカンカラヴァッジョ風">漁師とペリカン、カラヴァッジョ風</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#卓球の試合カラヴァッジョ風"><img src="assets/showcase/tiles/caravaggio-ping-pong.jpg" alt="卓球の試合、カラヴァッジョ風"></a><br><sub><a href="SHOWCASE.ja.md#卓球の試合カラヴァッジョ風">卓球の試合、カラヴァッジョ風</a></sub></td>
+</tr>
+<tr>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#蘇州庭園のオシドリ印象派の油彩"><img src="assets/showcase/tiles/impressionist-suzhou-garden.jpg" alt="蘇州庭園のオシドリ、印象派の油彩"></a><br><sub><a href="SHOWCASE.ja.md#蘇州庭園のオシドリ印象派の油彩">蘇州庭園のオシドリ、印象派の油彩</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#太陽中世の装飾写本"><img src="assets/showcase/tiles/illuminated-manuscript-a.jpg" alt="太陽、中世の装飾写本"></a><br><sub><a href="SHOWCASE.ja.md#太陽中世の装飾写本">太陽、中世の装飾写本</a></sub></td>
 <td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#玉兎中世の装飾写本"><img src="assets/showcase/tiles/illuminated-manuscript-b.jpg" alt="玉兎、中世の装飾写本"></a><br><sub><a href="SHOWCASE.ja.md#玉兎中世の装飾写本">玉兎、中世の装飾写本</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#宇宙ステーションの修理敦煌壁画"><img src="assets/showcase/tiles/dunhuang-space-station.jpg" alt="宇宙ステーションの修理、敦煌壁画"></a><br><sub><a href="SHOWCASE.ja.md#宇宙ステーションの修理敦煌壁画">宇宙ステーションの修理、敦煌壁画</a></sub></td>
+</tr>
+<tr>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#ペリカンの影絵芝居"><img src="assets/showcase/tiles/shadow-puppet-pelican.jpg" alt="ペリカンの影絵芝居"></a><br><sub><a href="SHOWCASE.ja.md#ペリカンの影絵芝居">ペリカンの影絵芝居</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#回路と花工筆のテキスタイル"><img src="assets/showcase/tiles/gongbi-circuit-textile.jpg" alt="回路と花、工筆のテキスタイル"></a><br><sub><a href="SHOWCASE.ja.md#回路と花工筆のテキスタイル">回路と花、工筆のテキスタイル</a></sub></td>
 <td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#鏡の前のペリカン工筆画"><img src="assets/showcase/tiles/gongbi-pelican-mirror.jpg" alt="鏡の前のペリカン、工筆画"></a><br><sub><a href="SHOWCASE.ja.md#鏡の前のペリカン工筆画">鏡の前のペリカン、工筆画</a></sub></td>
+<td align="center" valign="top" width="25%"><a href="SHOWCASE.ja.md#金色の炎東洋ファンタジーのイラスト"><img src="assets/showcase/tiles/eastern-fantasy-lineart.jpg" alt="金色の炎、東洋ファンタジーのイラスト"></a><br><sub><a href="SHOWCASE.ja.md#金色の炎東洋ファンタジーのイラスト">金色の炎、東洋ファンタジーのイラスト</a></sub></td>
 </tr>
 </table>
 
