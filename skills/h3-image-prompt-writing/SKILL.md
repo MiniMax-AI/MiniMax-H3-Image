@@ -1,6 +1,7 @@
 ---
 name: h3-image-prompt-writing
 description: Write H3Image prompts for text-to-image generation and reference-image editing. Use to turn an idea or brief into a complete image prompt, refine an existing prompt, or describe edits and reference-guided compositions.
+compatibility: Portable to any agent that can read local files — no external API calls or proprietary runtime required. The agents/openai.yaml file only adds optional ChatGPT/Codex UI metadata; it does not restrict the skill to OpenAI agents.
 ---
 
 # H3Image Prompt Writing
