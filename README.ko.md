@@ -249,6 +249,7 @@ diffusers는 `ModularPipeline.from_pretrained("MiniMaxAI/MiniMax-H3-Image")`로 
 - [vLLM-Omni](https://github.com/vllm-project/vllm-omni) - [vllm-omni 레시피](https://recipes.vllm.ai/MiniMaxAI/MiniMax-H3-Image) 참고
 - [diffusers](https://github.com/huggingface/diffusers) - [diffusers 문서](https://huggingface.co/docs/diffusers/main/en/api/pipelines/minimax_h3_image) 참고
 - [ComfyUI](https://github.com/Comfy-Org/ComfyUI) - [Comfy 튜토리얼](https://docs.comfy.org/tutorials/image/minimax/minimax-h3-image) 참고, [T2I 템플릿](https://github.com/Comfy-Org/workflow_templates/blob/main/templates/image_minimax_h3_image_t2i.json) / [Edit 템플릿](https://github.com/Comfy-Org/workflow_templates/blob/main/templates/image_minimax_h3_image_edit.json) 사용
+- [h3metal](https://github.com/audenvenn/h3metal) - Apple Silicon Mac(M5/M6급 GPU)용, [빠른 시작](https://github.com/audenvenn/h3metal#quick-start) 참고
 
 #### SGLang
 
