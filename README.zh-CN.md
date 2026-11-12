@@ -248,6 +248,7 @@ diffusers 用 `ModularPipeline.from_pretrained("MiniMaxAI/MiniMax-H3-Image")` �
 - [vLLM-Omni](https://github.com/vllm-project/vllm-omni)：参见 [vllm-omni recipe](https://recipes.vllm.ai/MiniMaxAI/MiniMax-H3-Image)
 - [diffusers](https://github.com/huggingface/diffusers)：参见 [diffusers 文档](https://huggingface.co/docs/diffusers/main/en/api/pipelines/minimax_h3_image)
 - [ComfyUI](https://github.com/Comfy-Org/ComfyUI)：参见 [Comfy 教程](https://docs.comfy.org/tutorials/image/minimax/minimax-h3-image)；使用 [T2I 模板](https://github.com/Comfy-Org/workflow_templates/blob/main/templates/image_minimax_h3_image_t2i.json) / [Edit 模板](https://github.com/Comfy-Org/workflow_templates/blob/main/templates/image_minimax_h3_image_edit.json)
+- [h3metal](https://github.com/audenvenn/h3metal)：Apple Silicon Mac（M5/M6 级 GPU）；参见 [快速开始](https://github.com/audenvenn/h3metal#quick-start)
 
 #### SGLang
 
