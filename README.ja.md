@@ -248,6 +248,7 @@ diffusers は `ModularPipeline.from_pretrained("MiniMaxAI/MiniMax-H3-Image")` �
 - [SGLang](https://docs.sglang.io/) - [cookbook](https://docs.sglang.io/cookbook/diffusion/MiniMax/MiniMax-H3-Image) を参照
 - [vLLM-Omni](https://github.com/vllm-project/vllm-omni) - [vllm-omni recipe](https://recipes.vllm.ai/MiniMaxAI/MiniMax-H3-Image) を参照
 - [diffusers](https://github.com/huggingface/diffusers) - [diffusers ドキュメント](https://huggingface.co/docs/diffusers/main/en/api/pipelines/minimax_h3_image) を参照
+- [LightX2V](https://github.com/ModelTC/LightX2V) - [利用ガイド](https://github.com/ModelTC/LightX2V/tree/main/scripts/minimax_h3_image) を参照
 - [ComfyUI](https://github.com/Comfy-Org/ComfyUI) - [Comfy チュートリアル](https://docs.comfy.org/tutorials/image/minimax/minimax-h3-image) を参照。テンプレートは [T2I テンプレート](https://github.com/Comfy-Org/workflow_templates/blob/main/templates/image_minimax_h3_image_t2i.json) / [Edit テンプレート](https://github.com/Comfy-Org/workflow_templates/blob/main/templates/image_minimax_h3_image_edit.json) を使用します
 
 #### SGLang
