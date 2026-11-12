@@ -248,6 +248,7 @@ diffusers는 `ModularPipeline.from_pretrained("MiniMaxAI/MiniMax-H3-Image")`로 
 - [SGLang](https://docs.sglang.io/) - [cookbook](https://docs.sglang.io/cookbook/diffusion/MiniMax/MiniMax-H3-Image) 참고
 - [vLLM-Omni](https://github.com/vllm-project/vllm-omni) - [vllm-omni 레시피](https://recipes.vllm.ai/MiniMaxAI/MiniMax-H3-Image) 참고
 - [diffusers](https://github.com/huggingface/diffusers) - [diffusers 문서](https://huggingface.co/docs/diffusers/main/en/api/pipelines/minimax_h3_image) 참고
+- [LightX2V](https://github.com/ModelTC/LightX2V) - [사용 가이드](https://github.com/ModelTC/LightX2V/tree/main/scripts/minimax_h3_image) 참고
 - [ComfyUI](https://github.com/Comfy-Org/ComfyUI) - [Comfy 튜토리얼](https://docs.comfy.org/tutorials/image/minimax/minimax-h3-image) 참고, [T2I 템플릿](https://github.com/Comfy-Org/workflow_templates/blob/main/templates/image_minimax_h3_image_t2i.json) / [Edit 템플릿](https://github.com/Comfy-Org/workflow_templates/blob/main/templates/image_minimax_h3_image_edit.json) 사용
 
 #### SGLang
