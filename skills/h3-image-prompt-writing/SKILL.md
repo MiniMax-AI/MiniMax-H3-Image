@@ -135,7 +135,7 @@ On a local SGLang server, send the prompt as `prompt` and a `size` (`WIDTHxHEIGH
 aspect ratio from the [Sizes table](https://github.com/MiniMax-AI/MiniMax-H3-Image#sizes); the
 other fields are under
 [Request Parameters](https://github.com/MiniMax-AI/MiniMax-H3-Image#request-parameters), and
-vLLM-Omni's differ slightly, see the [vLLM-Omni recipe](https://recipes.vllm.ai/MiniMaxAI/MiniMax-H3-Image).
+vLLM-Omni's differ slightly; see the [vLLM-Omni recipe](https://recipes.vllm.ai/MiniMaxAI/MiniMax-H3-Image).
 A local server does not expand prompts, so a prompt written with this skill takes the place of
 that step.
 
