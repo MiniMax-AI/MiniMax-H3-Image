@@ -435,7 +435,7 @@ These tips from the official user guide apply to the MiniMax API and to a local 
 
 - MiniMax-H3-Image is released under the [MiniMax-H3-Image Community License Agreement](LICENSE).
 - The T2I PE Model ([MiniMax-H3-Image-PE](https://huggingface.co/MiniMaxAI/MiniMax-H3-Image-PE)) is part of MiniMax-H3-Image and is accordingly subject to [MiniMax-H3-Image Community License Agreement](LICENSE).
-- The separate written authorization described in Section IV of the license is requested through [Application form](https://platform.minimax.io/console/license)
+- The separate written authorization described in Section IV of the license is requested through the [Application form](https://platform.minimax.io/console/license).
 
 ## Contact Us
 
